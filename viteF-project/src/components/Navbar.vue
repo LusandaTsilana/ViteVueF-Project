@@ -57,6 +57,12 @@ ul a{
 
     }
 
+    @media (min-width: 992px) {
+      .navbar-nav{
+        font-size: 18px;
+      }
+    }
+
     
     }
 

@@ -2,9 +2,20 @@
   font-family: 'Fuzzy Bubbles', cursive;
   font-family: 'Philosopher', sans-serif;
   text-decoration-color: black;
+  
  
 }
 
-body {
-  max-height: 100vh;
+p{
+  font-size: 20px;
+}
+
+html {
+  height: 100%;
+}
+
+footer{
+  margin-top: auto;
+  padding-bottom: 0;
+
 }
