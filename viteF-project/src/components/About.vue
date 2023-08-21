@@ -4,10 +4,10 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 </script>
 
 <template>
-    <h1 class = "display-4" >About</h1>
+    <h1 class = "display-6" >About</h1>
 
-    <div class="container">
-  <div class="row align-items-start">
+    <div class="container" id="summary">
+  <div class="row">
     <div class="col" id="parabox">
       <p>I am an ex-Clinical Trial Recruiter who loves building projects with code.<br>
         <br>
@@ -20,10 +20,10 @@ I have acquired Front- development. Currently, I am learning to master Back-End 
 I am seeking a full-time role where I can contribute my skills in coding to grow professionally.</p>
     </div>
     <div class="col" id="e-box">
-      <h5>Qualification</h5>
+      <h6>Qualification</h6>
       <div class="tab-titles">
-                            <p class = "tab-links active-link" onclick = "opentab('education')">Education</p>
-                            <p class = "tab-links" onclick = "opentab('experience')" >Experience</p>
+                        <div><p class = "tab-links active-link" onclick = "opentab('education')">Education</p></div>
+                        <div><p class = "tab-links" onclick = "opentab('experience')" >Experience</p></div>
                             
                         </div>
                         <div class="tab-contents active-tab" id = "education">
@@ -45,7 +45,35 @@ I am seeking a full-time role where I can contribute my skills in coding to grow
     
   </div>
 </div>
+
+<!--languages section-->
+
+
+<div class="container" id = "languages">
+ <h6 id="languages-h">Programming Languages</h6> 
+  <div class="row">
+    <div class="col"><img src="/src/assets/html.png" width="90" height="112"></div>
+    <div class="col"><img src="/src/assets/css.png" width="90" height="112"></div>
+    <div class="col"><img src="/src/assets/python.png" width="105" height="112"></div>
+    <div class="col"><img src="/src/assets/java.png" width="120" height="112"></div>
+    <div class="col"><img src="/src/assets/js.png" width="100" height="96"></div>
+  </div>
+<!--<div class="col"><img src="/src/assets/node.png" width="199.73" height="144.58"></div>-->
+    <!--<div class="col"><img src="/src/assets/vue.js.png" width="110" height="132"></div>-->
   
+  
+</div>
+  
+<div class="container" id = "techs">
+ <h6 id="techs-h">Technologies</h6> 
+  <div class="row">
+   <div class="col"><img src="/src/assets/node.png" width="189.73" height="114.58"></div>
+    <div class="col"><img src="/src/assets/vue.js.png" width="100" height="102"></div>
+  </div>
+
+  
+  
+</div>
 </template>
 
 <style scoped>
@@ -57,22 +85,133 @@ h1{
     padding-bottom: 70px;
 }
 
-h5{
+h6{
   font-weight: bold;
 }
 
 li{
-  text-decoration: none;
+  list-style: none;
 }
 
 #e-box{
   text-align: center;
+  width: 501px;
+  
+  padding: 5px;
+  border: 1px gray;
+  display: flex;
+  flex-direction: column;
+  
+  
+}
+
+#e-box li{
+  font-size: 14px;
 }
 
 #parabox{
     text-align: justify;
 }
 
+/*----qualification section-----*/
+
+.tab-titles{
+    display: flex;
+    margin: 20px 0 40px;
+
+}
+.tab-links {
+    margin-right: 50px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    position: relative;
+}
+
+.tab-links::after{
+    content: '';
+    width: 0;
+    height: 3px;
+    background:rgb(137, 171, 131);
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+    transition: 0.5s;
+}
+
+.tab-links.active-link::after{
+    width:50%;
+
+}
+
+.tab-contents ul li{
+    list-style: none;
+    margin: 10px 0;
+}
+.tab-contents ul li span{
+    color: rgb(137, 171, 131);
+    font-size: 14px;
+}
+
+.tab-contents{
+    display: none;
+}
+.tab-contents.active-tab{
+    display: block;
+}
+
+/*-----qualifications section end----*/
+
+#languages div, #techs div{
+  padding-bottom: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+
+
+#languages-h, #techs-h{
+  margin-bottom: 50px;
+  margin-top: 30px;
+  text-decoration: underline;
+  text-align: center;
+}
+
+
+/*----responsiveness for xs, s and medium devices----*/
+@media (max-width: 992px) {
+  #languages{
+    display: flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items: center;
+
+  }
+
+  #languages img, #techs img{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-right: 50px;
+  }
+}
+
+/*-----responsiveness for xs and s devices for #summary section----*/
+@media (max-width: 768px) {
+  .row{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #parabox{
+    text-align: center;
+   padding-left: 20px;
+   padding-right: 20px;
+  }
+
+}
 
 </style>
 
@@ -80,7 +219,7 @@ li{
 //js for tab links underline and clicking under qualification sections
 var tablinks = document.getElementsByClassName("tab-links");
     var tabcontents = document.getElementsByClassName("tab-contents");
-
+    
     function opentab(tabname){
         for(tablink of tablinks){
             tablinks.classList.remove("active-link"); //to remove content & underline when clicked on heading

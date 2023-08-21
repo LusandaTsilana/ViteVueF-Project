@@ -31,9 +31,10 @@
   
   </script>
 
-<style>
+<style scoped>
 #navbar{
     background-color: rgba(202, 220, 199, 1);
+    
 }
 
 img{
@@ -59,7 +60,7 @@ ul a{
 
     @media (min-width: 992px) {
       .navbar-nav{
-        font-size: 18px;
+        font-size: 16px;
       }
     }
 

@@ -32,13 +32,14 @@ footer{
 }
 
 footer i{
-    font-size: 1.25rem;
+    font-size: 1rem;
     line-height: 1rem; /* 16px */
    
     
 }
 footer a{
     text-decoration: none;
+    color:black;
 }
 
 i{
@@ -60,8 +61,10 @@ i{
     align-items: center;
 }
 
-#paragraph1{
-    margin-bottom: 0;
+#copyright p{
+    margin-bottom: 15px;
+    font-size: 12px;
+    
 
 }
 </style>
