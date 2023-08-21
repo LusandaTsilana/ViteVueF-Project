@@ -19,28 +19,24 @@ I have acquired Front- development. Currently, I am learning to master Back-End 
 
 I am seeking a full-time role where I can contribute my skills in coding to grow professionally.</p>
     </div>
+
+    <!--Education/Experience section-->
     <div class="col" id="e-box">
       <h6>Qualification</h6>
-      <div class="tab-titles">
-                        <div><p class = "tab-links active-link" onclick = "opentab('education')">Education</p></div>
-                        <div><p class = "tab-links" onclick = "opentab('experience')" >Experience</p></div>
-                            
-                        </div>
-                        <div class="tab-contents active-tab" id = "education">
-                            <ul>
-                                <li><span><strong>2022 - Current</strong></span><br>BSc. Applied Mathematics & Computer Science</li>
-                                <li><span><strong>2018 - 2021</strong></span><br>BSc. Biotechnology</li>
-                            </ul>
-                        </div>
-                        <div class="tab-contents" id = "experience">
-                            <ul>
-                                <li><span><strong>2023 - Current</strong></span><br>Software Developer Intern</li>
-                                <li><span><strong>2021 - 2023</strong></span><br>Pharmaceutical Sales</li>
-                                <li><span><strong>2018 - 2019</strong></span><br>Beauty Sales</li>
-                                 
-                            </ul>
-                        </div>
-                        
+      
+      <ul>
+        <li class="nav-item">
+          <a href="#"> {{ tablinks[0] }}</a>
+
+        </li>
+        <li class="nav-item">
+          <a href="#">{{ tablinks[1] }}</a>
+
+        </li>
+</ul>
+      <div id="content" class="container">
+        <p>{{ content }}</p>
+      </div>
     </div>
     
   </div>
@@ -58,10 +54,7 @@ I am seeking a full-time role where I can contribute my skills in coding to grow
     <div class="col"><img src="/src/assets/java.png" width="120" height="112"></div>
     <div class="col"><img src="/src/assets/js.png" width="100" height="96"></div>
   </div>
-<!--<div class="col"><img src="/src/assets/node.png" width="199.73" height="144.58"></div>-->
-    <!--<div class="col"><img src="/src/assets/vue.js.png" width="110" height="132"></div>-->
-  
-  
+
 </div>
   
 <div class="container" id = "techs">
@@ -217,18 +210,25 @@ li{
 
 <script>
 //js for tab links underline and clicking under qualification sections
-var tablinks = document.getElementsByClassName("tab-links");
-    var tabcontents = document.getElementsByClassName("tab-contents");
-    
-    function opentab(tabname){
-        for(tablink of tablinks){
-            tablinks.classList.remove("active-link"); //to remove content & underline when clicked on heading
-        }
-        for(tabcontent of tabcontents){
-            tabcontents.classList.remove("active-tab");//same as above
-        }
-        event.currentTarget.classList.add("active-link"); //to display underline color when clicking on title
-        document.getElementById(tabname).classList.add("active-tab"); 
+import { ref } from '@vue/reactivity';
+
+export default {
+  data() {
+    return {
+      tablinks: ['Education', 'Experience']
+
     }
+  },
+
+  setup() {
+    return {
+      content: <ul>
+        <li><span>2022 - Current</span>BSc. Applied Mathematics & Computer Science</li>
+        <li><span>2018 - 2021</span>BSc. Biotechnology</li>
+      </ul>
+    }
+
+  }
+}
 
 </script>
