@@ -22,7 +22,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
         
         PROJECT DURATION: 2 months <br>
 
-        <a href=""> <i class="bi bi-link-45deg"></i> View</a></p>
+        <a href="https://melodic-nasturtium-8a6e3c.netlify.app/" target="_blank" @click="openLink()"> <i class="bi bi-link-45deg"></i> View</a></p>
     </div>
 
 
@@ -97,3 +97,13 @@ li{
 }*/
 </style>
 
+<script>
+    export default {
+    methods: {
+        openLink() {
+            //to open to new window when clicking on view for school website
+        },
+    },
+
+};
+</script>

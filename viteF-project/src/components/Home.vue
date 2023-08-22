@@ -14,7 +14,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
       <p class="h3">Junior Web Developer</p>
 
       <div id="buttons">
-      <button type="button" class="btn btn-outline" id="button" href="/contact">Contact</button>
+      <button type="button" class="btn btn-outline" id="button"><a href="/contact">Contact</a></button>
       <button type="button" class="btn btn-outline" id="button" >Resume</button>
         </div>
     </div>
@@ -58,6 +58,11 @@ p{
 
 #name{
     text-decoration: underline;
+}
+
+#buttons a{
+  text-decoration: none;
+  color: black;
 }
 
 @media (max-width: 992px) {
