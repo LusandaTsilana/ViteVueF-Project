@@ -11,8 +11,18 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
     <div id="MZ-box" class="col shadow p-3 mb-5 bg-body-tertiary rounded">
         <h6 id="MZ" class="">School Website</h6>
-        <p>Working collaboratively with my team to develop a website for Mzamomtsha Primary School. Throughout the project, we utilized our collective skills in HTML, CSS and Javascript while following the Software Developement Lifecycle. 
-        <br> PROJECT DURATION: 2 months <br><a href=""> <i class="bi bi-link-45deg"></i> View</a></p>
+        <p>Working collaboratively with my team to develop a website for Mzamomtsha Primary School. Throughout the project, we utilized our collective skills in HTML, CSS and Javascript while following the Software Developement Lifecycle which included:
+        <br>
+        <ul>
+            <li>Developement Team Formation</li>
+            <li>Wireframe Design</li>
+            <li>Figma UI/UX Prototype</li>
+            <li>Research & Development</li>
+        </ul>
+        
+        PROJECT DURATION: 2 months <br>
+
+        <a href=""> <i class="bi bi-link-45deg"></i> View</a></p>
     </div>
 
 
@@ -70,6 +80,11 @@ h1{
     text-align: center;
 }
 span{
+    font-weight: bold;
+}
+
+li{
+    list-style: none;
     font-weight: bold;
 }
 
