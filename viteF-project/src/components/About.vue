@@ -23,21 +23,10 @@ I am seeking a full-time role where I can contribute my skills in coding to grow
     <!--Education/Experience section-->
     <div class="col" id="e-box">
       <h6>Qualification</h6>
+
       
-      <!--<ul>
-        <li class="nav-item">
-          <a href="#"> {{ tablinks[0] }}</a>
-
-        </li>
-        <li class="nav-item">
-          <a href="#">{{ tablinks[1] }}</a>
-
-        </li>
-</ul>
-      <div id="content" class="container">
-        <p>{{ content }}</p>
-      </div>-->
-    </div>
+      </div>
+    
     
   </div>
 </div>
@@ -167,25 +156,48 @@ li{
 
 <script>
 //js for tab links underline and clicking under qualification sections
-/*import { ref } from '@vue/reactivity';
+import { ref } from '@vue/reactivity'; //import ref funcion from node modules for reactivity
 
 export default {
   data() {
     return {
-      tablinks: ['Education', 'Experience']
+      tabs: [
+        { name: 'Education', active: false },
+        { name: 'Experience', active: false },
+      ],
+    };
+  },
+  setup() {
+    //ref is to create reactive variable for the "content"
+    const educationContent = ref(`
+    <ul>
+      <li><span>2022 - Current</span>BSc. Applied Mathematics & Computer Science</li>
+      <li><span>2018 - 2021</span>BSc. Biotechnology</li>
+      </ul>`
+      );
 
-    }
+      const experienceContent = ref(`
+    <ul>
+      <li><span>2023 - Current</span>Junior Web Developer</li>
+      <li><span>2021 - 2023</span>Clinical Trial Recruiter</li>
+      <li><span>2018 - 2019</span>Sales & Customer Care</li>
+      </ul>`
+      );
+
+      return {
+        educationContent,
+        experienceContent,
+      };
   },
 
-  setup() {
-    return {
-      content: <ul>
-        <li><span>2022 - Current</span>BSc. Applied Mathematics & Computer Science</li>
-        <li><span>2018 - 2021</span>BSc. Biotechnology</li>
-      </ul>
-    }
+  methods: {
+    openTab(tabName) {
+      this.tabs.forEach((tab) => {
+        tab.active = tab.name === tabName;
+      });
+    },
+  },
+};
 
-  }
-}*/
 
 </script>
