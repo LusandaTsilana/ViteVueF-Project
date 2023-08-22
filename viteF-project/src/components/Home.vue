@@ -19,7 +19,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
         </div>
     </div>
     <div class="col">
-        <img src="/src/assets/portrait.jpg" alt="portrait" id = "portrait" width="433.56" height="500">
+        <img src="/src/assets/portrait.jpg" class = "" alt="portrait" id = "portrait" width="433.56" height="500">
      
     </div>
   </div>

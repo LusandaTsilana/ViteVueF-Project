@@ -24,7 +24,7 @@ I am seeking a full-time role where I can contribute my skills in coding to grow
     <div class="col" id="e-box">
       <h6>Qualification</h6>
       
-      <ul>
+      <!--<ul>
         <li class="nav-item">
           <a href="#"> {{ tablinks[0] }}</a>
 
@@ -36,7 +36,7 @@ I am seeking a full-time role where I can contribute my skills in coding to grow
 </ul>
       <div id="content" class="container">
         <p>{{ content }}</p>
-      </div>
+      </div>-->
     </div>
     
   </div>
@@ -45,7 +45,7 @@ I am seeking a full-time role where I can contribute my skills in coding to grow
 <!--languages section-->
 
 
-<div class="container" id = "languages">
+<div class="container shadow p-3 mb-5 bg-body-tertiary rounded" id = "languages">
  <h6 id="languages-h">Programming Languages</h6> 
   <div class="row">
     <div class="col"><img src="/src/assets/html.png" width="90" height="112"></div>
@@ -57,7 +57,7 @@ I am seeking a full-time role where I can contribute my skills in coding to grow
 
 </div>
   
-<div class="container" id = "techs">
+<div class="container shadow p-3 mb-5 bg-body-tertiary rounded" id = "techs">
  <h6 id="techs-h">Technologies</h6> 
   <div class="row">
    <div class="col"><img src="/src/assets/node.png" width="189.73" height="114.58"></div>
@@ -86,6 +86,12 @@ li{
   list-style: none;
 }
 
+.container{
+ margin-top: 20px;
+ margin-bottom: 50px;
+ 
+}
+
 #e-box{
   text-align: center;
   width: 501px;
@@ -106,60 +112,13 @@ li{
     text-align: justify;
 }
 
-/*----qualification section-----*/
-
-.tab-titles{
-    display: flex;
-    margin: 20px 0 40px;
-
-}
-.tab-links {
-    margin-right: 50px;
-    font-size: 14px;
-    font-weight: 500;
-    cursor: pointer;
-    position: relative;
-}
-
-.tab-links::after{
-    content: '';
-    width: 0;
-    height: 3px;
-    background:rgb(137, 171, 131);
-    position: absolute;
-    left: 0;
-    bottom: -8px;
-    transition: 0.5s;
-}
-
-.tab-links.active-link::after{
-    width:50%;
-
-}
-
-.tab-contents ul li{
-    list-style: none;
-    margin: 10px 0;
-}
-.tab-contents ul li span{
-    color: rgb(137, 171, 131);
-    font-size: 14px;
-}
-
-.tab-contents{
-    display: none;
-}
-.tab-contents.active-tab{
-    display: block;
-}
-
-/*-----qualifications section end----*/
 
 #languages div, #techs div{
-  padding-bottom: 20px;
+  padding-bottom: 40px;
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
+  align-items: center;
 }
 
 
@@ -183,9 +142,7 @@ li{
   }
 
   #languages img, #techs img{
-    margin-top: 20px;
-    margin-bottom: 20px;
-    margin-right: 50px;
+    margin: 20px 30px 20px 30px;
   }
 }
 
@@ -210,7 +167,7 @@ li{
 
 <script>
 //js for tab links underline and clicking under qualification sections
-import { ref } from '@vue/reactivity';
+/*import { ref } from '@vue/reactivity';
 
 export default {
   data() {
@@ -229,6 +186,6 @@ export default {
     }
 
   }
-}
+}*/
 
 </script>
