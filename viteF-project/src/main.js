@@ -6,11 +6,7 @@ import './style.css'
 import App from './App.vue'
 import router from './plugins/router'
 
-import Vuelidate from 'vuelidate'
-Vue.use(Vuelidate)
 
-//Vue.config.productionTip = false
-//will comment out upon deployment
 
 createApp(App).use(router).mount('#app')
 

@@ -1,40 +1,4 @@
-<script>
 
-import { useVuelidate } from '@vuelidate/core'
-import { required } from '@vuelidate/validators'
-import {required, minLength, maxLength, alpha, email} from 'vuelidate/lib/validators'
-
-
-export default {
-    data: () => ({
-        name: '',
-        email: '',
-        message: '',
-        recaptcha: null,
-
-    }),
-    validations : {
-        name: {
-            required, 
-            alpha
-        },
-        email: {
-            required, 
-            email
-        },
-        message: {
-            required, 
-            minLength: minLength(30), 
-            maxLength: maxLength(100),
-        },
-        recaptcha: {
-            required,
-            
-        }
-    }
-}
-
-</script>
 <template>
 
 <h1 class = "display-6" >Contact</h1>
@@ -59,22 +23,23 @@ export default {
         <div id = "form-box" class="column shadow p-3 mb-5 bg-body-tertiary rounded">
             <h5>Write me your project</h5>
 
-        <form>
-            <div class="mb-3">
-                <label for="InputName" class="form-label">Full Name</label>
-                <input type="name" class="form-control" id="InputName">
+            {{ isValidEmail }}
+            <form>
+  <div class="mb-3">
+    <label for="InputName" class="form-label">Full Name</label>
+    <input v-model="name" type="name" class="form-control" id="InputName">
+  </div>
+   <div class="mb-3">
+    <label for="InputEmail" class="form-label">Email</label>
+    <input v-model="email" type="email" class="form-control" id="InputEmail">
     
-            </div>
-            <div class="mb-3">
-                <label for="InputEmail" class="form-label">Email</label>
-                <input type="Email" class="form-control" id="InputEmail">
-            </div>
-            <div class="mb-3">
-                <label for="MessageBox" class="form-label" >Message</label>
-                <input type="Message" class="form-control py-5" id="MessageBox">
-            </div>
-            <button type="submit" class="btn btn-outline" id = "submit-button">Submit</button>
-        </form>
+  </div>
+  <div class="mb-3">
+    <label for="InputMessage" class="form-label">Message</label>
+    <input v-model="message" type="text" class="form-control pb-6" id="InputMessage">
+  </div>
+  <button @click="submit" type="submit" class="btn btn-outline" id="submit-button">Submit</button>
+</form>
         </div>
     
  </div>
@@ -149,4 +114,26 @@ div a{
 }
 
 </style>
+
+
+<script setup>
+import { ref, computed } from 'vue';
+
+const startValidation = ref(false);
+const name = ref();
+const email = ref();
+const message = ref();
+
+function submit() {
+    startValidation.value = true;
+}
+
+const isValidEmail = computed(() => {
+
+    return startValidation.value ? /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email.value);
+}
+);
+
+</script>
+
 
