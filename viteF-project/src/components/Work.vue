@@ -1,7 +1,3 @@
-<script setup>
-import 'bootstrap/dist/css/bootstrap.min.css';
-
-</script>
 
 <template>
 <h1 class = "display-6" >Work</h1>

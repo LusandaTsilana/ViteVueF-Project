@@ -1,8 +1,40 @@
-<script setup>
-import 'bootstrap/dist/css/bootstrap.min.css';
+<script>
+
+import { useVuelidate } from '@vuelidate/core'
+import { required } from '@vuelidate/validators'
+import {required, minLength, maxLength, alpha, email} from 'vuelidate/lib/validators'
+
+
+export default {
+    data: () => ({
+        name: '',
+        email: '',
+        message: '',
+        recaptcha: null,
+
+    }),
+    validations : {
+        name: {
+            required, 
+            alpha
+        },
+        email: {
+            required, 
+            email
+        },
+        message: {
+            required, 
+            minLength: minLength(30), 
+            maxLength: maxLength(100),
+        },
+        recaptcha: {
+            required,
+            
+        }
+    }
+}
 
 </script>
-
 <template>
 
 <h1 class = "display-6" >Contact</h1>
@@ -117,3 +149,4 @@ div a{
 }
 
 </style>
+

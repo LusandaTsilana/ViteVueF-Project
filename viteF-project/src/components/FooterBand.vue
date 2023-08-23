@@ -1,7 +1,3 @@
-<script setup>
-import 'bootstrap/dist/css/bootstrap.min.css';
-
-</script>
 
 <template>
   <footer>
@@ -68,3 +64,6 @@ i{
 
 }
 </style>
+
+<script>
+</script>

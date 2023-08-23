@@ -27,7 +27,7 @@
 </template>
 
 <script>
-  import '@/style.css'; // Import main style.css file
+  
   
   </script>
 

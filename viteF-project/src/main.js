@@ -1,10 +1,17 @@
 import { createApp } from 'vue'
 import 'bootstrap'
 import 'bootstrap/dist/css/bootstrap.css'
+import 'bootstrap/dist/js/bootstrap.js'
 import './style.css'
 import App from './App.vue'
 import router from './plugins/router'
 
+import Vuelidate from 'vuelidate'
+Vue.use(Vuelidate)
+
+//Vue.config.productionTip = false
+//will comment out upon deployment
+
 createApp(App).use(router).mount('#app')
 
-import 'bootstrap/dist/js/bootstrap.js'
+

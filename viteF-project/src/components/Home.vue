@@ -1,7 +1,4 @@
-<script setup>
-import 'bootstrap/dist/css/bootstrap.min.css';
 
-</script>
 
 <template>
 
@@ -98,3 +95,6 @@ p{
 }
 
 </style>
+
+<script>
+</script>
