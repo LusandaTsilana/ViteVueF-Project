@@ -24,17 +24,34 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
         </div>
 
-   
+        <div id = "form-box" class="column shadow p-3 mb-5 bg-body-tertiary rounded">
+            <h5>Write me your project</h5>
+
+        <form>
+            <div class="mb-3">
+                <label for="InputName" class="form-label">Full Name</label>
+                <input type="name" class="form-control" id="InputName">
     
-
-    <div id = "form" class="container">
-
-    </div>
+            </div>
+            <div class="mb-3">
+                <label for="InputEmail" class="form-label">Email</label>
+                <input type="Email" class="form-control" id="InputEmail">
+            </div>
+            <div class="mb-3">
+                <label for="MessageBox" class="form-label" >Message</label>
+                <input type="Message" class="form-control py-5" id="MessageBox">
+            </div>
+            <button type="submit" class="btn btn-outline" id = "submit-button">Submit</button>
+        </form>
+        </div>
+    
  </div>
   
 </template>
 
 <style scoped>
+
+/*--headings styling--*/
 h1{
     text-align: center;
     text-decoration: underline;
@@ -50,11 +67,11 @@ h5{
 
 #main{
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     padding-bottom: 50px;
 }
 
-
+/*---contact modes styling--*/
 i{
     padding: 20px 10px 20px 10px;
     font-size: 2rem;
@@ -65,9 +82,9 @@ div a{
     color: black;
 }
 
-#contact-modes{
+#contact-modes, #form-box{
     padding: 100px;
-    width: 50%;
+    width: 40%;
     height: 500px;
 }
 
@@ -77,5 +94,26 @@ div a{
 
 }
 
+/*---form box styling--- fix button placements*/
+#submit-button{
+    background-color: rgba(202, 220, 199, 1);
+}
+
+/*---responsiveness of column components---*/
+@media (max-width: 992px) {
+    #main{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+    }
+    #contact-modes, #form-box{
+    padding: 100px;
+    width: 60%;
+    height: 500px;
+}
+
+}
 
 </style>

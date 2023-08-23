@@ -26,9 +26,9 @@ import 'bootstrap/dist/css/bootstrap.min.css';
     </div>
 
 
-</div>
 
-<div id = "MS-box" class="container shadow p-3 mb-5 bg-body-tertiary rounded">
+
+<div id = "MS-box" class="col shadow p-3 mb-5 bg-body-tertiary rounded">
     <h6 id="MS">My Services</h6>
     <div class="row">
     <div class="col">
@@ -45,7 +45,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
     </div>
     </div>
 </div>
-
+</div>
   
 </template>
 
@@ -88,13 +88,21 @@ li{
     font-weight: bold;
 }
 
-/*@media (max-width: 576px) {
-    #MS-box .row div{
-       need to make the 3 sets into a column stretching down
+.col{
+    padding: 15px;
+    text-align: center;
+}
+
+@media (max-width: 576px) {
+    #MS-box div{
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      align-items: center;
     }
     
 
-}*/
+}
 </style>
 
 <script>
