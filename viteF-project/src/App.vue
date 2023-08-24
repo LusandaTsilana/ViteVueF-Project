@@ -12,8 +12,7 @@
   import 'bootstrap/dist/js/bootstrap.min.js';
   import '@/style.css'; // Import main style.css file
   import FooterBand from '@/components/FooterBand.vue';
-  
-  
+
   export default {
     components: {
       Navbar,

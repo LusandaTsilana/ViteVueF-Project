@@ -1,138 +1,217 @@
 
+
 <template>
+    <h1 class="display-6">Contact</h1>
 
-<h1 class = "display-6" >Contact</h1>
+    <div id="main" class="container">
 
-<div id = "main" class="container">
-
-    <div id = "contact-modes" class="column shadow p-3 mb-5 bg-body-tertiary rounded">
-        <h5>Talk to me</h5>
+        <div id="contact-modes" class="column shadow p-3 mb-5 bg-body-tertiary rounded">
+            <h5>Talk to me</h5>
 
             <div class="col shadow-sm p-3 mb-5 bg-body-tertiary rounded">
                 <p><a href=""><i class="bi bi-envelope-at"></i></a>sanda.tsilana@gmail.com</p>
             </div>
             <div class="col shadow-sm p-3 mb-5 bg-body-tertiary rounded">
-                <p><a href=""><i class="bi bi-linkedin"></i></a>Linkedin</p>
+                <p><a href="https://www.linkedin.com/in/lusanda-tsilana31" target="_blank" @click="openLink()"><i class="bi bi-linkedin"></i></a>Linkedin</p>
             </div>
             <div class="col shadow-sm p-3 mb-5 bg-body-tertiary rounded">
-                <p><a href=""><i class="bi bi-github"></i></a>Github</p>
+                <p><a href="https://github.com/LusandaTsilana" target="_blank" @click="openLink()"><i class="bi bi-github"></i></a>Github</p>
             </div>
 
         </div>
 
-        <div id = "form-box" class="column shadow p-3 mb-5 bg-body-tertiary rounded">
+        <div id="form-box" class="column shadow p-3 mb-5 bg-body-tertiary rounded">
             <h5>Write me your project</h5>
 
-            {{ isValidEmail }}
+
+
             <form>
-  <div class="mb-3">
-    <label for="InputName" class="form-label">Full Name</label>
-    <input v-model="name" type="name" class="form-control" id="InputName">
-  </div>
-   <div class="mb-3">
-    <label for="InputEmail" class="form-label">Email</label>
-    <input v-model="email" type="email" class="form-control" id="InputEmail">
-    
-  </div>
-  <div class="mb-3">
-    <label for="InputMessage" class="form-label">Message</label>
-    <input v-model="message" type="text" class="form-control pb-6" id="InputMessage">
-  </div>
-  <button @click="submit" type="submit" class="btn btn-outline" id="submit-button">Submit</button>
-</form>
+              
+                <div class="mb-3">
+                    <label for="InputName" class="form-label">Full Name</label>
+                    <input type="name" class="form-control" id="InputName" v-model="state.fullname"/>
+                    <span v-if="v$.fullname.$error">
+                    {{ v$.fullname.$errors[0].$message }}</span>
+                   
+                </div>
+
+              
+                <div class="mb-3">
+                    <label for="InputEmail" class="form-label">Email</label>
+                    <input  type="email" class="form-control" id="InputEmail" v-model="state.email"/>
+                    <span v-if="v$.email.$error">
+                    {{ v$.email.$errors[0].$message }}</span>
+                </div>
+
+               
+                <div class="mb-3">
+                    <label for="InputMessage" class="form-label">Message</label>
+                    <input  type="text" class="form-control pb-5" id="InputMessage" v-model="state.messagetext"/>
+                    <span v-if="v$.messagetext.$error">
+                    {{ v$.messagetext.$errors[0].$message }}</span>
+
+                </div>
+                <button @click="submitForm" type="submit" class="btn btn-outline" id="submit-button">Submit</button>
+            </form>
         </div>
-    
- </div>
-  
+
+    </div>
 </template>
 
 <style scoped>
-
 /*--headings styling--*/
-h1{
+h1 {
     text-align: center;
     text-decoration: underline;
     padding-top: 50px;
     padding-bottom: 70px;
 }
 
-h5{
+h5 {
     text-align: center;
     margin: 10px 0px 30px 0px;
     font-weight: bold;
 }
 
-#main{
+#main {
     display: flex;
     justify-content: space-evenly;
     padding-bottom: 50px;
 }
 
 /*---contact modes styling--*/
-i{
+i {
     padding: 20px 10px 20px 10px;
     font-size: 2rem;
 }
 
-div a{
+div a {
     text-decoration: none;
     color: black;
 }
 
-#contact-modes, #form-box{
+#contact-modes,
+#form-box {
     padding: 100px;
     width: 40%;
     height: 500px;
 }
 
-.col{
+.col {
     text-align: center;
     padding: 30px 0px 30px 0px;
 
 }
 
 /*---form box styling--- fix button placements*/
-#submit-button{
+#submit-button {
     background-color: rgba(202, 220, 199, 1);
+}
+
+span{
+    color: red;
 }
 
 /*---responsiveness of column components---*/
 @media (max-width: 992px) {
-    #main{
+    #main {
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
 
     }
-    #contact-modes, #form-box{
-    padding: 100px;
-    width: 60%;
-    height: 500px;
-}
+
+    #contact-modes,
+    #form-box {
+        padding: 100px;
+        width: 60%;
+        height: 500px;
+    }
 
 }
-
 </style>
 
 
-<script setup>
-import { ref, computed } from 'vue';
+<script>
 
-const startValidation = ref(false);
-const name = ref();
-const email = ref();
-const message = ref();
+import { useVuelidate } from '@vuelidate/core'
+import { required, email, minLength, maxLength } from '@vuelidate/validators'
+import { reactive, computed } from 'vue'
 
-function submit() {
-    startValidation.value = true;
+
+export default {
+    setup() {
+        const state = reactive ({
+            fullname: '',
+            email: '',
+            messagetext: '',
+          
+    
+    })
+        const rules = computed (() => {
+            return { 
+                fullname: { required },
+                email: { required, email },
+                messagetext: { 
+                required, minLength: minLength(30), 
+                maxLength: maxLength(100)},  
+            }
+        })
+
+        const v$ = useVuelidate(rules, state)
+
+        return {
+            state,
+            v$,
+        }
+    },
+
+    minLength (min) {
+        return {
+            $validator: minLength(min),
+            $message: ({ $params }) => `This should be at least ${$params.min} long`,
+            $params: { min}
+
+        }
+    },
+    maxLength (max) {
+        return {
+            $validator: maxLength(max),
+            $message: ({ $params }) => 
+            `Message cannot exceed ${$params} characters`,
+            $arams: {max}
+
+        }
+    },
+
+    methods: {
+        submitForm(event) {
+
+            event.preventDefault();
+           
+
+            this.v$.$validate()
+            .then(() => {
+                //will send form to server/email.js here
+            })
+            .catch((errors) => {
+                console.error('Validation errors: ', errors);
+            });
+          
+           
+        },
+
+        openLink() {
+            //to open to new window when clicking on view for school website
+        },
+    }
 }
 
-const isValidEmail = computed(() => {
 
-    return startValidation.value ? /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email.value);
-}
-);
+
+
+
 
 </script>
 
