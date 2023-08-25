@@ -33,11 +33,11 @@ I am seeking a full-time role where I can contribute my skills in coding to grow
 <div class="container shadow p-3 mb-5 bg-body-tertiary rounded" id = "languages">
  <h6 id="languages-h">Programming Languages</h6> 
   <div class="row">
-    <div class="col"><img src="/src/assets/html.png" width="90" height="112"></div>
-    <div class="col"><img src="/src/assets/css.png" width="90" height="112"></div>
-    <div class="col"><img src="/src/assets/python.png" width="105" height="112"></div>
-    <div class="col"><img src="/src/assets/java.png" width="120" height="112"></div>
-    <div class="col"><img src="/src/assets/js.png" width="100" height="96"></div>
+    <div class="col"><img src="@/assets/html.png" width="90" height="112"></div>
+    <div class="col"><img src="@/assets/css.png" width="90" height="112"></div>
+    <div class="col"><img src="@/assets/python.png" width="105" height="112"></div>
+    <div class="col"><img src="@/assets/java.png" width="120" height="112"></div>
+    <div class="col"><img src="@/assets/js.png" width="100" height="96"></div>
   </div>
 
 </div>
@@ -45,8 +45,8 @@ I am seeking a full-time role where I can contribute my skills in coding to grow
 <div class="container shadow p-3 mb-5 bg-body-tertiary rounded" id = "techs">
  <h6 id="techs-h">Technologies</h6> 
   <div class="row">
-   <div class="col"><img src="/src/assets/node.png" width="189.73" height="114.58"></div>
-    <div class="col"><img src="/src/assets/vue.js.png" width="100" height="102"></div>
+   <div class="col"><img src="@/assets/node.png" width="189.73" height="114.58"></div>
+    <div class="col"><img src="@/assets/vue.js.png" width="100" height="102"></div>
   </div>
 
   
