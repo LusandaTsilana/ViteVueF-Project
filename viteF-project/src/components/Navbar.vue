@@ -36,6 +36,9 @@
     background-color: rgba(202, 220, 199, 1);
     
 }
+/*nav{
+  position: ;
+}*/
 
 img{
     margin-left: 50px;

@@ -25,7 +25,7 @@
 
 
 
-            <form>
+            <form @submit.prevent="submitForm">
               
                 <div class="mb-3">
                     <label for="InputName" class="form-label">Full Name</label>
@@ -51,7 +51,7 @@
                     {{ v$.messagetext.$errors[0].$message }}</span>
 
                 </div>
-                <button @click="submitForm" type="submit" class="btn btn-outline" id="submit-button">Submit</button>
+                <button type="submit" class="btn btn-outline" id="submit-button">Submit</button>
             </form>
         </div>
 
@@ -90,10 +90,14 @@ div a {
     color: black;
 }
 
-#contact-modes,
 #form-box {
     padding: 100px;
-    width: 40%;
+    width: 50%;
+    height: 500px;
+}
+#contact-modes{
+    padding: 100px;
+    width: 30%;
     height: 500px;
 }
 
@@ -155,7 +159,7 @@ export default {
                 email: { required, email },
                 messagetext: { 
                 required, minLength: minLength(30), 
-                maxLength: maxLength(100)},  
+                maxLength: maxLength(150)},  
             }
         })
 
@@ -186,11 +190,7 @@ export default {
     },
 
     methods: {
-        submitForm(event) {
-
-            event.preventDefault();
-           
-
+        submitForm() {
             this.v$.$validate()
             .then(() => {
                 //will send form to server/email.js here
