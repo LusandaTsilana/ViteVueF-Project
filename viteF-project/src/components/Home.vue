@@ -12,7 +12,7 @@
 
       <div id="buttons">
       <button type="button" class="btn btn-outline" id="button"><a href="/contact">Contact</a></button>
-      <button type="button" class="btn btn-outline" id="button" >Resume</button>
+      <button type="button" class="btn btn-outline" id="button"><a href="@/assets/LUSANDA T CV 2023.pdf" target="_blank" >Resume</a></button>
         </div>
     </div>
     <div class="col">
@@ -97,4 +97,5 @@ p{
 </style>
 
 <script>
+
 </script>

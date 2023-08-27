@@ -1,6 +1,6 @@
 
 <template>
-    <h1 class = "display-6" >About</h1>
+    <h1 class = "display-4" >About</h1>
 
     <div class="container" id="summary">
   <div class="row">
@@ -18,7 +18,7 @@ I am seeking a full-time role where I can contribute my skills in coding to grow
 
     <!--Education/Experience section-->
     <div class="col" id="e-box">
-      <h6>Qualification</h6>
+      <h5>Qualification</h5>
 
       
       </div>
@@ -31,7 +31,7 @@ I am seeking a full-time role where I can contribute my skills in coding to grow
 
 
 <div class="container shadow p-3 mb-5 bg-body-tertiary rounded" id = "languages">
- <h6 id="languages-h">Programming Languages</h6> 
+ <h3 class = "" id="languages-h">Programming Languages</h3> 
   <div class="row">
     <div class="col"><img src="@/assets/html.png" width="90" height="112"></div>
     <div class="col"><img src="@/assets/css.png" width="90" height="112"></div>
@@ -43,7 +43,7 @@ I am seeking a full-time role where I can contribute my skills in coding to grow
 </div>
   
 <div class="container shadow p-3 mb-5 bg-body-tertiary rounded" id = "techs">
- <h6 id="techs-h">Technologies</h6> 
+ <h3 class = "" id="techs-h">Technologies</h3> 
   <div class="row">
    <div class="col"><img src="@/assets/node.png" width="189.73" height="114.58"></div>
     <div class="col"><img src="@/assets/vue.js.png" width="100" height="102"></div>

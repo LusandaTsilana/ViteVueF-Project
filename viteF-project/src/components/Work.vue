@@ -1,16 +1,16 @@
 
 <template>
-<h1 class = "display-6" >Work</h1>
+<h1 class = "display-4" >Work</h1>
 
 <div class="container">
-    <h6 id="MP">My Portfolio</h6>
+    <h3 class = "" id="MP">My Portfolio</h3>
 
     <div id="MZ-box" class="col shadow p-3 mb-5 bg-body-tertiary rounded">
-        <h6 id="MZ" class="">School Website</h6>
+        <h4 id="MZ" class="">School Website</h4>
         <p>Working collaboratively with my team to develop a website for Mzamomtsha Primary School. Throughout the project, we utilized our collective skills in HTML, CSS and Javascript while following the Software Developement Lifecycle which included:
         <br>
         <ul>
-            <li>Developement Team Formation</li>
+            <li>Developer Team Formation</li>
             <li>Wireframe Design</li>
             <li>Figma UI/UX Prototype</li>
             <li>Research & Development</li>
@@ -25,7 +25,7 @@
 
 
 <div id = "MS-box" class="col shadow p-3 mb-5 bg-body-tertiary rounded">
-    <h6 id="MS">My Services</h6>
+    <h4 id="MS" class="">My Services</h4>
     <div class="row">
     <div class="col">
         <p><span>UI/UX Design</span> <br>
@@ -59,7 +59,7 @@ h1{
     margin-bottom: 50px;
     margin-top: 5px;
     text-align: center;
-    font-weight: bold;
+    
 }
 
 #MZ, #MS{

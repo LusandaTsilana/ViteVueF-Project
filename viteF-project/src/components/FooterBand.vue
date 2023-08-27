@@ -3,10 +3,10 @@
   <footer>
         <div id="footer-icons">
             <div>
-                <a href="/contact"><i class="bi bi-linkedin"></i></a>
+                <a href="https://www.linkedin.com/in/lusanda-tsilana31" target="_blank" @click="openLink()"><i class="bi bi-linkedin"></i></a>
             </div>
             <div>
-                <a href="/contact"><i class="bi bi-github"></i></a>
+                <a href="https://github.com/LusandaTsilana" target="_blank" @click="openLink()"><i class="bi bi-github"></i></a>
             </div>
         </div>
         <div id="copyright">
@@ -66,4 +66,14 @@ i{
 </style>
 
 <script>
+
+export default {
+
+    methods: {
+    openLink() {
+
+    }
+} 
+}
+
 </script>

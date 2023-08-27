@@ -1,7 +1,7 @@
 
 
 <template>
-    <h1 class="display-6">Contact</h1>
+    <h1 class="display-4">Contact</h1>
 
     <div id="main" class="container">
 
@@ -114,6 +114,7 @@ div a {
 
 span{
     color: red;
+    font-size: 13px;
 }
 
 /*---responsiveness of column components---*/
@@ -174,7 +175,7 @@ export default {
     minLength (min) {
         return {
             $validator: minLength(min),
-            $message: ({ $params }) => `This should be at least ${$params.min} long`,
+            $message: ({ $params }) => `This should be at least ${$params.min} long. Give brief description of your project and I will be in contact.`,
             $params: { min}
 
         }

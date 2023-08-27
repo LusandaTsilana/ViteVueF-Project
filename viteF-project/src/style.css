@@ -1,6 +1,6 @@
 *{
   font-family: 'Fuzzy Bubbles', cursive;
-  font-family: 'Philosopher', sans-serif;
+  
   text-decoration-color: black;
   
  
@@ -10,8 +10,8 @@ p{
   font-size: 16px;
 }
 
-html, body {
-  height: 100%;
+html {
+  height: 100vh;
 }
 
 footer{
