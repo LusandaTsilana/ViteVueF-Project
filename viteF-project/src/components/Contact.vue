@@ -35,13 +35,13 @@
                    
                 </div>
 
-                <!--<div class="mb-3">
+                <div class="mb-3">
                     <label for="InputNumber" class="form-label">Cellphone</label>
                     <input type="cellphone" class="form-control" id="InputNumber" v-model="state.cellphone"/>
                     <span v-if="v$.cellphone.$error">
                     {{ v$.cellphone.$errors[0].$message }}</span>
                    
-                </div>-->
+                </div>
 
               
                 <div class="mb-3">
@@ -101,12 +101,12 @@ div a {
 #form-box {
     padding: 100px;
     width: 50%;
-    height: 500px;
+    height: 100%;
 }
 #contact-modes{
     padding: 100px;
     width: 30%;
-    height: 500px;
+    height: 100%;
 }
 
 .col {
@@ -139,7 +139,7 @@ span{
     #form-box {
         padding: 100px;
         width: 60%;
-        height: 500px;
+        
     }
 
 }
@@ -149,15 +149,20 @@ span{
 <script>
 
 import { useVuelidate } from '@vuelidate/core'
-import { required, email, minLength, maxLength } from '@vuelidate/validators'
+import { required, alpha, numeric, email, minLength, maxLength } from '@vuelidate/validators'
 import { reactive, computed } from 'vue'
+
+// import Vue from 'vue'   // in Vue 2
+import * as Vue from 'vue' // in Vue 3
+import axios from 'axios'
+import VueAxios from 'vue-axios'
 
 
 export default {
     setup() {
         const state = reactive ({
             fullname: '',
-            //cellphone: '',
+            cellphone: '',
             email: '',
             messagetext: '',
           
@@ -165,7 +170,8 @@ export default {
     })
         const rules = computed (() => {
             return { 
-                fullname: { required },
+                fullname: { required, alpha},
+                cellphone: { required, numeric },
                 email: { required, email },
                 messagetext: { 
                 required, minLength: minLength(30), 
@@ -201,9 +207,12 @@ export default {
 
     methods: {
         submitForm() {
+            axios.post("https://jsonplaceholder.typicode.com/posts", this.state);
             this.v$.$validate()
-            .then(() => {
-               //console.log(this.state)
+            
+            .then((response) => {
+                
+               console.log(response)
                 //will send form to server/email.js here
             })
             .catch((errors) => {

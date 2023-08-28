@@ -11,8 +11,8 @@
       <p class="h3">Junior Web Developer</p>
 
       <div id="buttons">
-      <button type="button" class="btn btn-outline" id="button"><a href="/contact">Contact</a></button>
-      <button type="button" class="btn btn-outline" id="button"><a href="@/assets/LUSANDA T CV 2023.pdf" target="_blank" >Resume</a></button>
+      <button type="button" class="btn btn" id="buttonn"><a href="/contact">Contact</a></button>
+      <button type="button" class="btn btn" id="buttonn"><a href="@/assets/LUSANDA T CV 2023.pdf" target="_blank" >Resume</a></button>
         </div>
     </div>
     <div class="col">
@@ -35,13 +35,13 @@
     border-radius: 10px;
 }
 
-#button{
+#buttonn{
     background-color: rgba(202, 220, 199, 1);
     margin: 10px;
     
 }
 
-#button:hover{
+#buttonn:hover{
    background-color: rgb(155, 209, 146);
 }
 
@@ -98,5 +98,36 @@ p{
 </style>
 
 <script>
+import { onMounted } from 'vue'
+import { animate, spring } from 'motion'
+
+export default{
+
+  
+
+setup() {
+
+  //when page mounts, we should have access to the DOM
+//for animation
+ onMounted(() => {
+      const animation = animate("#buttonn", { scale: 1.1 },
+    {
+      duration: 1, // as in 1 sec
+      easing: spring(),
+      repeat: Infinity,
+      direction: "alternate",
+
+    }
+
+  );
+})
+
+
+
+}
+
+}
+
+ 
 
 </script>

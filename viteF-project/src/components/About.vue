@@ -18,7 +18,40 @@ I am seeking a full-time role where I can contribute my skills in coding to grow
 
     <!--Education/Experience section-->
     <div class="col" id="e-box">
-      <h5>Qualification</h5>
+      <h4>Qualification</h4>
+
+      <div class="container2">
+        <div class="education">
+          <h5>Education</h5>
+          <ul >
+            <li>
+              <span>2022 - Current</span><br>
+            BSc. Applied Mathematics & Computer Science</li>
+
+            <li>
+
+              <span>2018 - 2021</span><br>
+            BSc. Biotechnology</li>
+          </ul>
+        </div>
+
+        <div class="experience">
+          <h5>Experience</h5>
+          <ul>
+            <li>
+              <span>2023 - Current</span><br>
+            Junior Web Developer</li>
+
+            <li>
+              <span>2021 - 2023</span><br>
+            Clinical Trial Recruiter</li>
+
+          </ul>
+
+        </div>
+      </div>
+
+
 
       
       </div>
@@ -30,10 +63,10 @@ I am seeking a full-time role where I can contribute my skills in coding to grow
 <!--languages section-->
 
 
-<div class="container shadow p-3 mb-5 bg-body-tertiary rounded" id = "languages">
+<div  class="container shadow p-3 mb-5 bg-body-tertiary rounded" id = "languages">
  <h3 class = "" id="languages-h">Programming Languages</h3> 
   <div class="row">
-    <div class="col"><img src="@/assets/html.png" width="90" height="112"></div>
+    <div  class="col"><img src="@/assets/html.png" width="90" height="112"></div>
     <div class="col"><img src="@/assets/css.png" width="90" height="112"></div>
     <div class="col"><img src="@/assets/python.png" width="105" height="112"></div>
     <div class="col"><img src="@/assets/java.png" width="120" height="112"></div>
@@ -63,12 +96,20 @@ h1{
     padding-bottom: 70px;
 }
 
-h6{
+h4{
   font-weight: bold;
+ 
+  margin-bottom: 40px;
+}
+
+h5{
+  color: rgb(119, 163, 111);
 }
 
 li{
   list-style: none;
+  margin: 10px;
+  font-size: 14px
 }
 
 .container{
@@ -80,7 +121,6 @@ li{
 #e-box{
   text-align: center;
   width: 501px;
-  
   padding: 5px;
   border: 1px gray;
   display: flex;
@@ -88,9 +128,8 @@ li{
   
   
 }
-
-#e-box li{
-  font-size: 14px;
+span{
+  font-weight: bold;
 }
 
 #parabox{
@@ -129,6 +168,9 @@ li{
   #languages img, #techs img{
     margin: 20px 30px 20px 30px;
   }
+  h4{
+    margin-top: 30px;
+  }
 }
 
 /*-----responsiveness for xs and s devices for #summary section----*/
@@ -151,49 +193,6 @@ li{
 </style>
 
 <script>
-//js for tab links underline and clicking under qualification sections
-import { ref } from '@vue/reactivity'; //import ref funcion from node modules for reactivity
-
-export default {
-  data() {
-    return {
-      tabs: [
-        { name: 'Education', active: false },
-        { name: 'Experience', active: false },
-      ],
-    };
-  },
-  setup() {
-    //ref is to create reactive variable for the "content"
-    const educationContent = ref(`
-    <ul>
-      <li><span>2022 - Current</span>BSc. Applied Mathematics & Computer Science</li>
-      <li><span>2018 - 2021</span>BSc. Biotechnology</li>
-      </ul>`
-      );
-
-      const experienceContent = ref(`
-    <ul>
-      <li><span>2023 - Current</span>Junior Web Developer</li>
-      <li><span>2021 - 2023</span>Clinical Trial Recruiter</li>
-      <li><span>2018 - 2019</span>Sales & Customer Care</li>
-      </ul>`
-      );
-
-      return {
-        educationContent,
-        experienceContent,
-      };
-  },
-
-  methods: {
-    openTab(tabName) {
-      this.tabs.forEach((tab) => {
-        tab.active = tab.name === tabName;
-      });
-    },
-  },
-};
 
 
 </script>

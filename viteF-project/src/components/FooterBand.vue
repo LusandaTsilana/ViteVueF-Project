@@ -25,6 +25,7 @@
 footer{
     
     background-color: rgba(202, 220, 199, 1);
+    bottom: 0;
 }
 
 footer i{
