@@ -1,10 +1,10 @@
 *{
   font-family: 'Fuzzy Bubbles', cursive;
-  
   text-decoration-color: black;
-  
+  box-sizing: border-box;
  
 }
+
 
 p{
   font-size: 16px;

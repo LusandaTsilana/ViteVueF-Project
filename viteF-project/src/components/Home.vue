@@ -25,6 +25,7 @@
 </template>
 
 <style scoped>
+
 #box{
     margin-top: 60px;
     margin-bottom: 60px;

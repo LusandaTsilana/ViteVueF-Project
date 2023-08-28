@@ -1,6 +1,6 @@
 
 <template>
-  <nav class="navbar navbar-expand-lg" id="navbar">
+  <nav class="navbar navbar-expand-lg shadow-sm" id="navbar">
   <div class="container-fluid">
     <a class="navbar-brand" href="/home"><img src="@/assets/lusandalogo.png" alt="Logo" width="53.08" height="50" class="d-inline-block align-text-top"></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -9,7 +9,7 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link " aria-current="page" href="/home">HOME</a>
+          <a class="nav-link active" aria-current="page" href="/home" >HOME</a>
         </li>
         <li class="nav-item">
           <a class="nav-link " href="/about">ABOUT</a>
@@ -32,6 +32,12 @@
   </script>
 
 <style scoped>
+nav{
+  position: sticky;
+  top: 0;
+  width: 100%;
+}
+
 #navbar{
     background-color: rgba(202, 220, 199, 1);
     

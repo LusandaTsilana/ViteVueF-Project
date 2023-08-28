@@ -25,7 +25,7 @@
 
 
 
-            <form @submit.prevent="submitForm">
+            <form @submit.prevent="submitForm" method="post">
               
                 <div class="mb-3">
                     <label for="InputName" class="form-label">Full Name</label>
@@ -34,6 +34,14 @@
                     {{ v$.fullname.$errors[0].$message }}</span>
                    
                 </div>
+
+                <!--<div class="mb-3">
+                    <label for="InputNumber" class="form-label">Cellphone</label>
+                    <input type="cellphone" class="form-control" id="InputNumber" v-model="state.cellphone"/>
+                    <span v-if="v$.cellphone.$error">
+                    {{ v$.cellphone.$errors[0].$message }}</span>
+                   
+                </div>-->
 
               
                 <div class="mb-3">
@@ -46,7 +54,7 @@
                
                 <div class="mb-3">
                     <label for="InputMessage" class="form-label">Message</label>
-                    <input  type="text" class="form-control pb-5" id="InputMessage" v-model="state.messagetext"/>
+                    <input  type="text" class="form-control pb-5" id="InputMessage" cols="30" rows= "10" v-model="state.messagetext"/>
                     <span v-if="v$.messagetext.$error">
                     {{ v$.messagetext.$errors[0].$message }}</span>
 
@@ -149,6 +157,7 @@ export default {
     setup() {
         const state = reactive ({
             fullname: '',
+            //cellphone: '',
             email: '',
             messagetext: '',
           
@@ -194,6 +203,7 @@ export default {
         submitForm() {
             this.v$.$validate()
             .then(() => {
+               //console.log(this.state)
                 //will send form to server/email.js here
             })
             .catch((errors) => {
