@@ -26,6 +26,11 @@ footer{
     
     background-color: rgba(202, 220, 199, 1);
     bottom: 0;
+    width: 100%;
+    position: absolute;
+    right: 0;
+    left: 0;
+    bottom: 0;
 }
 
 footer i{

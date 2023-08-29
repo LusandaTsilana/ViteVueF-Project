@@ -8,7 +8,7 @@
       <h1 class="display-4">Hi there, </h1>
       <h1 class="display-4">I am <span class="display-2" id="name">Lusanda</span></h1>
 
-      <p class="h3">Junior Web Developer</p>
+      <p class="h5">Junior Web Developer</p>
 
       <div id="buttons">
       <button type="button" class="btn btn" id="buttonn"><a href="/contact">Contact</a></button>
@@ -17,7 +17,8 @@
     </div>
     <div class="col">
         <img src="@/assets/portrait.jpg" class = "" alt="portrait" id = "portrait" width="433.56" height="500">
-        <img src="@/assets/stripes.png" class="" alt="stripes" id="stripes" width="180.38" height="129.11">
+        <img src="@/assets/stripes.png" class="" alt="stripes" id="stripes1" width="180.38" height="129.11">
+        <img src="@/assets/stripes.png" class="" alt="stripes" id="stripes2" width="125.75" height="79.54">
     </div>
   </div>
 </div>
@@ -25,6 +26,8 @@
 </template>
 
 <style scoped>
+
+
 
 #box{
     margin-top: 60px;
@@ -35,11 +38,21 @@
     border-radius: 10px;
 }
 
-#stripes{
+#stripes1{
  position: absolute;
  z-index: 1;
- right: 30px;
+ left: 73%;
+ top: 13%;
+  
 }
+
+#stripes2{
+  position:absolute;
+  z-index: 1;
+  left: 48%;
+  top: 70%;
+}
+
 
 #buttonn{
     background-color: rgba(202, 220, 199, 1);

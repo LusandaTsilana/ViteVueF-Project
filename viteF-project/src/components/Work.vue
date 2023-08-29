@@ -9,13 +9,16 @@
         <h4 id="MZ" class="">School Website</h4>
         <p>Working collaboratively with my team to develop a website for Mzamomtsha Primary School. Throughout the project, we utilized our collective skills in HTML, CSS and Javascript while following the Software Developement Lifecycle which included:
         <br>
-        <ul>
-            <li>Team formation & Project Initiation</li>
+        <ul ref="dropdown" class="dropdown">
+            <li class="dropdown-label" @click="show = !show">Project Initiation</li>
+            <p class="dropdown-content" v-if="show">Hey</p>
+
+
             <li>Wireframe Design</li>
             <li>Figma UI/UX Prototype</li>
             <li>Research & Development</li>
         </ul>
-        
+      
         PROJECT DURATION: 2 months <br>
 
         <a href="https://melodic-nasturtium-8a6e3c.netlify.app/" target="_blank" @click="openLink()"> <i class="bi bi-link-45deg"></i> View</a></p>
@@ -79,6 +82,10 @@ span{
     font-weight: bold;
 }
 
+ul{
+    margin: 20px;
+}
+
 li{
     list-style: none;
     font-weight: bold;
@@ -101,13 +108,16 @@ li{
 }
 </style>
 
-<script>
-    export default {
-    methods: {
-        openLink() {
-            //to open to new window when clicking on view for school website
-        },
-    },
+<script setup>
+import { ref, onMounted } from "vue"
+import autoAnimate from "@formkit/auto-animate"
 
-};
+const dropdown = ref() // we need a DOM node
+const show = ref(false)
+
+onMounted(() => {
+  autoAnimate(dropdown.value), // thats it!
+  openLink() 
+})
+
 </script>
