@@ -10,7 +10,7 @@
         <p>Working collaboratively with my team to develop a website for Mzamomtsha Primary School. Throughout the project, we utilized our collective skills in HTML, CSS and Javascript while following the Software Developement Lifecycle which included:
         <br>
         <ul>
-            <li>Developer Team Formation</li>
+            <li>Team formation & Project Initiation</li>
             <li>Wireframe Design</li>
             <li>Figma UI/UX Prototype</li>
             <li>Research & Development</li>

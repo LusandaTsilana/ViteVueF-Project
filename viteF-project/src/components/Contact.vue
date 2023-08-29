@@ -189,6 +189,7 @@ export default {
 
     minLength (min) {
         return {
+            $property: "messagetext",
             $validator: minLength(min),
             $message: ({ $params }) => `This should be at least ${$params.min} long. Give brief description of your project and I will be in contact.`,
             $params: { min}
@@ -197,6 +198,7 @@ export default {
     },
     maxLength (max) {
         return {
+            $property: "messagetext",
             $validator: maxLength(max),
             $message: ({ $params }) => 
             `Message cannot exceed ${$params} characters`,
@@ -204,6 +206,7 @@ export default {
 
         }
     },
+    
 
     methods: {
         submitForm() {

@@ -17,7 +17,7 @@
     </div>
     <div class="col">
         <img src="@/assets/portrait.jpg" class = "" alt="portrait" id = "portrait" width="433.56" height="500">
-     
+        <img src="@/assets/stripes.png" class="" alt="stripes" id="stripes" width="180.38" height="129.11">
     </div>
   </div>
 </div>
@@ -33,6 +33,12 @@
 
 #portrait{
     border-radius: 10px;
+}
+
+#stripes{
+ position: absolute;
+ z-index: 1;
+ right: 30px;
 }
 
 #buttonn{
