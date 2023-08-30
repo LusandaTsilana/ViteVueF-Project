@@ -10,12 +10,18 @@
         <p>Working collaboratively with my team to develop a website for Mzamomtsha Primary School. Throughout the project, we utilized our collective skills in HTML, CSS and Javascript while following the Software Developement Lifecycle which included:
         <br>
         <ul ref="dropdown" class="dropdown">
-            <li class="dropdown-label" @click="show = !show">Project Initiation</li>
-            <p class="dropdown-content" v-if="show">Hey</p>
+            <li class="dropdown-label" @click="show = !show">Project Initiation +</li>
+            <p class="dropdown-content" v-if="show">Objective: Create online presence for Mzamomtsha Primary School
+            <br>
+        Defining stakeholders, information gathering and scope development
+    <br>
+        Task delegation and plan on project execution</p>
 
 
-            <li>Wireframe Design</li>
+            <li>Wireframe Design +</li>
+           
             <li>Figma UI/UX Prototype</li>
+
             <li>Research & Development</li>
         </ul>
       
@@ -89,6 +95,7 @@ ul{
 li{
     list-style: none;
     font-weight: bold;
+    margin-bottom: 20px;
 }
 
 .col{

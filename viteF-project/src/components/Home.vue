@@ -32,10 +32,16 @@
 #box{
     margin-top: 60px;
     margin-bottom: 60px;
+   
+}
+
+#boxx{
+  height: 80%;
 }
 
 #portrait{
     border-radius: 10px;
+    height: 100%;
 }
 
 #stripes1{
@@ -43,6 +49,7 @@
  z-index: 1;
  left: 78%;
  top: 13%;
+ display: none;
   
 }
 
@@ -51,6 +58,7 @@
   z-index: 1;
   left: 48%;
   top: 70%;
+  display: none;
 }
 
 
@@ -91,6 +99,10 @@ p{
 
   }
 
+  #stripes1, #stripes2{
+    display: none;
+  }
+  
   #textbox{
     display: flex;
     flex-direction: column;

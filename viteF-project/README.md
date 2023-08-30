@@ -1,6 +1,48 @@
-# Vue 3 + Vite
+# Project: PERSONAL ONLINE PORTFOLIO
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+The purpose of this project showcases my skills, projects, and achievements. It serves as a digital resume and a platform for demonstrating expertise in programming languages, frameworks, and technologies. It includes my code samples, project descriptions, and links to live demos and GitHub repositories. The primary goal is to create an online presence for potential employers, clients, or collaborators by providing a comprehensive view of my capabilities and past work.
+
+## Table of Contents
+
+- [Getting Started](#getting-started)
+- [Prerequisites](#prerequisites)
+- [Installation](#installation)
+- [Usage](#usage)
+
+## Getting Started
+
+### Prerequisites:
+
+- Node.js(recommened version)
+
+### Installation:
+
+1. Clone the repository to your local machine:
+git clone https://github.com/yourusername/your-project.git
+
+2. Navigate to the project directory:
+cd viteF-project
+
+3. Install project dependencies:
+
+devDependecy: vite@latest
+
+-vue v3
+-vue-router
+-bootstrap@latest
+-bootstrap icons
+-vuelidate/core
+-vuelidate/validators
+-@formkit/auto-animate
+-firebase
+
+### Running the Project:
+
+1.Start the development server:
+
+npm run dev
+
+2.Open the local web browser to access the application eg `http://localhost:3000`
 
 ## Recommended IDE Setup
 
