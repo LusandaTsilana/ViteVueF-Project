@@ -9,7 +9,7 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="/home" >HOME</a>
+          <a class="nav-link" aria-current="page" href="/home" >HOME</a>
         </li>
         <li class="nav-item">
           <a class="nav-link " href="/about">ABOUT</a>
@@ -43,9 +43,10 @@ nav{
     background-color: rgba(202, 220, 199, 1);
     
 }
-/*nav{
-  position: ;
-}*/
+.nav-link:active{
+  font-weight: bold;
+}
+  
 
 img{
     margin-left: 50px;

@@ -75,7 +75,6 @@ I am seeking a full-time role where I can contribute my skills in coding to grow
   
 </div>
 
- <a class="scroll" href="/about"><i class="bi bi-arrow-up-square-fill"></i></a> 
 
 <div class="container shadow p-3 mb-5 bg-body-tertiary rounded" id = "techs">
  <h3 class = "" id="techs-h">Technologies</h3> 
@@ -108,15 +107,6 @@ h5{
   color: rgb(119, 163, 111);
 }
 
-.scroll{
-  position: relative;
-  font-size: 35px;
-  bottom: 40px;
-  left: 95%;
-  text-decoration: none;
- 
-  
-}
 
 li{
   list-style: none;

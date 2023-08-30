@@ -41,7 +41,7 @@
 #stripes1{
  position: absolute;
  z-index: 1;
- left: 73%;
+ left: 78%;
  top: 13%;
   
 }

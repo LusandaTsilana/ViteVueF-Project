@@ -59,6 +59,17 @@
                     {{ v$.messagetext.$errors[0].$message }}</span>
 
                 </div>
+
+                <div class="mb-3">
+                    <input  type="text" class="form-control pb-5" id="InputRobot" v-model="state.robot"/>
+                    <VueClientRecaptcha
+                    :value="state.robot"
+                    @getCode="getCaptchaCode"
+                    @isValid="checkValidCaptcha"
+                    />
+
+                </div>
+
                 <button type="submit" class="btn btn-outline" id="submit-button">Submit</button>
             </form>
         </div>
@@ -150,21 +161,24 @@ span{
 
 import { useVuelidate } from '@vuelidate/core'
 import { required, alpha, numeric, email, minLength, maxLength } from '@vuelidate/validators'
-import { reactive, computed } from 'vue'
+import { reactive, computed, ref } from 'vue'
+import VueClientRecaptcha from 'vue-client-recaptcha/dist/vue-client-recaptcha.es'
 
-// import Vue from 'vue'   // in Vue 2
-import * as Vue from 'vue' // in Vue 3
+
 import axios from 'axios'
 import VueAxios from 'vue-axios'
 
-
 export default {
+    components: {
+        VueClientRecaptcha,
+    },
     setup() {
         const state = reactive ({
             fullname: '',
             cellphone: '',
             email: '',
             messagetext: '',
+            robot: ref(null),
           
     
     })
@@ -175,7 +189,10 @@ export default {
                 email: { required, email },
                 messagetext: { 
                 required, minLength: minLength(30), 
-                maxLength: maxLength(150)},  
+                maxLength: maxLength(150)},
+
+                robot: { getCaptchaCode, checkValidCaptcha },
+                
             }
         })
 
@@ -184,7 +201,10 @@ export default {
         return {
             state,
             v$,
-        }
+            getCaptchaCode,
+            checkValidCaptcha,
+        };
+
     },
 
     minLength (min) {
@@ -230,7 +250,6 @@ export default {
         },
     }
 }
-
 
 
 

@@ -112,12 +112,18 @@ li{
 import { ref, onMounted } from "vue"
 import autoAnimate from "@formkit/auto-animate"
 
-const dropdown = ref() // we need a DOM node
+const dropdown = ref(null) // a DOM node
 const show = ref(false)
 
+const openLink = () => {
+    //to open link in a new window
+}
+
+
 onMounted(() => {
-  autoAnimate(dropdown.value), // thats it!
-  openLink() 
+  autoAnimate(dropdown.value) // thats it!
+  
 })
+openLink()
 
 </script>
