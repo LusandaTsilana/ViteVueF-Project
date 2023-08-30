@@ -7,7 +7,7 @@ The purpose of this project showcases my skills, projects, and achievements. It 
 - [Getting Started](#getting-started)
 - [Prerequisites](#prerequisites)
 - [Installation](#installation)
-- [Usage](#usage)
+- [Running the Project](#running-the-project)
 
 ## Getting Started
 
