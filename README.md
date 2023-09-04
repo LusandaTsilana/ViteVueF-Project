@@ -39,11 +39,11 @@ devDependecy: vite@latest
 
 ### Running the Project:
 
-1.Start the development server:
+1. Start the development server:
 
 npm run dev
 
-2.Open the local web browser to access the application eg `http://localhost:3000`
+2. Open the local web browser to access the application eg `http://localhost:3000`
 
 ## Recommended IDE Setup
 
