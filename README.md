@@ -27,22 +27,23 @@ cd viteF-project
 
 devDependecy: vite@latest
 
--vue v3
--vue-router
--bootstrap@latest
--bootstrap icons
--vuelidate/core
--vuelidate/validators
--@formkit/auto-animate
--firebase
+-vue v3 <br>
+-vue-router <br>
+-bootstrap@latest <br>
+-bootstrap icons <br>
+-vuelidate/core <br>
+-vuelidate/validators <br>
+-@formkit/auto-animate <br>
+-rough-notation (JS library for highlight effects) <br>
+-firebase (optional - only for hosting <br>
 
 ### Running the Project:
 
-1.Start the development server:
+1. Start the development server:
 
 npm run dev
 
-2.Open the local web browser to access the application eg `http://localhost:3000`
+2. Open the local web browser to access the application eg `http://localhost:3000`
 
 ## Recommended IDE Setup
 
