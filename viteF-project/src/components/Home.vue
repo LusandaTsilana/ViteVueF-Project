@@ -8,7 +8,7 @@
       <h5 class="display-5">Hi there, </h5>
       <h5 class="display-5">I'm <span class="display-2" id="name">LUSANDA</span></h5>
 
-      <p class="h5">Junior Web Developer</p>
+      <div class="high"><p class="h5">Junior Web Developer</p></div>
 
       <div id="buttons">
       <button type="button" class="btn btn" id="buttonn"><a href="/contact">Contact</a></button>
@@ -49,16 +49,23 @@
  z-index: 1;
  left: 78%;
  top: 13%;
- display: none;
   
 }
+
+
 
 #stripes2{
   position:absolute;
   z-index: 1;
   left: 48%;
   top: 70%;
-  display: none;
+}
+
+#name{
+  font-weight: bold;
+  
+ 
+  text-decoration-thickness: 2px;
 }
 
 #buttons{
@@ -69,35 +76,33 @@
     margin: 10px;
     padding: 5px 10px;
     border-radius: 0%;
-    border: 2px solid rgb(155, 209, 146);
+    border: 1px solid black;
     font-size: 14px;
     
 }
 
 #buttonn:hover{
    background-color: rgb(155, 209, 146);
+   
 }
 
 #textbox{
     margin-top: 70px;
-   
+    display: block;
     
 }
+
+
 
 p{
     margin-top: 45px;
     margin-bottom: 20px;
-}
-
-#name{
-    letter-spacing: 2px;
-    font-weight: lighter;
-    color: transparent;
-    -webkit-text-stroke: 0.5px rgb(109, 107, 107);
-    background-image: linear-gradient(black, black);
+    padding-bottom: 10px;
+    color: white;
+    background-image: linear-gradient(rgb(117, 159, 110), rgb(117, 159, 110));
     background-repeat: no-repeat;
-    -webkit-background-clip: text;
-    background-clip: text;
+    -webkit-background-clip:content-box;
+    background-clip: content-box;
     background-position: -300px 0px;
     animation: backcolor 3s linear infinite alternate;
 
@@ -107,19 +112,6 @@ p{
   100%{
     background-position: 0px 0px;
   }
-}
-
-#name::before{
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  color:pink;
-  -webkit-text-stroke: 0vw black;
-  border-right: 2px solid pink;
-  overflow: hidden;
-  animation: animate 6s linear infinite;
 }
 
 #buttons a{
@@ -150,6 +142,7 @@ p{
   #buttons{
     display: flex;
     justify-content: center;
+    margin-top: 10px;
 
   }
 
@@ -160,6 +153,10 @@ p{
     justify-content: center;
     align-items: center;
     margin: auto;
+  }
+
+  p{
+    margin-top: 20px;
   }
 }
 

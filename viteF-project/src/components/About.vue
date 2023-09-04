@@ -5,15 +5,15 @@
     <div class="container" id="summary">
   <div class="row">
     <div class="col" id="parabox">
-      <p>I am an ex-Clinical Trial Recruiter who loves building projects with code.<br>
+      <p>I am a former Clinical Trial Recruiter who loves building projects with code.<br>
         <br>
 
-I first became fascinated with programming in 2022 due to automation. As a person who looks for efficiencies, I was captivated. Currently, I am completing a Computer Science degree . To acquire experience, I landed a Full-Stack Developer Internship where I got promoted to Junior Software Developer.<br>
+I first became fascinated with programming in 2022 due to <span id="highlightA">automation</span>. As a person who looks for <span id="highlightD">efficiencies</span>, I was captivated. Currently, I am completing a Computer Science degree. To acquire experience, I landed a Full-Stack Developer Internship where I got promoted to <span id="highlightE">Junior Software Developer.</span> <br>
 
-I have acquired Front- development. Currently, I am learning to master Back-End development. Since the career-switch, I have worked with top developers to advance my standards for web applications.<br>
+I have acquired <span id="highlightB">Front-End</span> development. Currently, I am learning to master <span id="highlightC">Back-End</span> development. Since the career-switch, I have worked with top developers to advance my knowledge and practice for web applications.<br>
 <br>
 
-I am seeking a full-time role where I can contribute my skills in coding to grow professionally.</p>
+I am seeking a full-time role where I can contribute my skills in coding to <span id="circle">grow</span> professionally.</p>
     </div>
 
     <!--Education/Experience section-->
@@ -157,6 +157,7 @@ span{
 }
 
 
+
 /*----responsiveness for xs, s and medium devices----*/
 @media (max-width: 992px) {
   #languages{
@@ -195,6 +196,21 @@ span{
 </style>
 
 <script>
+import { annotate, annotationGroup } from 'rough-notation';
 
+document.addEventListener('DOMContentLoaded', function () {
+  
+  const a1 = annotate(document.querySelector('#highlightA'), { type: 'highlight', color: 'gold' });
+  const a2 = annotate(document.querySelector('#highlightB'), { type: 'highlight', color: 'gold' });
+  const a3 = annotate(document.querySelector('#highlightC'), { type: 'highlight', color: 'orange' });
+  const a4 = annotate(document.querySelector('#highlightD'), { type: 'highlight', color: 'orange' });
+
+  const a5 = annotate(document.querySelector('#highlightE'), { type: 'highlight', color: 'pink' });
+
+  const a6 = annotate(document.querySelector('#circle'), { type: 'circle', color: 'green' });
+
+  const ag = annotationGroup([a1, a2, a3, a4, a5, a6]);
+  ag.show();
+});
 
 </script>

@@ -86,28 +86,30 @@ nav ul li a:hover::after{
        flex-direction: row;
        justify-content: center;
 
-    }
-
-    @media (min-width: 992px) {
-      .navbar-nav{
+    }     
+     .navbar-nav{
         font-size: 16px;
       }
+
+      
     }
 
     
-    }
+
 
     @media (max-width: 992px) {
   #navbar{
     background-color: white;
+    text-align: center;
   }
   li a:hover{
-    background-color: rgba(202, 220, 199, 1);
+    background-color: rgb(205, 224, 202);
   }
  
-
-  
+  nav ul li a::after{
+  display: none;
 }
+    }
 
 </style>
 
