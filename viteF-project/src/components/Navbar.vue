@@ -43,21 +43,40 @@ nav{
     background-color: rgba(202, 220, 199, 1);
     
 }
-.nav-link:active{
-  font-weight: bold;
-}
-  
 
 img{
     margin-left: 50px;
 }
 
-ul a:hover{
-    text-decoration: underline;
+nav ul li{
+  display: inline-block;
+  list-style: none;
 }
 
-ul a{
-    transition: text-decoration 0.5s ease;
+nav ul li a{
+  color: black;
+  text-decoration: none;
+  position: relative;
+}
+
+nav ul li a::after{
+  content: '';
+  width: 0%;
+  height: 1.5px;
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: black;
+  transition: width 0.3s;
+}
+
+nav ul li a:hover{
+  color: black;
+}
+
+nav ul li a:hover::after{
+  width: 50%;
 }
 
 

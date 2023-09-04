@@ -5,8 +5,8 @@
 <div id = "box" class="container text-start">
   <div id = "boxx" class="row align-items-start">
     <div class="col" id="textbox">
-      <h1 class="display-4">Hi there, </h1>
-      <h1 class="display-4">I am <span class="display-2" id="name">Lusanda</span></h1>
+      <h5 class="display-5">Hi there, </h5>
+      <h5 class="display-5">I'm <span class="display-2" id="name">LUSANDA</span></h5>
 
       <p class="h5">Junior Web Developer</p>
 
@@ -61,10 +61,16 @@
   display: none;
 }
 
+#buttons{
+  margin-top: 20px;
+}
 
 #buttonn{
-    background-color: rgba(202, 220, 199, 1);
     margin: 10px;
+    padding: 5px 10px;
+    border-radius: 0%;
+    border: 2px solid rgb(155, 209, 146);
+    font-size: 14px;
     
 }
 
@@ -73,16 +79,47 @@
 }
 
 #textbox{
-    margin-top: 50px;
+    margin-top: 70px;
+   
+    
 }
 
 p{
-    margin-top: 20px;
+    margin-top: 45px;
     margin-bottom: 20px;
 }
 
 #name{
-    text-decoration: underline;
+    letter-spacing: 2px;
+    font-weight: lighter;
+    color: transparent;
+    -webkit-text-stroke: 0.5px rgb(109, 107, 107);
+    background-image: linear-gradient(black, black);
+    background-repeat: no-repeat;
+    -webkit-background-clip: text;
+    background-clip: text;
+    background-position: -300px 0px;
+    animation: backcolor 3s linear infinite alternate;
+
+}
+
+@keyframes backcolor{
+  100%{
+    background-position: 0px 0px;
+  }
+}
+
+#name::before{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  color:pink;
+  -webkit-text-stroke: 0vw black;
+  border-right: 2px solid pink;
+  overflow: hidden;
+  animation: animate 6s linear infinite;
 }
 
 #buttons a{
