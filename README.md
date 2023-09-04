@@ -27,14 +27,15 @@ cd viteF-project
 
 devDependecy: vite@latest
 
--vue v3
--vue-router
--bootstrap@latest
--bootstrap icons
--vuelidate/core
--vuelidate/validators
--@formkit/auto-animate
--firebase
+-vue v3 <br>
+-vue-router <br>
+-bootstrap@latest <br>
+-bootstrap icons <br>
+-vuelidate/core <br>
+-vuelidate/validators <br>
+-@formkit/auto-animate <br>
+-rough-notation (JS library for highlight effects) <br>
+-firebase (optional - only for hosting <br>
 
 ### Running the Project:
 
