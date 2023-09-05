@@ -5,15 +5,18 @@
     <div class="container" id="summary">
   <div class="row">
     <div class="col" id="parabox">
-      <p>I am a former Clinical Trial Recruiter who loves building projects with code.<br>
-        <br>
-
-I first became fascinated with programming in 2022 due to <span id="highlightA">automation</span>. As a person who looks for <span id="highlightD">efficiencies</span>, I was captivated. Currently, I am completing a Computer Science degree. To acquire experience, I landed a Full-Stack Developer Internship where I got promoted to <span id="highlightE">Junior Software Developer.</span> <br>
-
-I have acquired <span id="highlightB">Front-End</span> development. Currently, I am learning to master <span id="highlightC">Back-End</span> development. Since the career-switch, I have worked with top developers to advance my knowledge and practice for web applications.<br>
+      <p>
+        I used to work as a clinical trial recruiter, but my passion lies in coding and building projects from scratch. <br>
 <br>
+My journey into programming began in 2022, thanks to my fascination with <span id="highA">automation.</span> Being someone who always seeks out <span id="highB">efficiencies</span>, I was immediately drawn into this world. While still working as a clinical trial recruiter, I decided to pursue a <strong>BSc. Computer Science.</strong> To gain practical experience, I enrolled in a Software Developer program, where I honed my skills in <span id="highC">UI/UX </span>design and <span id="highD">web development.</span> Since then, I've transitioned into a role as a <strong>Junior Software Developer.</strong> <br>
+<br>
+In my spare time, I'm fully immersed in a <span id="highE">SAS</span> programming course to further expand my knowledge into Data Analysis. <br>
+<br>
+I'm also actively delving into <strong>back-end</strong> development to diversify my skill set. Since switching careers, I've had the privilege of working alongside top developers to enhance my expertise and gain hands-on experience in developing web and <span id="highF">mobile applications.</span> <br>
+<br>
+Now, I'm on the lookout for a full-time role where I can apply my coding skills to <span id="circle">grow </span>professionally. <br>
 
-I am seeking a full-time role where I can contribute my skills in coding to <span id="circle">grow</span> professionally.</p>
+      </p>
     </div>
 
     <!--Education/Experience section-->
@@ -91,15 +94,13 @@ I am seeking a full-time role where I can contribute my skills in coding to <spa
 <style scoped>
 h1{
     text-decoration: underline;
-    display: flex;
-    justify-content: center;
+    text-align: center;
     padding-top: 50px;
     padding-bottom: 70px;
 }
 
 h4{
   font-weight: bold;
- 
   margin-bottom: 40px;
 }
 
@@ -130,9 +131,7 @@ li{
   
   
 }
-span{
-  font-weight: bold;
-}
+
 
 #parabox{
     text-align: justify;
@@ -200,16 +199,16 @@ import { annotate, annotationGroup } from 'rough-notation';
 
 document.addEventListener('DOMContentLoaded', function () {
   
-  const a1 = annotate(document.querySelector('#highlightA'), { type: 'highlight', color: 'gold' });
-  const a2 = annotate(document.querySelector('#highlightB'), { type: 'highlight', color: 'gold' });
-  const a3 = annotate(document.querySelector('#highlightC'), { type: 'highlight', color: 'orange' });
-  const a4 = annotate(document.querySelector('#highlightD'), { type: 'highlight', color: 'orange' });
+  const a1 = annotate(document.querySelector('#highA'), { type: 'highlight', color: 'gold' });
+  const a2 = annotate(document.querySelector('#highB'), { type: 'highlight', color: 'orange' });
+  const a3 = annotate(document.querySelector('#highC'), { type: 'highlight', color: 'pink' });
+  const a4 = annotate(document.querySelector('#highD'), { type: 'highlight', color: 'gold' });
+  const a5 = annotate(document.querySelector('#highE'), { type: 'highlight', color: 'orange' });
+  const a6 = annotate(document.querySelector('#highF'), { type: 'highlight', color: 'pink' });
 
-  const a5 = annotate(document.querySelector('#highlightE'), { type: 'highlight', color: 'pink' });
+  const a7 = annotate(document.querySelector('#circle'), { type: 'circle', color: 'green' });
 
-  const a6 = annotate(document.querySelector('#circle'), { type: 'circle', color: 'green' });
-
-  const ag = annotationGroup([a1, a2, a3, a4, a5, a6]);
+  const ag = annotationGroup([a1, a2,a3, a4, a5, a6, a7]);
   ag.show();
 });
 

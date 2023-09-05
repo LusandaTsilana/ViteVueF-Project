@@ -63,8 +63,7 @@
 
 #name{
   font-weight: bold;
-  
- 
+  text-decoration: underline;
   text-decoration-thickness: 2px;
 }
 
@@ -92,12 +91,17 @@
     
 }
 
-
-
 p{
+  margin-top: 8px;
+  margin-right: 25px;
+  margin-left: 10px;
+}
+
+.high{
     margin-top: 45px;
     margin-bottom: 20px;
     padding-bottom: 10px;
+    padding-top: 10px;
     color: white;
     background-image: linear-gradient(rgb(117, 159, 110), rgb(117, 159, 110));
     background-repeat: no-repeat;
@@ -155,9 +159,11 @@ p{
     margin: auto;
   }
 
-  p{
-    margin-top: 20px;
+  .high{
+    margin-top: 10px;
+    margin-bottom: 10px;
   }
+
 }
 
 </style>
