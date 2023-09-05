@@ -6,7 +6,7 @@
   <div class="row">
     <div class="col" id="parabox">
       <p>
-        I used to work as a clinical trial recruiter, but my passion lies in coding and building projects from scratch. <br>
+        I used to work as a clinical trial recruiter, but my passion lies in <span id="highG">coding and building projects</span> from scratch. <br>
 <br>
 My journey into programming began in 2022, thanks to my fascination with <span id="highA">automation.</span> Being someone who always seeks out <span id="highB">efficiencies</span>, I was immediately drawn into this world. While still working as a clinical trial recruiter, I decided to pursue a <strong>BSc. Computer Science.</strong> To gain practical experience, I enrolled in a Software Developer program, where I honed my skills in <span id="highC">UI/UX </span>design and <span id="highD">web development.</span> Since then, I've transitioned into a role as a <strong>Junior Software Developer.</strong> <br>
 <br>
@@ -23,45 +23,102 @@ Now, I'm on the lookout for a full-time role where I can apply my coding skills 
     <div class="col" id="e-box">
       <h4>Qualification</h4>
 
-      <div class="container2">
-        <div class="education">
-          <h5>Education</h5>
-          <ul >
-            <li>
-              <span>2022 - Current</span><br>
-            BSc. Applied Mathematics & Computer Science</li>
-
-            <li>
-
-              <span>2018 - 2021</span><br>
-            BSc. Biotechnology</li>
-          </ul>
+      <div class="qualification_tabs">
+        <div class="qualification_title" @click="activeTab = 'tab1'"><i class="bi bi-mortarboard"></i>
+          Education
         </div>
 
-        <div class="experience">
-          <h5>Experience</h5>
-          <ul>
-            <li>
-              <span>2023 - Current</span><br>
-            Junior Web Developer</li>
+        <div class="qualification_title" @click="activeTab = 'tab2'"><i class="bi bi-briefcase"></i>
+          Experience
+        </div>
+      </div>
 
-            <li>
-              <span>2021 - 2023</span><br>
-            Clinical Trial Recruiter</li>
+      <div class="qualification_sections">
+        <div class="qualification_content" v-if="activeTab === 'tab1'|| activeTab === 'initial'">
 
-          </ul>
+          <div class="qualification_data">
+            <div>
+              <h6 class="qualification_name">Software Dev. Program</h6>
+            <span class="subtitle">CapaCiTi</span>
+            <div class="calender">
+              <i class="calender-alt">2023 - 2023</i>
+            </div>
+            </div>
+            
+          </div>
+
+          <div class="qualification_data">
+            <div>
+              <h6 class="qualification_name">BSc. Computer Science</h6>
+            <span class="subtitle">University of South Africa</span>
+            <div class="calender">
+              <i class="calender-alt">2022 - Present</i>
+            </div>
+            </div>
+            
+          </div>
+
+          <div class="qualification_data">
+            <div>
+              <h6 class="qualification_name">BSc. Biotechnology</h6>
+            <span class="subtitle">University of Western Cape</span>
+            <div class="calender">
+              <i class="calender-alt">2018 - 2021</i>
+            </div>
+            </div>
+            
+          </div>
+            
+          </div>
+
+          <div class="experience_content" v-if="activeTab === 'tab2'">
+
+<div class="experience_data">
+  <div>
+    <h6 class="experience_name">Junior Web Developer</h6>
+  <span class="subtitle">Younglings</span>
+  <div class="calender">
+    <i class="calender-alt">2023 - Current</i>
+  </div>
+  </div>
+  
+</div>
+
+<div class="experience_data">
+  <div>
+    <h6 class="experience_name">Clinical Trial Recruiter</h6>
+  <span class="subtitle">Subjectwell</span>
+  <div class="calender">
+    <i class="calender-alt">2021 - 2023</i>
+  </div>
+  </div>
+  
+</div>
+
+<div class="experience_data">
+  <div id="BS">
+    <h6 class="experience_name">Beauty Sales</h6>
+  <span class="subtitle">Foschini</span>
+  <div class="calender">
+    <i class="calender-alt">2018 - 2019</i>
+  </div>
+  </div>
+  
+</div>
+
+  
+</div>
+          
 
         </div>
       </div>
 
 
-      
-      
       </div>
     
     
   </div>
-</div>
+
 
 <!--languages section-->
 
@@ -69,7 +126,7 @@ Now, I'm on the lookout for a full-time role where I can apply my coding skills 
 <div  class="container shadow p-3 mb-5 bg-body-tertiary rounded" id = "languages">
  <h3 class = "" id="languages-h">Programming Languages</h3> 
   <div class="row">
-    <div  class="col"><img src="@/assets/html.png" width="90" height="112"></div>
+    <div  class="col" v-motion-roll-visible-top><img src="@/assets/html.png" width="90" height="112"></div>
     <div class="col"><img src="@/assets/css.png" width="90" height="112"></div>
     <div class="col"><img src="@/assets/python.png" width="105" height="112"></div>
     <div class="col"><img src="@/assets/java.png" width="120" height="112"></div>
@@ -100,20 +157,37 @@ h1{
 }
 
 h4{
-  font-weight: bold;
+  text-decoration: underline;
   margin-bottom: 40px;
 }
 
-h5{
-  color: rgb(119, 163, 111);
+h6{
+  color: rgb(69, 92, 65);
+  font-weight: bold;
+}
+
+.qualification_tabs{
+  display: flex;
+  justify-content: space-evenly;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+.qualification_title.qualification_title:hover{
+  font-weight: bold;
+}
+
+.qualification_sections{
+  margin-top: 20px;
+  font-size: 14px;
+  
 }
 
 
-li{
-  list-style: none;
-  margin: 10px;
-  font-size: 14px
+.qualification_data, .experience_data{
+  margin-bottom: 30px;
 }
+
 
 .container{
  margin-top: 20px;
@@ -124,7 +198,7 @@ li{
 #e-box{
   text-align: center;
   width: 501px;
-  padding: 5px;
+  padding-left: 30px;
   border: 1px gray;
   display: flex;
   flex-direction: column;
@@ -195,21 +269,40 @@ li{
 </style>
 
 <script>
-import { annotate, annotationGroup } from 'rough-notation';
+import { annotate, annotationGroup } from 'rough-notation'
+
+
 
 document.addEventListener('DOMContentLoaded', function () {
   
   const a1 = annotate(document.querySelector('#highA'), { type: 'highlight', color: 'gold' });
   const a2 = annotate(document.querySelector('#highB'), { type: 'highlight', color: 'orange' });
   const a3 = annotate(document.querySelector('#highC'), { type: 'highlight', color: 'pink' });
-  const a4 = annotate(document.querySelector('#highD'), { type: 'highlight', color: 'gold' });
+  const a4 = annotate(document.querySelector('#highD'), { type: 'highlight', color: 'gold', multiline: true });
   const a5 = annotate(document.querySelector('#highE'), { type: 'highlight', color: 'orange' });
-  const a6 = annotate(document.querySelector('#highF'), { type: 'highlight', color: 'pink' });
+  const a6 = annotate(document.querySelector('#highF'), { type: 'highlight', color: 'pink', multiline: true });
+  const a7 = annotate(document.querySelector('#highG'), { type: 'highlight', color: 'pink', multiline: true });
 
-  const a7 = annotate(document.querySelector('#circle'), { type: 'circle', color: 'green' });
+  const a8 = annotate(document.querySelector('#circle'), { type: 'circle', color: 'green' });
 
-  const ag = annotationGroup([a1, a2,a3, a4, a5, a6, a7]);
+  const ag = annotationGroup([a1, a2,a3, a4, a5, a6, a7, a8]);
   ag.show();
 });
+
+export default {
+  data() {
+
+    return {
+      activeTab: 'initial',
+      
+    }
+  },
+
+  methods: {
+    toggleTab(tab1){
+      this.activeTab = tab1;
+    },
+  },
+};
 
 </script>

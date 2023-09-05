@@ -6,6 +6,7 @@ import '@/style.css'
 import App from '@/App.vue'
 import router from '@/plugins/router'
 import '@/firebase/init.js'
+import '@vueuse/motion'
 
 
 
