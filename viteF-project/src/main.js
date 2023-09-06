@@ -6,12 +6,14 @@ import '@/style.css'
 import App from '@/App.vue'
 import router from '@/plugins/router'
 import '@/firebase/init.js'
+import { MotionPlugin } from '@vueuse/motion'
 import '@vueuse/motion'
+import 'motion'
 import 'vue-rough-notation'
 
 
 
 
-createApp(App).use(router).mount('#app')
+createApp(App).use(router, MotionPlugin).mount('#app')
 
 

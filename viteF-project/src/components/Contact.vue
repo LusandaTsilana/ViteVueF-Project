@@ -36,7 +36,7 @@
                 </div>
 
                 <div class="mb-3">
-                    <label for="InputNumber" class="form-label">Cellphone</label>
+                    <label for="InputNumber" class="form-label">Cellphone (optional)</label>
                     <input type="cellphone" class="form-control" id="InputNumber" v-model="state.cellphone"/>
                     <span v-if="v$.cellphone.$error">
                     {{ v$.cellphone.$errors[0].$message }}</span>
@@ -173,7 +173,7 @@ export default {
         const rules = computed (() => {
             return { 
                 fullname: { required, alpha},
-                cellphone: { required, numeric },
+                cellphone: { numeric },
                 email: { required, email },
                 messagetext: { 
                 required, minLength: minLength(30), 

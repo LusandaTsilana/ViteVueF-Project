@@ -3,10 +3,22 @@
 <h1 class = "display-4" >Work</h1>
 
 <div class="container">
-    <h3 class = "" id="MP">My Portfolio</h3>
 
     <div id="MZ-box" class="col shadow p-3 mb-5 bg-body-tertiary rounded">
         <h4 id="MZ" class="">School Website</h4>
+
+        <div class="container text-center">
+  <div class="row align-items-start">
+    <div class="col">
+        <div class=" card" style="width: 22rem;">
+        <img src="@/assets/portrait.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">Mzamomtsha Primary School</h5>
+            <a href="https://melodic-nasturtium-8a6e3c.netlify.app/" target="_blank" @click="openLink()"> <i class="bi bi-link-45deg"></i> View</a>
+        </div>
+        </div>
+    </div>
+    <div id="MZ-text" class="col">
         <p>Working collaboratively with my team to develop a website for Mzamomtsha Primary School. Throughout the project, we utilized our collective skills in HTML, CSS and Javascript while following the Software Developement Lifecycle which included:
         <br>
         <ul ref="dropdown" class="dropdown">
@@ -14,7 +26,7 @@
             <p class="dropdown-content" v-if="show">Objective: Create online presence for Mzamomtsha Primary School
             <br>
         Defining stakeholders, information gathering and scope development
-    <br>
+        <br>
         Task delegation and plan on project execution</p>
 
 
@@ -25,9 +37,12 @@
             <li>Research & Development</li>
         </ul>
       
-        PROJECT DURATION: 2 months <br>
+        PROJECT DURATION: 2 months <br></p>
+    </div>
+    
+  </div>
+</div>
 
-        <a href="https://melodic-nasturtium-8a6e3c.netlify.app/" target="_blank" @click="openLink()"> <i class="bi bi-link-45deg"></i> View</a></p>
     </div>
 
 
@@ -58,8 +73,7 @@
 
 h1{
     text-decoration: underline;
-    display: flex;
-    justify-content: center;
+    text-align: center;
     padding-top: 50px;
     padding-bottom: 70px;
 }
@@ -80,6 +94,13 @@ h1{
     padding: 30px;
     margin-bottom: 20px;
 }
+
+
+
+#MZ-text{
+    text-align: justify;
+}
+
 
 .container{
     text-align: center;

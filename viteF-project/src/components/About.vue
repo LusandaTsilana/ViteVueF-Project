@@ -6,7 +6,7 @@
   <div class="row">
     <div class="col" id="parabox">
       <p>
-        I used to work as a clinical trial recruiter, but my passion lies in <RoughNotation :is-show="isShow" type="highlight" color="pink"><span>coding and building projects </span></RoughNotation> from scratch. <br>
+        I used to work as a clinical trial recruiter, but my passion lies in <span id="highG">coding and building projects </span> from scratch. <br>
 <br>
 My journey into programming began in 2022, thanks to my fascination with <span id="highA">automation.</span> Being someone who always seeks out <span id="highB">efficiencies</span>, I was immediately drawn into this world. While still working as a clinical trial recruiter, I decided to pursue a <strong>BSc. Computer Science.</strong> To gain practical experience, I enrolled in a Software Developer program, where I honed my skills in <span id="highC">UI/UX </span>design and <span id="highD">web development.</span> Since then, I've transitioned into a role as a <strong>Junior Software Developer.</strong> <br>
 <br>
@@ -24,11 +24,11 @@ Now, I'm on the lookout for a full-time role where I can apply my coding skills 
       <h4>Qualification</h4>
 
       <div class="qualification_tabs">
-        <div class="qualification_title" @click="activeTab = 'tab1'"><i class="bi bi-mortarboard"></i>
+        <div class="qualification_title" @click="activeTab = 'tab1'" :class="{ 'active-tab': activeTab === 'tab1'}"><i class="bi bi-mortarboard"></i>
           Education
         </div>
 
-        <div class="qualification_title" @click="activeTab = 'tab2'"><i class="bi bi-briefcase"></i>
+        <div class="qualification_title" @click="activeTab = 'tab2'" :class="{ 'active-tab': activeTab === 'tab2'}"><i class="bi bi-briefcase"></i>
           Experience
         </div>
       </div>
@@ -126,11 +126,11 @@ Now, I'm on the lookout for a full-time role where I can apply my coding skills 
 <div  class="container shadow p-3 mb-5 bg-body-tertiary rounded" id = "languages">
  <h3 class = "" id="languages-h">Programming Languages</h3> 
   <div class="row">
-    <div  class="col" ><img src="@/assets/html.png" width="90" height="112"></div>
-    <div class="col"><img src="@/assets/css.png" width="90" height="112"></div>
-    <div class="col"><img src="@/assets/python.png" width="105" height="112"></div>
-    <div class="col"><img src="@/assets/java.png" width="120" height="112"></div>
-    <div class="col"><img src="@/assets/js.png" width="100" height="96"></div>
+    <div  class="col" v-motion-roll-visible-top><img src="@/assets/html.png" width="90" height="112"></div>
+    <div class="col" v-motion-roll-visible-top><img src="@/assets/css.png" width="90" height="112"></div>
+    <div class="col" v-motion-roll-visible-top><img src="@/assets/python.png" width="105" height="112"></div>
+    <div class="col" v-motion-roll-visible-top><img src="@/assets/java.png" width="120" height="112"></div>
+    <div class="col" v-motion-roll-visible-top><img src="@/assets/js.png" width="100" height="96"></div>
   </div>
   
 </div>
@@ -174,6 +174,7 @@ h6{
 }
 
 .qualification_title.qualification_title:hover{
+  color: rgb(69, 92, 65);
   font-weight: bold;
 }
 
@@ -183,6 +184,11 @@ h6{
   
 }
 
+.active-tab{
+  color: rgb(69, 92, 65);
+  font-weight: bold; 
+  text-decoration: underline;
+}
 
 .qualification_data, .experience_data{
   margin-bottom: 30px;
@@ -269,10 +275,13 @@ h6{
 </style>
 
 <script>
-import RoughNotation from 'vue-rough-notation'
+import { MotionPlugin } from '@vueuse/motion'
+import { annotate, annotationGroup } from 'rough-notation'
 
+/*tried cleaning up code to avoid redundancy by using vue-rough-notation
+but had problems with render function, still under investigation*/
 
-/*document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', function () {
   
   const a1 = annotate(document.querySelector('#highA'), { type: 'highlight', color: 'gold' });
   const a2 = annotate(document.querySelector('#highB'), { type: 'highlight', color: 'orange' });
@@ -286,18 +295,19 @@ import RoughNotation from 'vue-rough-notation'
 
   const ag = annotationGroup([a1, a2,a3, a4, a5, a6, a7, a8]);
   ag.show();
-});*/
+});
 
 export default {
-  components: {
+ /* components: {
     RoughNotation,
-  },
+  },*/
+
 
   data() {
 
     return {
       activeTab: 'initial',
-      isShow: true,
+      /*isShow: true,*/
       
     }
   },
