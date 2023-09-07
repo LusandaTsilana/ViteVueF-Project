@@ -19,10 +19,10 @@
         </div>
     </div>
     <div id="MZ-text" class="col">
-        <p>Working collaboratively with my team to develop a website for Mzamomtsha Primary School. Throughout the project, we utilized our collective skills in HTML, CSS and Javascript while following the Software Developement Lifecycle which included:
+        <p>Working collaboratively with my team to develop an online presence for Mzamomtsha Primary School. Throughout the project, we utilized our collective skills in HTML, CSS and Javascript while following the Software Developement Lifecycle which included:</p>
         <br>
         <ul ref="dropdown" class="dropdown">
-            <li class="dropdown-label" @click="show = !show">Project Initiation +</li>
+            <li class="dropdown-label shadow p-3 mb-5 bg-body-tertiary rounded" @click="show = !show">Project Initiation</li>
             <p class="dropdown-content" v-if="show">Objective: Create online presence for Mzamomtsha Primary School
             <br>
         Defining stakeholders, information gathering and scope development
@@ -30,14 +30,14 @@
         Task delegation and plan on project execution</p>
 
 
-            <li>Wireframe Design +</li>
+            <li class="dropdown-label shadow p-3 mb-5 bg-body-tertiary rounded" @click="show = !show">Wireframe Design </li>
            
-            <li>Figma UI/UX Prototype</li>
+            <li class="dropdown-label shadow p-3 mb-5 bg-body-tertiary rounded" @click="show = !show">Figma UI/UX Prototype</li>
 
-            <li>Research & Development</li>
+            <li class="dropdown-label shadow p-3 mb-5 bg-body-tertiary rounded" @click="show = !show">Research & Development</li>
         </ul>
       
-        PROJECT DURATION: 2 months <br></p>
+       <br>
     </div>
     
   </div>
@@ -111,6 +111,9 @@ span{
 
 ul{
     margin: 20px;
+    
+   
+
 }
 
 li{
