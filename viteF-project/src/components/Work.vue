@@ -169,8 +169,6 @@ span{
 
 ul{
     margin: 20px;
-   
-
 }
 
 li{

@@ -46,7 +46,7 @@
               
                 <div class="mb-3">
                     <label for="InputEmail" class="form-label">Email</label>
-                    <input  type="email" class="form-control" id="InputEmail" v-model="state.email"/>
+                    <input  type="text" class="form-control" id="InputEmail" v-model="state.email"/>
                     <span v-if="v$.email.$error">
                     {{ v$.email.$errors[0].$message }}</span>
                 </div>
@@ -59,6 +59,8 @@
                     {{ v$.messagetext.$errors[0].$message }}</span>
 
                 </div>
+
+
 
 
                 <button type="submit" class="btn btn-outline" id="submit-button">Submit</button>
@@ -156,11 +158,15 @@ import { reactive, computed } from 'vue'
 
 
 
+
 //import axios from 'axios'
 //import VueAxios from 'vue-axios'
 
 export default {
     setup() {
+
+
+
         const state = reactive ({
             fullname: '',
             cellphone: '',
@@ -172,7 +178,7 @@ export default {
     })
         const rules = computed (() => {
             return { 
-                fullname: { required, alpha},
+                fullname: { required, alpha },
                 cellphone: { numeric },
                 email: { required, email },
                 messagetext: { 
@@ -197,7 +203,7 @@ export default {
         return {
             $property: "messagetext",
             $validator: minLength(min),
-            $message: ({ $params }) => `This should be at least ${$params.min} long. Give brief description of your project and I will be in contact.`,
+            $message: ({ $params }) => `This field should be at least ${$params.min} long. Give brief description of your project and I will be in contact.`,
             $params: { min}
 
         }
@@ -218,6 +224,7 @@ export default {
         submitForm() {
             //axios.post("https://jsonplaceholder.typicode.com/posts", this.state);
             this.v$.$validate()
+
             
             .then((response) => {
                 

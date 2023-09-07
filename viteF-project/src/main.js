@@ -10,6 +10,8 @@ import { MotionPlugin } from '@vueuse/motion'
 import '@vueuse/motion'
 import 'motion'
 import 'vue-rough-notation'
+import '@emailjs/browser'
+
 
 
 
