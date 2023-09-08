@@ -155,6 +155,8 @@ span{
 import { useVuelidate } from '@vuelidate/core'
 import { required, alpha, numeric, email, minLength, maxLength } from '@vuelidate/validators'
 import { reactive, computed } from 'vue'
+//import { VueRecaptchaPlugin } from 'vue-recaptcha'
+
 import emailjs from '@emailjs/browser';
 
 
