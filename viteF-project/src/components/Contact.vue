@@ -25,7 +25,7 @@
 
 
 
-            <form @submit.prevent="submitForm" method="post">
+            <form @submit.prevent="sendForm" ref="myForm">
               
                 <div class="mb-3">
                     <label for="InputName" class="form-label">Full Name</label>
@@ -155,6 +155,7 @@ span{
 import { useVuelidate } from '@vuelidate/core'
 import { required, alpha, numeric, email, minLength, maxLength } from '@vuelidate/validators'
 import { reactive, computed } from 'vue'
+import emailjs from '@emailjs/browser';
 
 
 
@@ -164,8 +165,6 @@ import { reactive, computed } from 'vue'
 
 export default {
     setup() {
-
-
 
         const state = reactive ({
             fullname: '',
@@ -179,7 +178,9 @@ export default {
         const rules = computed (() => {
             return { 
                 fullname: { required, alpha },
-                cellphone: { numeric },
+                cellphone: { numeric, 
+                    minLength: minLength(10),
+                    maxLength: maxLength(10) },
                 email: { required, email },
                 messagetext: { 
                 required, minLength: minLength(30), 
@@ -192,10 +193,13 @@ export default {
 
         const v$ = useVuelidate(rules, state)
 
+
         return {
             state,
             v$,
         };
+
+        
 
     },
 
@@ -218,21 +222,42 @@ export default {
 
         }
     },
-    
 
+    minLength (min) {
+        return {
+            $property: "cellphone",
+            $validator: minLength(min),
+            $message: ({ $params }) => `A cellphone number should have ${$params.min} digits.`,
+            $params: { min}
+
+        }
+    },
+
+    maxLength (min) {
+        return {
+            $property: "cellphone",
+            $validator: maxLength(min),
+            $message: ({ $params }) => `A cellphone number should have ${$params.min} digits.`,
+            $params: { min}
+
+        }
+    },
+
+   
     methods: {
-        submitForm() {
-            //axios.post("https://jsonplaceholder.typicode.com/posts", this.state);
+        sendForm() {
+            
             this.v$.$validate()
+            emailjs.sendForm('service_ouebe0d', 'template_6yxd1di', this.$refs.myForm, 'n3c3fJnlqx0Zw7gBF')
 
             
             .then((response) => {
                 
-               console.log(response)
+               console.log('Email sent successfully', response);
                 //will send form to server/email.js here
             })
             .catch((errors) => {
-                console.error('Validation errors: ', errors);
+                console.error('Email sending failed', errors);
             });
           
            
@@ -241,7 +266,11 @@ export default {
         openLink() {
             //to open to new window when clicking on view for school website
         },
+
     }
+
+
+  
 }
 
 

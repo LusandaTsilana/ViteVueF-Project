@@ -92,7 +92,7 @@
         <h5><span id="hh">UI/UX Design</span></h5><br>
     </div>
     <div class="col">
-        <img src="@/assets/unnamed (1).png" width="230" height="230">
+        <img src="@/assets/unnamed.png" width="230" height="230">
         <h5><span id="hh">Web Development </span></h5><br>
            
     </div>
