@@ -5,7 +5,8 @@ import 'bootstrap/dist/js/bootstrap.js'
 import '@/style.css'
 import App from '@/App.vue'
 import router from '@/plugins/router'
-//import 'vue-recaptcha'
+import { VueRecaptchaPlugin } from 'vue-recaptcha/head'
+
 import { MotionPlugin } from '@vueuse/motion'
 import '@vueuse/motion'
 import 'motion'
@@ -16,6 +17,8 @@ import '@emailjs/browser'
 
 
 
-createApp(App).use(router, MotionPlugin).mount('#app')
+createApp(App).use(router, MotionPlugin, VueRecaptchaPlugin, {
+    v3SiteKey: '', 
+}).mount('#app')
 
 
