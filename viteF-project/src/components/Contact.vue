@@ -25,7 +25,7 @@
 
 
 
-            <form @submit.prevent="sendForm" ref="myForm">
+            <form @submit.prevent="sendForm" ref="myForm" >
               
                 <div class="mb-3">
                     <label for="InputName" class="form-label">Full Name</label>
@@ -60,9 +60,16 @@
 
                 </div>
 
+                <div>
+                <vue-recaptcha
+                sitekey="6LfVgxgoAAAAAAUTIrbXPh9AjeXOm_c2TJ6Ae_Uv"></vue-recaptcha>
+                    
 
+                
+                </div>
 
-
+                
+              
                 <button type="submit" class="btn btn-outline" id="submit-button">Submit</button>
             </form>
         </div>
@@ -155,7 +162,7 @@ span{
 import { useVuelidate } from '@vuelidate/core'
 import { required, alpha, numeric, email, minLength, maxLength } from '@vuelidate/validators'
 import { reactive, computed } from 'vue'
-//import { VueRecaptchaPlugin } from 'vue-recaptcha/head'
+
 
 
 import emailjs from '@emailjs/browser';
@@ -163,118 +170,102 @@ import emailjs from '@emailjs/browser';
 
 
 
-//import axios from 'axios'
-//import VueAxios from 'vue-axios'
 
-export default {
+export default defineComponent({
     setup() {
 
-        const state = reactive ({
+
+        const state = reactive({
             fullname: '',
             cellphone: '',
             email: '',
             messagetext: '',
-            
-          
-    
-    })
-        const rules = computed (() => {
-            return { 
+           
+
+        });
+
+        const rules = computed(() => {
+            return {
                 fullname: { required, alpha },
-                cellphone: { numeric, 
+                cellphone: { numeric,
                     minLength: minLength(10),
                     maxLength: maxLength(10) },
                 email: { required, email },
-                messagetext: { 
-                required, minLength: minLength(30), 
-                maxLength: maxLength(150)},
-
+                messagetext: {
+                    required, minLength: minLength(30),
+                    maxLength: maxLength(150)
+                },
                
-                
-            }
-        })
+            };
+        });
 
-        const v$ = useVuelidate(rules, state)
-
-
+        const v$ = useVuelidate(rules, state);
         return {
             state,
             v$,
         };
-
-        
-
     },
-
-    minLength (min) {
+    minLength(min) {
         return {
             $property: "messagetext",
             $validator: minLength(min),
             $message: ({ $params }) => `This field should be at least ${$params.min} long. Give brief description of your project and I will be in contact.`,
-            $params: { min}
-
-        }
+            $params: { min }
+        };
     },
-    maxLength (max) {
+    maxLength(max) {
         return {
             $property: "messagetext",
             $validator: maxLength(max),
-            $message: ({ $params }) => 
-            `Message cannot exceed ${$params} characters`,
-            $arams: {max}
-
-        }
+            $message: ({ $params }) => `Message cannot exceed ${$params} characters`,
+            $arams: { max }
+        };
     },
-
-    minLength (min) {
+    minLength(min) {
         return {
             $property: "cellphone",
             $validator: minLength(min),
             $message: ({ $params }) => `A cellphone number should have ${$params.min} digits.`,
-            $params: { min}
-
-        }
+            $params: { min }
+        };
     },
-
-    maxLength (min) {
+    maxLength(min) {
         return {
             $property: "cellphone",
             $validator: maxLength(min),
             $message: ({ $params }) => `A cellphone number should have ${$params.min} digits.`,
-            $params: { min}
-
-        }
+            $params: { min }
+        };
     },
-
-   
     methods: {
-        sendForm() {
-            
-            this.v$.$validate()
-            emailjs.sendForm('service_ouebe0d', 'template_6yxd1di', this.$refs.myForm, 'n3c3fJnlqx0Zw7gBF')
-
-            
-            .then((response) => {
-                
-               console.log('Email sent successfully', response);
-                //will send form to server/email.js here
-            })
-            .catch((errors) => {
-                console.error('Email sending failed', errors);
-            });
-          
-           
+        
+        async sendForm() {
+            //to validate form fields using vuelidate
+            this.v$.$validate();
+            //recaptcha verification
+            if (this.v$.$pending) {
+                await this.recaptchaRef.value.execute();
+            }
+            if (!this.v$.$error) {
+                emailjs
+                    .sendForm('service_ouebe0d', 'template_6yxd1di', this.$refs.myForm, 'n3c3fJnlqx0Zw7gBF')
+                    .then((response) => {
+                    console.log('Email sent successfully', response);
+                    //will send form to server/email.js here
+                })
+                    .catch((errors) => {
+                    console.error('Email sending failed', errors);
+                });
+            }
         },
-
         openLink() {
             //to open to new window when clicking on view for school website
         },
+    },
 
-    }
-
-
-  
-}
+   
+   
+})
 
 
 

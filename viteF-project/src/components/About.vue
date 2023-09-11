@@ -275,7 +275,7 @@ h6{
 </style>
 
 <script>
-import { MotionPlugin } from '@vueuse/motion'
+//import { MotionPlugin } from '@vueuse/motion'
 import { annotate, annotationGroup } from 'rough-notation'
 
 /*tried cleaning up code to avoid redundancy by using vue-rough-notation
@@ -298,16 +298,14 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 export default {
- /* components: {
-    RoughNotation,
-  },*/
+
 
 
   data() {
 
     return {
       activeTab: 'initial',
-      /*isShow: true,*/
+      
       
     }
   },
