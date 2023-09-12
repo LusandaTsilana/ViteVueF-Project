@@ -8,6 +8,7 @@ export default defineConfig({
   build: {
     rollupOptions: {
       external: ['@unhead/vue'],
+     
     },
   },
   resolve: {
@@ -16,4 +17,5 @@ export default defineConfig({
     },
     
   },
+ 
 });

@@ -60,12 +60,9 @@
 
                 </div>
 
-                <div>
-                <vue-recaptcha
-                sitekey="6LfVgxgoAAAAAAUTIrbXPh9AjeXOm_c2TJ6Ae_Uv"></vue-recaptcha>
+                <div class="mb-3">
+                    <vue-recaptcha sitekey="6LfvMBwoAAAAAHBRBl_2OCBMvgygQgeOhT-IBTjk"></vue-recaptcha>
                     
-
-                
                 </div>
 
                 
@@ -162,24 +159,24 @@ span{
 import { useVuelidate } from '@vuelidate/core'
 import { required, alpha, numeric, email, minLength, maxLength } from '@vuelidate/validators'
 import { reactive, computed } from 'vue'
-
-
-
 import emailjs from '@emailjs/browser';
+import VueRecaptcha from 'vue-recaptcha'
 
 
 
+export default {
 
-
-export default defineComponent({
+    components: {
+        VueRecaptcha,
+    },
     setup() {
-
-
+        
         const state = reactive({
             fullname: '',
             cellphone: '',
             email: '',
             messagetext: '',
+           
            
 
         });
@@ -199,10 +196,15 @@ export default defineComponent({
             };
         });
 
+
         const v$ = useVuelidate(rules, state);
         return {
             state,
             v$,
+            VueRecaptcha,
+           
+            
+           
         };
     },
     minLength(min) {
@@ -242,10 +244,9 @@ export default defineComponent({
         async sendForm() {
             //to validate form fields using vuelidate
             this.v$.$validate();
-            //recaptcha verification
-            if (this.v$.$pending) {
-                await this.recaptchaRef.value.execute();
-            }
+           
+           
+
             if (!this.v$.$error) {
                 emailjs
                     .sendForm('service_ouebe0d', 'template_6yxd1di', this.$refs.myForm, 'n3c3fJnlqx0Zw7gBF')
@@ -257,6 +258,7 @@ export default defineComponent({
                     console.error('Email sending failed', errors);
                 });
             }
+           
         },
         openLink() {
             //to open to new window when clicking on view for school website
@@ -265,7 +267,7 @@ export default defineComponent({
 
    
    
-})
+}
 
 
 
