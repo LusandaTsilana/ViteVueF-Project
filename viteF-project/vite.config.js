@@ -7,7 +7,7 @@ export default defineConfig({
   plugins: [vue()],
   build: {
     rollupOptions: {
-      external: ['@unhead/vue'],
+      
      
     },
   },
