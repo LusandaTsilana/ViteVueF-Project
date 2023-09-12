@@ -61,8 +61,8 @@
                 </div>
 
                 <div class="mb-3">
-                    <vue-recaptcha sitekey="6LfvMBwoAAAAAHBRBl_2OCBMvgygQgeOhT-IBTjk"></vue-recaptcha>
-                    
+                    <!--<vue-recaptcha sitekey="6LfvMBwoAAAAAHBRBl_2OCBMvgygQgeOhT-IBTjk"></vue-recaptcha>-->
+                        <div class="g-recaptcha" :data-sitekey="state.recaptchaSiteKey" @click="onRecaptchaClick"></div>
                 </div>
 
                 
@@ -117,6 +117,10 @@ div a {
     height: 100%;
 }
 
+.g-recaptcha{
+    height: 120px;
+}
+
 .col {
     text-align: center;
     padding: 30px 0px 30px 0px;
@@ -160,15 +164,16 @@ import { useVuelidate } from '@vuelidate/core'
 import { required, alpha, numeric, email, minLength, maxLength } from '@vuelidate/validators'
 import { reactive, computed } from 'vue'
 import emailjs from '@emailjs/browser';
-import VueRecaptcha from 'vue-recaptcha'
+//import VueRecaptcha from 'vue-recaptcha'
 
 
 
 export default {
 
-    components: {
-        VueRecaptcha,
-    },
+   // components: {
+       // VueRecaptcha,
+    //},
+
     setup() {
         
         const state = reactive({
@@ -176,7 +181,7 @@ export default {
             cellphone: '',
             email: '',
             messagetext: '',
-           
+           recaptchaSiteKey: '6LfvMBwoAAAAAHBRBl_2OCBMvgygQgeOhT-IBTjk',
            
 
         });
@@ -201,7 +206,7 @@ export default {
         return {
             state,
             v$,
-            VueRecaptcha,
+           // VueRecaptcha,
            
             
            
@@ -263,6 +268,13 @@ export default {
         openLink() {
             //to open to new window when clicking on view for school website
         },
+
+        onRecaptchaClick() {
+  // This method will be called when reCAPTCHA is clicked.
+  // You can use it to perform any actions you need.
+
+}
+
     },
 
    
