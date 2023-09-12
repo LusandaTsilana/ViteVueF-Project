@@ -118,7 +118,9 @@ div a {
 }
 
 .g-recaptcha{
-    height: 120px;
+    display: block;
+    min-height: 125px;
+    min-width: 20px;
 }
 
 .col {
