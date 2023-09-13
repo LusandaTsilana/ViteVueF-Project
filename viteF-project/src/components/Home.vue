@@ -17,8 +17,8 @@
     </div>
     <div class="col">
         <img src="@/assets/portrait.jpg" class = "" alt="portrait" id = "portrait" width="433.56" height="500">
-        <img src="@/assets/stripes.png" class="" alt="stripes" id="stripes1" width="180.38" height="129.11">
-        <img src="@/assets/stripes.png" class="" alt="stripes" id="stripes2" width="125.75" height="79.54">
+        <!--<img src="@/assets/stripes.png" class="" alt="stripes" id="stripes1" width="180.38" height="129.11">
+        <img src="@/assets/stripes.png" class="" alt="stripes" id="stripes2" width="125.75" height="79.54">-->
     </div>
     
   </div>

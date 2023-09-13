@@ -1,24 +1,17 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
-import { onUnmounted } from "vue";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: "AIzaSyADsbgDKKtfarkFh-0SQgNI4Vqgo5_VfTE",
-  authDomain: "lusandat-dev.firebaseapp.com",
-  projectId: "lusandat-dev",
-  storageBucket: "lusandat-dev.appspot.com",
-  messagingSenderId: "707226280705",
-  appId: "1:707226280705:web:49026e0b31d458240e3100",
-  measurementId: "G-LVD3TQQXYD"
+  apiKey: "AIzaSyAVJLVvrZ5CB7vlLnE8eHT1dJR8j6zCCbc",
+  authDomain: "my-portfolio-75ff6.firebaseapp.com",
+  projectId: "my-portfolio-75ff6",
+  storageBucket: "my-portfolio-75ff6.appspot.com",
+  messagingSenderId: "665634044465",
+  appId: "1:665634044465:web:7b4b889c7f34c0683d3310"
 };
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
-
-

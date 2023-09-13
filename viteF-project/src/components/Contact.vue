@@ -62,7 +62,7 @@
 
                 <div class="mb-3">
                     <!--<vue-recaptcha sitekey="6LfvMBwoAAAAAHBRBl_2OCBMvgygQgeOhT-IBTjk"></vue-recaptcha>-->
-                        <div class="g-recaptcha" :data-sitekey="state.recaptchaSiteKey" :data-callback="onRecaptchaClick"></div>
+                        <!--<div class="g-recaptcha" :data-sitekey="state.recaptchaSiteKey" :data-callback="onRecaptchaClick"></div>-->
                 </div>
 
                 
@@ -185,7 +185,7 @@ export default {
             cellphone: '',
             email: '',
             messagetext: '',
-           recaptchaSiteKey: '6LfvMBwoAAAAAHBRBl_2OCBMvgygQgeOhT-IBTjk',
+           //recaptchaSiteKey: '6LfvMBwoAAAAAHBRBl_2OCBMvgygQgeOhT-IBTjk',
            
 
         });
@@ -209,7 +209,7 @@ export default {
         return {
             state,
             v$,
-            recaptchaResponse,
+            //recaptchaResponse,
             
            // VueRecaptcha,
            
@@ -240,7 +240,7 @@ export default {
             this.v$.$validate();
            
            //to validate recaptcha to see if it has been clicked
-           if (recaptchaResponse.value) {
+           /*if (recaptchaResponse.value) {*/
             if (!this.v$.$error) {
                 emailjs
                     .sendForm('service_ouebe0d', 'template_6yxd1di', this.$refs.myForm, 'n3c3fJnlqx0Zw7gBF')
@@ -264,17 +264,17 @@ export default {
             //to open to new window when clicking on view for school website
         },
 
-        onRecaptchaClick(response) {
+        /*onRecaptchaClick(response) {
   // This method will be called when reCAPTCHA is clicked.
   recaptchaResponse.value = response;
 
-},
+},*/
 
-    },
+    }
 
    
    
-}
+//}
 
 
 
