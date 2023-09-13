@@ -62,7 +62,7 @@
 
                 <div class="mb-3">
                     <!--<vue-recaptcha sitekey="6LfvMBwoAAAAAHBRBl_2OCBMvgygQgeOhT-IBTjk"></vue-recaptcha>-->
-                        <div class="g-recaptcha" :data-sitekey="state.recaptchaSiteKey" @click="onRecaptchaClick"></div>
+                        <div class="g-recaptcha" :data-sitekey="state.recaptchaSiteKey" :data-callback="onRecaptchaClick"></div>
                 </div>
 
                 
@@ -164,7 +164,7 @@ span{
 
 import { useVuelidate } from '@vuelidate/core'
 import { required, alpha, numeric, email, minLength, maxLength } from '@vuelidate/validators'
-import { reactive, computed } from 'vue'
+import { reactive, computed, ref } from 'vue'
 import emailjs from '@emailjs/browser';
 //import VueRecaptcha from 'vue-recaptcha'
 
@@ -177,6 +177,8 @@ export default {
     //},
 
     setup() {
+
+        const recaptchaResponse = ref(null);
         
         const state = reactive({
             fullname: '',
@@ -196,8 +198,7 @@ export default {
                     maxLength: maxLength(10) },
                 email: { required, email },
                 messagetext: {
-                    required, minLength: minLength(30),
-                    maxLength: maxLength(150)
+                    required
                 },
                
             };
@@ -208,26 +209,12 @@ export default {
         return {
             state,
             v$,
+            recaptchaResponse,
+            
            // VueRecaptcha,
            
             
            
-        };
-    },
-    minLength(min) {
-        return {
-            $property: "messagetext",
-            $validator: minLength(min),
-            $message: ({ $params }) => `This field should be at least ${$params.min} long. Give brief description of your project and I will be in contact.`,
-            $params: { min }
-        };
-    },
-    maxLength(max) {
-        return {
-            $property: "messagetext",
-            $validator: maxLength(max),
-            $message: ({ $params }) => `Message cannot exceed ${$params} characters`,
-            $arams: { max }
         };
     },
     minLength(min) {
@@ -252,8 +239,8 @@ export default {
             //to validate form fields using vuelidate
             this.v$.$validate();
            
-           
-
+           //to validate recaptcha to see if it has been clicked
+           if (recaptchaResponse.value) {
             if (!this.v$.$error) {
                 emailjs
                     .sendForm('service_ouebe0d', 'template_6yxd1di', this.$refs.myForm, 'n3c3fJnlqx0Zw7gBF')
@@ -264,18 +251,24 @@ export default {
                     .catch((errors) => {
                     console.error('Email sending failed', errors);
                 });
+            } else {
+                //display error message if recaptcha is not clicked
+                console.error('recaptcha not clicked!')
             }
+           }
+
+            
            
         },
         openLink() {
             //to open to new window when clicking on view for school website
         },
 
-        onRecaptchaClick() {
+        onRecaptchaClick(response) {
   // This method will be called when reCAPTCHA is clicked.
-  // You can use it to perform any actions you need.
+  recaptchaResponse.value = response;
 
-}
+},
 
     },
 
