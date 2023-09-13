@@ -29,7 +29,7 @@
               
                 <div class="mb-3">
                     <label for="InputName" class="form-label">Full Name</label>
-                    <input type="name" class="form-control" id="InputName" v-model="state.fullname"/>
+                    <input type="name" class="form-control" id="InputName" v-model="state.fullname" @blur="v$.state.fullname.$touch"/>
                     <span v-if="v$.fullname.$error">
                     {{ v$.fullname.$errors[0].$message }}</span>
                    
@@ -37,7 +37,7 @@
 
                 <div class="mb-3">
                     <label for="InputNumber" class="form-label">Cellphone (optional)</label>
-                    <input type="cellphone" class="form-control" id="InputNumber" v-model="state.cellphone"/>
+                    <input type="cellphone" class="form-control" id="InputNumber" v-model="state.cellphone" @blur="v$.state.cellphone.$touch"/>
                     <span v-if="v$.cellphone.$error">
                     {{ v$.cellphone.$errors[0].$message }}</span>
                    
@@ -46,7 +46,7 @@
               
                 <div class="mb-3">
                     <label for="InputEmail" class="form-label">Email</label>
-                    <input  type="text" class="form-control" id="InputEmail" v-model="state.email"/>
+                    <input  type="text" class="form-control" id="InputEmail" v-model="state.email" @blur="v$.state.email.$touch"/>
                     <span v-if="v$.email.$error">
                     {{ v$.email.$errors[0].$message }}</span>
                 </div>
@@ -54,7 +54,7 @@
                
                 <div class="mb-3">
                     <label for="InputMessage" class="form-label">Message</label>
-                    <input  type="text" class="form-control pb-5" id="InputMessage" cols="30" rows= "10" v-model="state.messagetext"/>
+                    <input  type="text" class="form-control pb-5" id="InputMessage" cols="30" rows= "10" v-model="state.messagetext" @blur="v$.state.messagetext.$touch"/>
                     <span v-if="v$.messagetext.$error">
                     {{ v$.messagetext.$errors[0].$message }}</span>
 
@@ -178,7 +178,7 @@ export default {
 
     setup() {
 
-        const recaptchaResponse = ref(null);
+        //const recaptchaResponse = ref(null);
         
         const state = reactive({
             fullname: '',
