@@ -20,7 +20,7 @@
         <img src="@/assets/stripes.png" class="" alt="stripes" id="stripes1" width="180.38" height="129.11">
         <img src="@/assets/stripes.png" class="" alt="stripes" id="stripes2" width="125.75" height="79.54">
     </div>
-    <div><p>Hello</p></div>
+    
   </div>
 </div>
   
