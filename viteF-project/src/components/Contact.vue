@@ -5,7 +5,7 @@
 
     <div id="main" class="container">
 
-        <div id="contact-modes" class="column shadow p-3 mb-5 bg-body-tertiary rounded">
+        <div id="contact-modes" class="column shadow p-5 mb-5 bg-body-tertiary rounded">
             <h5>Talk to me</h5>
 
             <div class="col shadow-sm p-3 mb-5 bg-body-tertiary rounded">
@@ -62,7 +62,7 @@
 
                 <div class="mb-3">
                     <!--<vue-recaptcha sitekey="6LfvMBwoAAAAAHBRBl_2OCBMvgygQgeOhT-IBTjk"></vue-recaptcha>-->
-                        <!--<div class="g-recaptcha" :data-sitekey="state.recaptchaSiteKey" :data-callback="onRecaptchaClick"></div>-->
+                        <div class="g-recaptcha" :data-sitekey="state.recaptchaSiteKey" :data-callback="onRecaptchaClick"></div>
                 </div>
 
                 
@@ -114,13 +114,13 @@ div a {
 #contact-modes{
     padding: 100px;
     width: 30%;
-    height: 100%;
+    /*height: 100%;*/
 }
 
 .g-recaptcha{
     display: block;
-    min-height: 125px;
-    min-width: 20px;
+    min-height: 100px;
+    min-width: 100px;
 }
 
 .col {
@@ -178,14 +178,14 @@ export default {
 
     setup() {
 
-        //const recaptchaResponse = ref(null);
+        const recaptchaResponse = ref(null);
         
         const state = reactive({
             fullname: '',
             cellphone: '',
             email: '',
             messagetext: '',
-           //recaptchaSiteKey: '6LfvMBwoAAAAAHBRBl_2OCBMvgygQgeOhT-IBTjk',
+           recaptchaSiteKey: '6LfvMBwoAAAAAHBRBl_2OCBMvgygQgeOhT-IBTjk',
            
 
         });
@@ -209,7 +209,7 @@ export default {
         return {
             state,
             v$,
-            //recaptchaResponse,
+            recaptchaResponse,
             
            // VueRecaptcha,
            
@@ -240,7 +240,7 @@ export default {
             this.v$.$validate();
            
            //to validate recaptcha to see if it has been clicked
-           /*if (recaptchaResponse.value) {*/
+           if (recaptchaResponse.value) {
             if (!this.v$.$error) {
                 emailjs
                     .sendForm('service_ouebe0d', 'template_6yxd1di', this.$refs.myForm, 'n3c3fJnlqx0Zw7gBF')
@@ -264,17 +264,17 @@ export default {
             //to open to new window when clicking on view for school website
         },
 
-        /*onRecaptchaClick(response) {
+        onRecaptchaClick(response) {
   // This method will be called when reCAPTCHA is clicked.
   recaptchaResponse.value = response;
 
-},*/
+}
 
     }
 
    
    
-//}
+}
 
 
 
