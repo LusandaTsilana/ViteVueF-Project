@@ -166,6 +166,8 @@ import { useVuelidate } from '@vuelidate/core'
 import { required, alpha, numeric, email, minLength, maxLength } from '@vuelidate/validators'
 import { reactive, computed, ref } from 'vue'
 import emailjs from '@emailjs/browser';
+import  VueSweetalert2  from 'vue-sweetalert2'
+import 'sweetalert2/dist/sweetalert2.min.css';
 //import VueRecaptcha from 'vue-recaptcha'
 
 
@@ -179,6 +181,7 @@ export default {
     setup() {
 
         //const recaptchaResponse = ref(null);
+       
         
         const state = reactive({
             fullname: '',
@@ -209,6 +212,8 @@ export default {
         return {
             state,
             v$,
+            
+           
             //recaptchaResponse,
             
            // VueRecaptcha,
@@ -261,7 +266,7 @@ export default {
                 this.state.messagetext = '';
 
                 //display alert message when email successfully sent
-                this.$swal('Email successfully sent!');
+               
                     
                 })
                     .catch((errors) => {
@@ -286,6 +291,8 @@ export default {
   recaptchaResponse.value = response;
 
 },*/
+
+       
 
 
     }
