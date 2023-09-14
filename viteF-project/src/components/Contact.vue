@@ -29,7 +29,7 @@
               
                 <div class="mb-3">
                     <label for="InputName" class="form-label">Full Name</label>
-                    <input type="name" name = "fullname" class="form-control" id="InputName" v-model="state.fullname" @blur="v$.state.fullname.$touch"/>
+                    <input type="name" name = "fullname" class="form-control" id="InputName" v-model="state.fullname"/>
                     <span v-if="v$.fullname.$error">
                     {{ v$.fullname.$errors[0].$message }}</span>
                    
@@ -37,7 +37,7 @@
 
                 <div class="mb-3">
                     <label for="InputNumber" class="form-label">Cellphone (optional)</label>
-                    <input type="cellphone" name = "cellphone" class="form-control" id="InputNumber" v-model="state.cellphone" @blur="v$.state.cellphone.$touch"/>
+                    <input type="cellphone" name = "cellphone" class="form-control" id="InputNumber" v-model="state.cellphone" />
                     <span v-if="v$.cellphone.$error">
                     {{ v$.cellphone.$errors[0].$message }}</span>
                    
@@ -46,7 +46,7 @@
               
                 <div class="mb-3">
                     <label for="InputEmail" class="form-label">Email</label>
-                    <input  type="text" name = "email" class="form-control" id="InputEmail" v-model="state.email" @blur="v$.state.email.$touch"/>
+                    <input  type="text" name = "email" class="form-control" id="InputEmail" v-model="state.email" />
                     <span v-if="v$.email.$error">
                     {{ v$.email.$errors[0].$message }}</span>
                 </div>
@@ -54,20 +54,20 @@
                
                 <div class="mb-3">
                     <label for="InputMessage" class="form-label">Message</label>
-                    <input  type="text" name = "messagetext" class="form-control pb-5" id="InputMessage" cols="30" rows= "10" v-model="state.messagetext" @blur="v$.state.messagetext.$touch"/>
+                    <input  type="text" name = "messagetext" class="form-control pb-5" id="InputMessage" cols="30" rows= "10" v-model="state.messagetext"/>
                     <span v-if="v$.messagetext.$error">
                     {{ v$.messagetext.$errors[0].$message }}</span>
 
                 </div>
 
-                <div class="mb-3">
-                    <!--<vue-recaptcha sitekey="6LfvMBwoAAAAAHBRBl_2OCBMvgygQgeOhT-IBTjk"></vue-recaptcha>-->
+                <!--<div class="mb-3">
+                    <vue-recaptcha sitekey="6LfvMBwoAAAAAHBRBl_2OCBMvgygQgeOhT-IBTjk"></vue-recaptcha>
                         <div class="g-recaptcha" :data-sitekey="state.recaptchaSiteKey" :data-callback="onRecaptchaClick"></div>
-                </div>
+                </div>-->
 
                 
               
-                <button type="submit" class="btn btn-outline" id="submit-button">Submit</button>
+                <button @click="showAlert" type="submit" class="btn btn-outline" id="submit-button">Submit</button>
             </form>
         </div>
 
@@ -178,14 +178,14 @@ export default {
 
     setup() {
 
-        const recaptchaResponse = ref(null);
+        //const recaptchaResponse = ref(null);
         
         const state = reactive({
             fullname: '',
             cellphone: '',
             email: '',
             messagetext: '',
-           recaptchaSiteKey: '6LfvMBwoAAAAAHBRBl_2OCBMvgygQgeOhT-IBTjk',
+          // recaptchaSiteKey: '6LfvMBwoAAAAAHBRBl_2OCBMvgygQgeOhT-IBTjk',
            
 
         });
@@ -209,7 +209,7 @@ export default {
         return {
             state,
             v$,
-            recaptchaResponse,
+            //recaptchaResponse,
             
            // VueRecaptcha,
            
@@ -240,21 +240,38 @@ export default {
             this.v$.$validate();
            
            //to validate recaptcha to see if it has been clicked
-           if (recaptchaResponse.value) {
+           /*if (recaptchaResponse.value) {*/
             if (!this.v$.$error) {
                 emailjs
                     .sendForm('service_ouebe0d', 'template_6yxd1di', this.$refs.myForm, 'n3c3fJnlqx0Zw7gBF')
                     .then((response) => {
-                    console.log('Email sent successfully', response);
+                        console.log('Email sent successfully', response);
                     //will send form to server/email.js here
+
+                    // Reset the form if there are no validation errors
+                this.$refs.myForm.reset();
+                
+                // You can also reset the validation state 
+                this.v$.$reset();
+
+                // Clear the form data to its reactive state
+                this.state.fullname = '';
+                this.state.cellphone = '';
+                this.state.email = '';
+                this.state.messagetext = '';
+
+                //display alert message when email successfully sent
+                this.$swal('Email successfully sent!');
+                    
                 })
                     .catch((errors) => {
                     console.error('Email sending failed', errors);
                 });
-            } else {
+            } /*else {
                 //display error message if recaptcha is not clicked
                 console.error('recaptcha not clicked!')
-            }
+            }*/
+            
            }
 
             
@@ -264,17 +281,18 @@ export default {
             //to open to new window when clicking on view for school website
         },
 
-        onRecaptchaClick(response) {
+       /* onRecaptchaClick(response) {
   // This method will be called when reCAPTCHA is clicked.
   recaptchaResponse.value = response;
 
-}
+},*/
+
 
     }
 
    
    
-}
+//}
 
 
 
