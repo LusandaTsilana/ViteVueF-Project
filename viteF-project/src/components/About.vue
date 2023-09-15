@@ -126,11 +126,11 @@ Now, I'm on the lookout for a full-time role where I can apply my coding skills 
 <div  class="container shadow p-3 mb-5 bg-body-tertiary rounded" id = "languages">
  <h3 class = "" id="languages-h">Programming Languages</h3> 
   <div class="row">
-    <div  class="col" v-motion-roll-visible-top><img src="@/assets/html.png" width="90" height="112"></div>
-    <div class="col" v-motion-roll-visible-top><img src="@/assets/css.png" width="90" height="112"></div>
-    <div class="col" v-motion-roll-visible-top><img src="@/assets/python.png" width="105" height="112"></div>
-    <div class="col" v-motion-roll-visible-top><img src="@/assets/java.png" width="120" height="112"></div>
-    <div class="col" v-motion-roll-visible-top><img src="@/assets/js.png" width="100" height="96"></div>
+    <div  class="col" ><img src="@/assets/html.png" width="90" height="112"></div>
+    <div class="col" ><img src="@/assets/css.png" width="90" height="112"></div>
+    <div class="col" ><img src="@/assets/python.png" width="105" height="112"></div>
+    <div class="col" ><img src="@/assets/java.png" width="120" height="112"></div>
+    <div class="col" ><img src="@/assets/js.png" width="100" height="96"></div>
   </div>
   
 </div>
@@ -275,11 +275,12 @@ h6{
 </style>
 
 <script>
-//import { MotionPlugin } from '@vueuse/motion'
+
 import { annotate, annotationGroup } from 'rough-notation'
 
 /*tried cleaning up code to avoid redundancy by using vue-rough-notation
 but had problems with render function, still under investigation*/
+
 
 document.addEventListener('DOMContentLoaded', function () {
   
@@ -298,7 +299,6 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 export default {
-
 
 
   data() {
