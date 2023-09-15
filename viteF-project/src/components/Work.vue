@@ -229,8 +229,7 @@ const isOpen = ref(false) // a DOM node
 
 const openLink = () => {
     //to open link in a new window
-}
-
+};
 
 
 </script>

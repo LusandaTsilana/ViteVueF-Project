@@ -275,7 +275,6 @@ h6{
 </style>
 
 <script>
-
 import { annotate, annotationGroup } from 'rough-notation'
 
 /*tried cleaning up code to avoid redundancy by using vue-rough-notation
@@ -315,6 +314,11 @@ export default {
       this.activeTab = tab1;
     },
   },
-};
+
+
+}
+
+
+
 
 </script>
