@@ -25,7 +25,7 @@
 
 
 
-            <form @submit.prevent="sendForm" ref="myForm" id="contactForm" >
+            <form @submit.prevent="sendForm" ref="myForm" id="contactForm" method="POST" >
               
                 <div class="mb-3">
                     <label for="InputName" class="form-label">Full Name</label>
@@ -275,11 +275,30 @@ export default {
            //to validate recaptcha to see if it has been clicked
            /*if (recaptchaResponse.value) {*/
             if (!this.v$.$error) {
-                emailjs
-                    .sendForm('service_ouebe0d', 'template_6yxd1di', this.$refs.myForm, 'n3c3fJnlqx0Zw7gBF')
-                    .then((response) => {
-                        console.log('Email sent successfully', response);
-                    //will send form to server/email.js here
+                const formData = {
+                    fullname: state.fullname,
+                    cellphone: state.cellphone,
+                    email: state.email,
+                    messagetext: state.messagetext,
+                };
+                try {
+                    const response = await fetch('https://lusandatdev-3a669-default-rtdb.firebaseio.com/', {
+                        method: 'POST',
+                        body: JSON.stringify(formData),
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                    });
+
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+
+                    console.log('Form data sent to Firebase');
+
+                    //show that form submission successful below
+
+                     this.showAlert();
 
                     // Reset the form if there are no validation errors
                 this.$refs.myForm.reset();
@@ -292,17 +311,15 @@ export default {
                 this.state.cellphone = '';
                 this.state.email = '';
                 this.state.messagetext = '';
-
-                //display alert message when email successfully sent
-                this.showAlert();
+               
                
                     
-                })
-                    .catch((errors) => {
+              
+                } catch(errors){
                     console.error('Email sending failed', errors);
                     this.showError();
                
-                });
+                };
             } /*else {
                 //display error message if recaptcha is not clicked
                 console.error('recaptcha not clicked!')
