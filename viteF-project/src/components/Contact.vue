@@ -25,7 +25,7 @@
 
 
 
-            <form @submit.prevent="sendForm" ref="myForm" >
+            <form @submit.prevent="sendForm" ref="myForm" id="contactForm" >
               
                 <div class="mb-3">
                     <label for="InputName" class="form-label">Full Name</label>
