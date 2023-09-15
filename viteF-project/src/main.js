@@ -9,10 +9,14 @@ import '@vueuse/motion'
 import 'motion'
 import 'vue-rough-notation'
 import '@emailjs/browser'
-import 'vue-sweetalert2';
+import VueSweetalert2 from 'vue-sweetalert2';
+import 'sweetalert2/dist/sweetalert2.min.css';
+import { VueRecaptchaPlugin } from 'vue-recaptcha'
 
 
 
-createApp(App).use(router).mount('#app')
+createApp(App).use(router, VueSweetalert2, VueRecaptchaPlugin, {
+    v2SiteKey: '6LfvMBwoAAAAAHBRBl_2OCBMvgygQgeOhT-IBTjk',
+}).mount('#app')
 
 

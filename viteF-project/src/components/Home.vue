@@ -16,7 +16,7 @@
         </div>
     </div>
     <div class="col">
-        <img src="@/assets/portrait.jpg" class = "" alt="portrait" id = "portrait" width="433.56" height="500">
+        <img src="@/assets/portraitF.png" class = "" alt="portrait" id = "portrait" width="483.56" height="550">
         <img src="@/assets/stripes.png" class="" alt="stripes" id="stripes1" width="180.38" height="129.11">
         <img src="@/assets/stripes.png" class="" alt="stripes" id="stripes2" width="125.75" height="79.54">
     </div>
@@ -51,7 +51,7 @@
  z-index: 1;
  left: 78%;
  top: 13%;
-  
+  display: none;
 }
 
 
@@ -61,6 +61,7 @@
   z-index: 1;
   left: 48%;
   top: 70%;
+  display: none;
 }
 
 #name{
@@ -154,8 +155,8 @@ p{
   }
 
   img{
-    width: 275px;
-    height: 317px;
+    width: 375px;
+    height: 337px;
     display: flex;
     justify-content: center;
     align-items: center;

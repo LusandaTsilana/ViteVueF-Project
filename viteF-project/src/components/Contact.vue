@@ -67,7 +67,7 @@
 
                 
               
-                <button @click="showAlert" type="submit" class="btn btn-outline" id="submit-button">Submit</button>
+                <button type="submit" class="btn btn-outline" id="submit-button">Submit</button>
             </form>
         </div>
 
@@ -164,10 +164,12 @@ span{
 
 import { useVuelidate } from '@vuelidate/core'
 import { required, alpha, numeric, email, minLength, maxLength } from '@vuelidate/validators'
-import { reactive, computed, ref } from 'vue'
+import { reactive, computed} from 'vue'
 import emailjs from '@emailjs/browser';
-import  VueSweetalert2  from 'vue-sweetalert2'
-import 'sweetalert2/dist/sweetalert2.min.css';
+import Swal from 'sweetalert2';
+
+
+
 //import VueRecaptcha from 'vue-recaptcha'
 
 
@@ -181,10 +183,19 @@ export default {
     setup() {
 
         //const recaptchaResponse = ref(null);
-       
+        const swal = Swal.mixin({
+            position: 'center', // Change position to 'center'
+            showCloseButton: true,
+        });
 
-       
-        
+        const showAlert = () => {
+        swal.fire({
+        icon: 'success',
+        title: 'Form Submitted!',
+        text: 'Thank you!',
+      });
+    };
+
         const state = reactive({
             fullname: '',
             cellphone: '',
@@ -211,9 +222,12 @@ export default {
 
 
         const v$ = useVuelidate(rules, state);
+
+
         return {
             state,
             v$,
+            showAlert,
             
            
             //recaptchaResponse,
@@ -224,6 +238,8 @@ export default {
            
         };
     },
+
+
     minLength(min) {
         return {
             $property: "cellphone",
@@ -241,6 +257,7 @@ export default {
         };
     },
     methods: {
+
         
         async sendForm() {
             //to validate form fields using vuelidate
@@ -268,6 +285,7 @@ export default {
                 this.state.messagetext = '';
 
                 //display alert message when email successfully sent
+                this.showAlert();
                
                     
                 })
@@ -279,10 +297,8 @@ export default {
                 console.error('recaptcha not clicked!')
             }*/
             
-           }
+           },
 
-            
-           
         },
         openLink() {
             //to open to new window when clicking on view for school website
