@@ -196,6 +196,14 @@ export default {
       });
     };
 
+    const showError = () => {
+        swal.fire({
+        icon: 'error',
+        title: 'Form not submitted',
+        text: 'Please try again later',
+      });
+    };
+
         const state = reactive({
             fullname: '',
             cellphone: '',
@@ -228,6 +236,7 @@ export default {
             state,
             v$,
             showAlert,
+            showError,
             
            
             //recaptchaResponse,
@@ -291,6 +300,8 @@ export default {
                 })
                     .catch((errors) => {
                     console.error('Email sending failed', errors);
+                    this.showError();
+               
                 });
             } /*else {
                 //display error message if recaptcha is not clicked
