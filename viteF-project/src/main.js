@@ -4,7 +4,7 @@ import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap/dist/js/bootstrap.js'
 import '@/style.css'
 import App from '@/App.vue'
-import router from '@/plugins/router'
+import router from '@/plugins/router.js'
 
 import 'motion'
 import 'vue-rough-notation'

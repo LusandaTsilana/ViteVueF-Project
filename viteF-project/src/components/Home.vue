@@ -1,6 +1,6 @@
 
 
-<template>
+<template id="#home">
 
 <div id = "box" class="container text-start">
   <div id = "boxx" class="row align-items-start">

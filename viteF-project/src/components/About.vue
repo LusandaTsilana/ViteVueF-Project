@@ -1,5 +1,5 @@
 
-<template>
+<template >
     <h1 class = "display-4" >About</h1>
 
     <div class="container" id="summary">

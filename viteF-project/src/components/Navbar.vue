@@ -9,16 +9,16 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="/home" >HOME</a>
+          <router-link to="/home">home</router-link>
         </li>
         <li class="nav-item">
-          <a class="nav-link " href="/about">ABOUT</a>
+          <router-link to="/about">ABOUT</router-link>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/work">WORK</a>
+          <router-link to="/work">work</router-link>
         </li>
         <li class="nav-item">
-          <a class="nav-link " href="/contact">CONTACT</a>
+          <router-link to="/contact">c</router-link>
         </li>
       </ul>
     </div>
