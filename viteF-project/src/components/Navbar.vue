@@ -2,23 +2,23 @@
 <template>
   <nav class="navbar navbar-expand-lg shadow-sm" id="navbar">
   <div class="container-fluid">
-    <a class="navbar-brand" href="/home"><img src="@/assets/lusandalogo.png" alt="Logo" width="53.08" height="50" class="d-inline-block align-text-top"></a>
+    <a class="navbar-brand" id="logo"><router-link to="/home"><img src="@/assets/lusandalogo.png" alt="Logo" width="53.08" height="50" class="d-inline-block align-text-top"></router-link></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link"><router-link to="/home">HOME</router-link></a>
+          <router-link to="/home"><a class="nav-link">HOME</a></router-link>
         </li>
         <li class="nav-item">
-          <a class="nav-link"><router-link to="/about">ABOUT</router-link></a>
+          <router-link to="/about"><a class="nav-link">ABOUT</a></router-link>
         </li>
         <li class="nav-item">
-          <a class="nav-link"><router-link to="/work">WORK</router-link></a>
+          <router-link to="/work"><a class="nav-link">WORK</a></router-link>
         </li>
         <li class="nav-item">
-          <a class="nav-link"><router-link to="/contact">CONTACT</router-link></a>
+          <router-link to="/contact"><a class="nav-link">CONTACT</a></router-link>
         </li>
       </ul>
     </div>
@@ -101,11 +101,11 @@ nav ul li a:hover::after{
     background-color: white;
     text-align: center;
   }
-  a:hover{
+  .nav-link:hover{
     background-color: rgb(205, 224, 202);
   }
  
-  a::after{
+  nav ul li a::after{
   display: none;
 }
     }
