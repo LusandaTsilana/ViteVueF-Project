@@ -187,7 +187,7 @@ p{
 </style>
 
 <script>
-import { onMounted } from 'vue'
+import { onMounted, provide } from 'vue'
 import { animate, spring } from 'motion'
 
 import { 
@@ -224,9 +224,10 @@ export default{
       serviceUrl: "https://ej2services.syncfusion.com/production/web-services/api/pdfviewer",
       documentPath: "@/assets/LUSANDA T CV 2023.pdf"
     };
+    
 
     // Provide the PdfViewer options
-    provide('PdfViewer', [Toolbar, Magnification, Navigation, LinkAnnotation, BookmarkView, ThumbnailView, Print, TextSelection, TextSearch, Annotation, FormFields, FormDesigner]);
+    provide(PdfViewerPlugin, [Toolbar, Magnification, Navigation, LinkAnnotation, BookmarkView, ThumbnailView, Print, TextSelection, TextSearch, Annotation, FormFields, FormDesigner]);
 
     return {
       pdfViewerConfig, // Make pdfViewerConfig accessible in your template
