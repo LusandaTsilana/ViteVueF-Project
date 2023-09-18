@@ -9,16 +9,16 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <router-link to="/home">home</router-link>
+          <a class="nav-link"><router-link to="/home">HOME</router-link></a>
         </li>
         <li class="nav-item">
-          <router-link to="/about">ABOUT</router-link>
+          <a class="nav-link"><router-link to="/about">ABOUT</router-link></a>
         </li>
         <li class="nav-item">
-          <router-link to="/work">work</router-link>
+          <a class="nav-link"><router-link to="/work">WORK</router-link></a>
         </li>
         <li class="nav-item">
-          <router-link to="/contact">c</router-link>
+          <a class="nav-link"><router-link to="/contact">CONTACT</router-link></a>
         </li>
       </ul>
     </div>
@@ -64,7 +64,7 @@ nav ul li a::after{
   width: 0%;
   height: 1.5px;
   position: absolute;
-  bottom: -5px;
+  bottom: -5px; 
   left: 50%;
   transform: translateX(-50%);
   background: black;
@@ -95,19 +95,17 @@ nav ul li a:hover::after{
       
     }
 
-    
-
 
     @media (max-width: 992px) {
   #navbar{
     background-color: white;
     text-align: center;
   }
-  li a:hover{
+  a:hover{
     background-color: rgb(205, 224, 202);
   }
  
-  nav ul li a::after{
+  a::after{
   display: none;
 }
     }

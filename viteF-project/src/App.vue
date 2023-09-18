@@ -2,7 +2,7 @@
     <div id="app">
       <Navbar/> <!-- Global component -->
       
-      <router-view/> Render the matched view based on the current route
+      <router-view/> <!--Render the matched view based on the current route-->
       <FooterBand/>
     </div>
   </template>
