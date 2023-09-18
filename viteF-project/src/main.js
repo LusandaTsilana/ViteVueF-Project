@@ -11,8 +11,10 @@ import 'vue-rough-notation'
 import '@emailjs/browser'
 import VueSweetalert2 from 'vue-sweetalert2';
 import 'sweetalert2/dist/sweetalert2.min.css';
+import { PdfViewerPlugin } from '@syncfusion/ej2-vue-pdfviewer';
 
 
-createApp(App).use(router, VueSweetalert2).mount('#app')
+
+createApp(App).use(router, VueSweetalert2, PdfViewerPlugin).mount('#app')
 
 

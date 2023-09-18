@@ -12,7 +12,13 @@
 
       <div id="buttons">
       <button type="button" class="btn btn" id="buttonn"><a href="/contact">Contact</a></button>
-      <button type="button" class="btn btn" id="buttonn"><a href="@/assets/LUSANDA T CV 2023.pdf" target="_blank" >Resume</a></button>
+      <button type="button" class="btn btn" id="buttonn">
+        <ejs-pdfviewer 
+      id="pdfViewer" 
+      :serviceUrl="serviceUrl" 
+      :documentPath="documentPath">Resume</ejs-pdfviewer>
+      </button>
+
         </div>
     </div>
     <div class="col">
@@ -27,8 +33,15 @@
 </template>
 
 <style scoped>
-
-
+/*--css imports for pdfViewer --*/
+@import '@syncfusion/ej2-base/styles/material.css';  
+  @import '@syncfusion/ej2-buttons/styles/material.css';
+  @import '@syncfusion/ej2-dropdowns/styles/material.css';  
+  @import '@syncfusion/ej2-inputs/styles/material.css';  
+  @import '@syncfusion/ej2-navigations/styles/material.css';
+  @import '@syncfusion/ej2-popups/styles/material.css';
+  @import '@syncfusion/ej2-splitbuttons/styles/material.css';
+  @import "@syncfusion/ej2-vue-pdfviewer/styles/material.css";
 
 #box{
     margin-top: 60px;
@@ -145,6 +158,7 @@ p{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-top: 25px;
   }
 
   #buttons{
@@ -155,8 +169,8 @@ p{
   }
 
   img{
-    width: 375px;
-    height: 337px;
+    width: 395px;
+    height: 357px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -176,33 +190,47 @@ p{
 import { onMounted } from 'vue'
 import { animate, spring } from 'motion'
 
+import { 
+  PdfViewerPlugin, 
+  Toolbar, 
+  Magnification, 
+  Navigation, 
+  LinkAnnotation, 
+  BookmarkView,
+  ThumbnailView, 
+  Print,
+  TextSelection, 
+  TextSearch, 
+  Annotation, 
+  FormDesigner, 
+  FormFields } from '@syncfusion/ej2-vue-pdfviewer';
+
+
+
 export default{
+  setup() {
+    // Animation code here
+    onMounted(() => {
+      const animation = animate("#buttonn", { scale: 1.1 }, {
+        duration: 1, // as in 1 sec
+        easing: spring(),
+        repeat: Infinity,
+        direction: "alternate",
+      });
+    });
 
-  
+    // PDF Viewer configuration
+    const pdfViewerConfig = {
+      serviceUrl: "https://ej2services.syncfusion.com/production/web-services/api/pdfviewer",
+      documentPath: "@/assets/LUSANDA T CV 2023.pdf"
+    };
 
-setup() {
+    // Provide the PdfViewer options
+    provide('PdfViewer', [Toolbar, Magnification, Navigation, LinkAnnotation, BookmarkView, ThumbnailView, Print, TextSelection, TextSearch, Annotation, FormFields, FormDesigner]);
 
-  //when page mounts, we should have access to the DOM
-//for animation
- onMounted(() => {
-      const animation = animate("#buttonn", { scale: 1.1 },
-    {
-      duration: 1, // as in 1 sec
-      easing: spring(),
-      repeat: Infinity,
-      direction: "alternate",
-
-    }
-
-  );
-})
-
-
-
+    return {
+      pdfViewerConfig, // Make pdfViewerConfig accessible in your template
+    };
+  },
 }
-
-}
-
- 
-
 </script>

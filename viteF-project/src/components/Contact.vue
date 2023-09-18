@@ -108,6 +108,10 @@ div a {
     color: black;
 }
 
+div p:hover{
+    color: rgb(43, 72, 38);
+}
+
 #form-box {
     padding: 100px;
     width: 50%;
@@ -218,7 +222,7 @@ export default {
 
         const rules = computed(() => {
             return {
-                fullname: { required, alpha },
+                fullname: { required },
                 cellphone: { numeric,
                     minLength: minLength(10),
                     maxLength: maxLength(10) },

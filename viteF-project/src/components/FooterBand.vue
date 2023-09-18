@@ -44,6 +44,10 @@ footer a{
     color:black;
 }
 
+footer a:hover{
+    color: rgb(43, 72, 38);
+}
+
 i{
     margin-right: 10px;
     margin-left: 10px;
