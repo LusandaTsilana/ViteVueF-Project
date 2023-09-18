@@ -101,7 +101,7 @@ nav ul li a:hover::after{
     background-color: white;
     text-align: center;
   }
-  .nav-link:hover{
+  .nav-item:hover{
     background-color: rgb(205, 224, 202);
   }
  
