@@ -11,7 +11,7 @@
   <div class="row">
     <div class="col" id="cardcol">
         <div class="card" style="width: 25rem;">
-        <img src="@/assets/school kids.jpg" class="card-img-top" alt="...">
+        <img src="@/assets/schoolkids.jpg" class="card-img-top" alt="...">
         <div class="card-body">
             <h5 class="card-title">Mzamomtsha Primary School</h5>
             <a href="https://melodic-nasturtium-8a6e3c.netlify.app/" target="_blank" @click="openLink()"> <i class="bi bi-link-45deg"></i> View</a>
