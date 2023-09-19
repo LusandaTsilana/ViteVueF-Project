@@ -90,7 +90,7 @@
 #buttonn{
     margin: 10px;
     padding: 5px 10px;
-    border-radius: 0%;
+    border-radius: 3%;
     border: 1px solid gray;
     font-size: 14px;
     
@@ -114,7 +114,7 @@ p{
 }
 
 .high{
-  width: 300px;
+    width: 300px;
     margin-top: 45px;
     margin-bottom: 20px;
     padding-bottom: 10px;

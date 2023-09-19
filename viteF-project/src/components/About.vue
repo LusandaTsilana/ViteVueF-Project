@@ -180,7 +180,7 @@ h6{
 
 .qualification_sections{
   margin-top: 20px;
-  font-size: 14px;
+  font-size: 16px;
   
 }
 
@@ -211,6 +211,7 @@ h6{
   
   
 }
+
 
 
 #parabox{
@@ -277,46 +278,48 @@ h6{
 <script>
 import { annotate, annotationGroup } from 'rough-notation'
 
+
 /*tried cleaning up code to avoid redundancy by using vue-rough-notation
 but had problems with render function, still under investigation*/
 
 
 document.addEventListener('DOMContentLoaded', function () {
   
-  const a1 = annotate(document.querySelector('#highA'), { type: 'highlight', color: 'gold' });
-  const a2 = annotate(document.querySelector('#highB'), { type: 'highlight', color: 'orange' });
-  const a3 = annotate(document.querySelector('#highC'), { type: 'highlight', color: 'pink' });
-  const a4 = annotate(document.querySelector('#highD'), { type: 'highlight', color: 'gold', multiline: true });
-  const a5 = annotate(document.querySelector('#highE'), { type: 'highlight', color: 'orange' });
-  const a6 = annotate(document.querySelector('#highF'), { type: 'highlight', color: 'pink', multiline: true });
-  const a7 = annotate(document.querySelector('#highG'), { type: 'highlight', color: 'pink', multiline: true });
+   const a1 = annotate(document.querySelector('#highA'), { type: 'highlight', color: 'gold' });
+   const a2 = annotate(document.querySelector('#highB'), { type: 'highlight', color: 'orange' });
+   const a3 = annotate(document.querySelector('#highC'), { type: 'highlight', color: 'pink' });
+   const a4 = annotate(document.querySelector('#highD'), { type: 'highlight', color: 'gold', multiline: true });
+   const a5 = annotate(document.querySelector('#highE'), { type: 'highlight', color: 'orange' });
+   const a6 = annotate(document.querySelector('#highF'), { type: 'highlight', color: 'pink', multiline: true });
+   const a7 = annotate(document.querySelector('#highG'), { type: 'highlight', color: 'pink', multiline: true });
 
-  const a8 = annotate(document.querySelector('#circle'), { type: 'circle', color: 'green' });
+   const a8 = annotate(document.querySelector('#circle'), { type: 'circle', color: 'green' });
 
-  const ag = annotationGroup([a1, a2,a3, a4, a5, a6, a7, a8]);
-  ag.show();
-});
+   const ag = annotationGroup([a1, a2,a3, a4, a5, a6, a7, a8]);
+      ag.show();
+ });
+
 
 export default {
 
 
   data() {
-
     return {
       activeTab: 'initial',
-      
-      
-    }
+      isShow: true,
+    };
   },
 
   methods: {
-    toggleTab(tab1){
+    toggleTab(tab1) {
       this.activeTab = tab1;
     },
   },
+};
 
 
-}
+
+
 
 
 

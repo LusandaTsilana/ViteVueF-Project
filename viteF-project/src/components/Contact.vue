@@ -9,7 +9,7 @@
             <h5>Talk to me</h5>
 
             <div class="col shadow-sm p-3 mb-5 bg-body-tertiary rounded">
-                <p><a href=""><i class="bi bi-envelope-at"></i></a>sanda.tsilana@gmail.com</p>
+                <p class=""><a href=""><i class="bi bi-envelope-at"></i></a>sanda.tsilana<br>@gmail.com</p>
             </div>
             <div class="col shadow-sm p-3 mb-5 bg-body-tertiary rounded">
                 <p><a href="https://www.linkedin.com/in/lusanda-tsilana31" target="_blank" @click="openLink()"><i class="bi bi-linkedin" id="linkedin"></i></a>Linkedin</p>
@@ -158,7 +158,7 @@ span{
     #contact-modes,
     #form-box {
         padding: 100px;
-        width: 60%;
+        width: 70%;
         
     }
 
@@ -169,8 +169,8 @@ span{
 <script>
 
 import { useVuelidate } from '@vuelidate/core'
-import { required, alpha, numeric, email, minLength, maxLength } from '@vuelidate/validators'
-import { reactive, computed} from 'vue'
+import { required, numeric, email, minLength, maxLength } from '@vuelidate/validators'
+import { reactive, computed, ref} from 'vue'
 import emailjs from '@emailjs/browser';
 import Swal from 'sweetalert2';
 
@@ -188,7 +188,9 @@ export default {
 
     setup() {
 
-        //const recaptchaResponse = ref(null);
+        const recaptchaResponse = ref(null);
+
+
         const swal = Swal.mixin({
             position: 'center', // Change position to 'center'
             showCloseButton: true,
@@ -215,7 +217,7 @@ export default {
             cellphone: '',
             email: '',
             messagetext: '',
-          // recaptchaSiteKey: '6LfvMBwoAAAAAHBRBl_2OCBMvgygQgeOhT-IBTjk',
+            recaptchaSiteKey: '6LfvMBwoAAAAAHBRBl_2OCBMvgygQgeOhT-IBTjk',
            
 
         });
@@ -226,8 +228,8 @@ export default {
                 cellphone: { numeric,
                     minLength: minLength(10),
                     maxLength: maxLength(10) },
-                email: { required, email },
-                messagetext: {
+                    email: { required, email },
+                    messagetext: {
                     required
                 },
                
@@ -243,11 +245,8 @@ export default {
             v$,
             showAlert,
             showError,
+            recaptchaResponse,
             
-           
-            //recaptchaResponse,
-            
-           // VueRecaptcha,
            
             
            
@@ -279,7 +278,7 @@ export default {
             this.v$.$validate();
            
            //to validate recaptcha to see if it has been clicked
-           /*if (recaptchaResponse.value) {*/
+           if (recaptchaResponse.value) {
             if (!this.v$.$error) {
                 emailjs
                     .sendForm('service_ouebe0d', 'template_6yxd1di', this.$refs.myForm, 'n3c3fJnlqx0Zw7gBF')
@@ -310,23 +309,23 @@ export default {
                     this.showError();
                
                 });
-            } /*else {
+            } else {
                 //display error message if recaptcha is not clicked
                 console.error('recaptcha not clicked!')
-            }*/
+            };
             
-           },
+           }
 
         },
         openLink() {
             //to open to new window when clicking on view for school website
         },
 
-       /* onRecaptchaClick(response) {
+        onRecaptchaClick(response) {
   // This method will be called when reCAPTCHA is clicked.
   recaptchaResponse.value = response;
 
-},*/
+},
 
        
 
@@ -335,7 +334,7 @@ export default {
 
    
    
-//}
+}
 
 
 

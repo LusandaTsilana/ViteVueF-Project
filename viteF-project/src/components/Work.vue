@@ -10,8 +10,8 @@
         <div class="container text-center">
   <div class="row">
     <div class="col" id="cardcol">
-        <div class="card" style="width: 22rem;">
-        <img src="@/assets/school.jpg" class="card-img-top" alt="...">
+        <div class="card" style="width: 25rem;">
+        <img src="@/assets/school kids.jpg" class="card-img-top" alt="...">
         <div class="card-body">
             <h5 class="card-title">Mzamomtsha Primary School</h5>
             <a href="https://melodic-nasturtium-8a6e3c.netlify.app/" target="_blank" @click="openLink()"> <i class="bi bi-link-45deg"></i> View</a>
@@ -21,9 +21,9 @@
     <div id="MZ-text" class="col">
         <p>Working collaboratively with my team to develop an <span id="high1">online presence</span> for Mzamomtsha Primary School. Throughout the project, we utilized our collective skills in <span id="high2">HTML</span>, <span id="high3">CSS</span> and <span id="high4">Javascript</span> while following the Software Developement Lifecycle</p>
         
-        <div v-auto-animate class="p-8 rounded">
-            <h5 @click="isOpen = !isOpen" ><button>Software Developement Cycle</button></h5>
-            <p v-if="isOpen" class="py-8" id="proj">
+        <div ref="dropdown" class="p-8 rounded">
+            <h5 @click="isOpen = !isOpen" class="dropdown-label"><button>Software Developement Cycle</button></h5>
+            <p v-if="isOpen" class="dropdown-content py-8" id="proj">
             <ul>
                 <li><strong>Initiation:</strong> Team formation and task delegation</li>
                 <li><strong>Research:</strong> Information gathering, requirements analysis</li>
@@ -49,7 +49,7 @@
         <div class="container text-center">
   <div class="row">
     <div class="col" id="cardcol">
-        <div class="card" style="width: 22rem;">
+        <div class="card" style="width: 25rem;">
         <img src="@/assets/SARS-logo.jpg" class="card-img-top" alt="...">
         <div class="card-body">
             <h5 class="card-title">SARS tax calculator</h5>
@@ -60,9 +60,9 @@
     <div id="MZ-text" class="col">
         <p>A tax calculator system was developed with <span id="high7">Java </span>to be used by people to calculate their tax obligations using their annual incomes. </p>
         
-        <div v-auto-animate class="p-8 rounded">
-            <h5 @click="isOpen = !isOpen" ><button>Software Developement Cycle</button></h5>
-            <p v-if="isOpen" class="py-8" id="proj">
+        <div ref="dropdown" class="p-8 rounded">
+            <h5 @click="isOpen = !isOpen" class="dropdown-label"><button>Software Developement Cycle</button></h5>
+            <p v-if="isOpen" class="dropdown-content py-8" id="proj">
             <ul>
                 <li><strong>Research:</strong> Information gathering based on income tax 2023/2024</li>
                 <li><strong>Design:</strong> Creating a wireframe  <a href="https://www.figma.com/proto/owgymaQOAUmKEsBcvN3sLY/TAX-CALCULATOR-SYSTEM-APP?page-id=0%3A1&node-id=1-2&mode=design&t=g9fjNpwlOiV8hMyA-1" target="_blank" @click="openLink()"> <i class="bi bi-link-45deg"></i> View</a></li>
@@ -83,29 +83,37 @@
 
 
 <div id = "MS-box" class="col shadow p-3 mb-5 bg-body-tertiary rounded">
-    <h4 id="MS" class="">My Services</h4>
+    <h4 id="MS" class="">My Expertise</h4>
     <div class="row" id="serv.row">
     <div class="col">
-        <img src="@/assets/UIUX.png">
+       <img src="@/assets/coding.gif">
         <br>
         <br>
-        <h5><span id="hh">UI/UX Design</span></h5><br>
+        <h5><span id="hh">Software Developement</span></h5><br>
     </div>
     <div class="col">
-        <img src="@/assets/unnamed.png" width="230" height="230">
-        <h5><span id="hh">Web Development </span></h5><br>
+        <h5><span id="hh">Front End Dev </span></h5><br>
            
     </div>
-    <div class="col">
-       
-        <img src="@/assets/image.png" width="200" height="200">
-        <br>
-        <br>
-        <h5><span id="hh">Mobile Development </span></h5><br>
-    </div>
     </div>
 </div>
+
+<div class="container text-center">
+  <div class="row">
+    <div class="col align-self-start">
+      One of three columns
+    </div>
+    </div>
+    <div class="row"><div class="col align-self-center">
+      Two of three columns
+    </div></div>
+    <div class="row"><div class="col align-self-end">
+      Three of three columns
+    </div></div>
+   
+  </div>
 </div>
+
   
 </template>
 
@@ -122,6 +130,17 @@ h5{
     text-align: center;
 }
 
+button{
+    margin: 10px;
+    padding: 5px 10px;
+    border-radius: 3%;
+    border: 1px solid gray;
+}
+
+button:hover{
+    background-color: rgb(155, 209, 146);
+}
+
 #hh{
     color: rgb(69, 92, 65);
 }
@@ -136,6 +155,15 @@ h5{
     text-align: center;
     
 }
+
+.card, img{
+    transition: transform 0.3s ease;
+}
+
+.card:hover{
+    transform: scale(1.1);
+}
+
 
 
 #cardcol{
@@ -207,7 +235,7 @@ li{
 
 <script setup>
 import { ref, onMounted } from "vue"
-import { vAutoAnimate } from "@formkit/auto-animate"
+import autoAnimate from "@formkit/auto-animate"
 import { annotate, annotationGroup } from 'rough-notation'
 
 
@@ -224,7 +252,12 @@ document.addEventListener('DOMContentLoaded', function () {
   ag.show();
 });
 
+const dropdown = ref()
 const isOpen = ref(false) // a DOM node
+
+onMounted(() => {
+  autoAnimate(dropdown.value) // thats it!
+})
 
 
 const openLink = () => {
