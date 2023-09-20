@@ -60,10 +60,10 @@
 
                 </div>
 
-                <!--<div class="mb-3">
-                    <vue-recaptcha sitekey="6LfvMBwoAAAAAHBRBl_2OCBMvgygQgeOhT-IBTjk"></vue-recaptcha>
+                <div class="mb-3">
                         <div class="g-recaptcha" :data-sitekey="state.recaptchaSiteKey" :data-callback="onRecaptchaClick"></div>
-                </div>-->
+                        <div id="html_element"></div>
+                </div>
 
                 
               
@@ -125,8 +125,8 @@ div p:hover{
 
 .g-recaptcha{
     display: block;
-    min-height: 100px;
-    min-width: 100px;
+    height: 100px;
+    width: 100px;
 }
 
 .col {
@@ -278,7 +278,7 @@ export default {
             this.v$.$validate();
            
            //to validate recaptcha to see if it has been clicked
-           if (recaptchaResponse.value) {
+           if (this.recaptchaResponse) {
             if (!this.v$.$error) {
                 emailjs
                     .sendForm('service_ouebe0d', 'template_6yxd1di', this.$refs.myForm, 'n3c3fJnlqx0Zw7gBF')
@@ -322,19 +322,34 @@ export default {
         },
 
         onRecaptchaClick(response) {
-  // This method will be called when reCAPTCHA is clicked.
-  recaptchaResponse.value = response;
+            // This method will be called when reCAPTCHA is clicked.
+             this.recaptchaResponse = response;
 
 },
 
        
 
 
-    }
+    },
+
+    mounted() {
+    // Define the onloadCallback function here
+    var onloadCallback = function() {
+      // You can add any additional initialization code here if needed
+    };
+
+    // Load reCAPTCHA script
+    const script = document.createElement("script");
+    script.src = "https://www.google.com/recaptcha/api.js?render=explicit";
+    script.async = true;
+    script.defer = true;
+    script.onload = onloadCallback;
+    document.head.appendChild(script);
+  },
 
    
    
-}
+};
 
 
 

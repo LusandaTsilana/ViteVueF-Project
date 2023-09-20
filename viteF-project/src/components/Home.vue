@@ -33,15 +33,6 @@
 </template>
 
 <style scoped>
-/*--css imports for pdfViewer --*/
-@import '@syncfusion/ej2-base/styles/material.css';  
-  @import '@syncfusion/ej2-buttons/styles/material.css';
-  @import '@syncfusion/ej2-dropdowns/styles/material.css';  
-  @import '@syncfusion/ej2-inputs/styles/material.css';  
-  @import '@syncfusion/ej2-navigations/styles/material.css';
-  @import '@syncfusion/ej2-popups/styles/material.css';
-  @import '@syncfusion/ej2-splitbuttons/styles/material.css';
-  @import "@syncfusion/ej2-vue-pdfviewer/styles/material.css";
 
 #box{
     margin-top: 60px;
@@ -190,22 +181,6 @@ p{
 import { onMounted, provide } from 'vue'
 import { animate, spring } from 'motion'
 
-import { 
-  PdfViewerPlugin, 
-  Toolbar, 
-  Magnification, 
-  Navigation, 
-  LinkAnnotation, 
-  BookmarkView,
-  ThumbnailView, 
-  Print,
-  TextSelection, 
-  TextSearch, 
-  Annotation, 
-  FormDesigner, 
-  FormFields } from '@syncfusion/ej2-vue-pdfviewer';
-
-
 
 export default{
   setup() {
@@ -219,19 +194,8 @@ export default{
       });
     });
 
-    // PDF Viewer configuration
-    const pdfViewerConfig = {
-      serviceUrl: "https://ej2services.syncfusion.com/production/web-services/api/pdfviewer",
-      documentPath: "@/assets/LUSANDA T CV 2023.pdf"
-    };
-    
 
-    // Provide the PdfViewer options
-    provide(PdfViewerPlugin, [Toolbar, Magnification, Navigation, LinkAnnotation, BookmarkView, ThumbnailView, Print, TextSelection, TextSearch, Annotation, FormFields, FormDesigner]);
-
-    return {
-      pdfViewerConfig, // Make pdfViewerConfig accessible in your template
-    };
+  
   },
 }
 </script>

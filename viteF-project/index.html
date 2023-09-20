@@ -12,6 +12,13 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fuzzy+Bubbles&family=Philosopher&display=swap" rel="stylesheet">
     <script src="https://www.google.com/recaptcha/api.js" async = true></script>
+    <script type="text/javascript">
+      var onloadCallback = function() {
+        grecaptcha.render('html_element', {
+          'sitekey' : '6LfvMBwoAAAAAHBRBl_2OCBMvgygQgeOhT-IBTjk'
+        });
+      };
+    </script>
 
     
     <title>LusandaTsilanaDev</title>
@@ -19,7 +26,10 @@
   <body>
     <div id="app"></div>
     <script type="module" src="./src/main.js"></script>
-    
-  
+   
+    <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit"
+    async defer>
+</script>
+
   </body>
 </html>
