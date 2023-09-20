@@ -1,8 +1,11 @@
 <template>
     <div id="app">
       <Navbar/> <!-- Global component -->
-      <router-view/>
+      <Home/>
       <!--Render the matched view based on the current route-->
+      <About/>
+      <Projects/>
+      <Contact/>
       <FooterBand/>
     </div>
   </template>
@@ -14,7 +17,7 @@
   import '@/style.css'; // Import main style.css file
   import Home from "@/components/Home.vue";
   import About from "@/components/About.vue";
-  import Work from "@/components/Work.vue";
+  import Projects from "@/components/Projects.vue";
   import Contact from "@/components/Contact.vue";
   import FooterBand from '@/components/FooterBand.vue';
  
@@ -25,7 +28,7 @@
       Navbar,
       Home,
       About,
-      Work,
+      Projects,
       Contact,
       FooterBand,
      

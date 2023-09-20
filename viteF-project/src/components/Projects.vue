@@ -1,6 +1,6 @@
 
 <template>
-<h1 class = "display-4" >Work</h1>
+<h1 class = "display-4" >Projects</h1>
 
 <div class="container">
 
@@ -10,7 +10,7 @@
         <div class="container text-center">
   <div class="row">
     <div class="col" id="cardcol">
-        <div class="card" style="width: 25rem;">
+        <div class="card" id="cards" style="width: 25rem;">
         <img src="@/assets/schoolkids.jpg" class="card-img-top" alt="...">
         <div class="card-body">
             <h5 class="card-title">Mzamomtsha Primary School</h5>
@@ -49,7 +49,7 @@
         <div class="container text-center">
   <div class="row">
     <div class="col" id="cardcol">
-        <div class="card" style="width: 25rem;">
+        <div class="card" id="cards" style="width: 25rem;">
         <img src="@/assets/SARS-logo.jpg" class="card-img-top" alt="...">
         <div class="card-body">
             <h5 class="card-title">SARS tax calculator</h5>
@@ -60,9 +60,9 @@
     <div id="MZ-text" class="col">
         <p>A tax calculator system was developed with <span id="high7">Java </span>to be used by people to calculate their tax obligations using their annual incomes. </p>
         
-        <div ref="dropdown" class="p-8 rounded">
-            <h5 @click="isOpen = !isOpen" class="dropdown-label"><button>Software Developement Cycle</button></h5>
-            <p v-if="isOpen" class="dropdown-content py-8" id="proj">
+        <div ref="ddropdown" class="p-8 rounded">
+            <h5 @click="isOOpen = !isOOpen" class="dropdown-label"><button>Software Developement Cycle</button></h5>
+            <p v-if="isOOpen" class="dropdown-content py-8" id="proj">
             <ul>
                 <li><strong>Research:</strong> Information gathering based on income tax 2023/2024</li>
                 <li><strong>Design:</strong> Creating a wireframe  <a href="https://www.figma.com/proto/owgymaQOAUmKEsBcvN3sLY/TAX-CALCULATOR-SYSTEM-APP?page-id=0%3A1&node-id=1-2&mode=design&t=g9fjNpwlOiV8hMyA-1" target="_blank" @click="openLink()"> <i class="bi bi-link-45deg"></i> View</a></li>
@@ -71,6 +71,8 @@
             </p>
 
         </div>
+
+       
        
     </div>
     
@@ -83,7 +85,7 @@
 
 
 <div id = "MS-box" class="col shadow p-3 mb-5 bg-body-tertiary rounded">
-    <h1 id="MS" class="">My Expertise</h1>
+    <h1 id="MS" class="">My Services</h1>
     <div class="row" id="serv.row">
     <div class="col">
         <h3><span id="hh">UI/UX Design</span></h3><br>
@@ -119,11 +121,25 @@ h5{
     text-align: center;
 }
 
+#high1, #high7{
+    background: linear-gradient(
+    to bottom,
+    transparent 50%,
+    #fcae41 50%
+  )
+}
+
+ul li{
+    font-size: 16px;
+}
+
 button{
     margin: 10px;
     padding: 5px 10px;
-    border-radius: 3%;
-    border: 1px solid gray;
+    border-radius: 1%;
+    border: none;
+    background-color: rgba(202, 220, 199, 1);
+   
 }
 
 button:hover{
@@ -150,11 +166,11 @@ button:hover{
     
 }
 
-.card, img{
+#cards, img{
     transition: transform 0.3s ease;
 }
 
-.card:hover{
+#cards:hover{
     transform: scale(1.1);
 }
 
@@ -225,33 +241,27 @@ li{
         justify-content: center;
     }
 }
+
+@media (min-width: 1200px) {
+
+}
 </style>
 
 <script setup>
 import { ref, onMounted } from "vue"
 import autoAnimate from "@formkit/auto-animate"
-import { annotate, annotationGroup } from 'rough-notation'
-
-
-document.addEventListener('DOMContentLoaded', function () {
-  
-  const a1 = annotate(document.querySelector('#high1'), { type: 'highlight', color: 'gold', multiline: true});
-  const a2 = annotate(document.querySelector('#high2'), { type: 'highlight', color: 'turquoise' });
-  const a3 = annotate(document.querySelector('#high3'), { type: 'highlight', color: 'pink' });
-  const a4 = annotate(document.querySelector('#high4'), { type: 'highlight', color: 'orange', multiline: true });
-  const a7 = annotate(document.querySelector('#high7'), { type: 'highlight', color: 'turquoise'});
-  
-
-  const ag = annotationGroup([a1, a2,a3, a4, a7]);
-  ag.show();
-});
 
 const dropdown = ref()
-const isOpen = ref(false) // a DOM node
+const ddropdown = ref()
+
+const isOpen = ref(false) 
+const isOOpen = ref(false)
+// a DOM node
 
 onMounted(() => {
-  autoAnimate(dropdown.value) // thats it!
-})
+  autoAnimate(dropdown.value)
+  autoAnimate(ddropdown.value) // thats it!
+});
 
 
 const openLink = () => {

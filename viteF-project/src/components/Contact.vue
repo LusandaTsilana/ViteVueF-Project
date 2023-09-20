@@ -200,7 +200,7 @@ export default {
         swal.fire({
         icon: 'success',
         title: 'Form Submitted!',
-        text: 'Thank you!',
+        text: 'Thank you!' ,
       });
     };
 

@@ -1,8 +1,12 @@
 *{
-  font-family: 'Fuzzy Bubbles', cursive;
+ 
   text-decoration-color: black;
   box-sizing: border-box;
- 
+  font-family: 'Cormorant', serif;
+  font-family: 'Mooli', sans-serif;
+  font-family: 'Playfair Display', serif;
+  font-family: 'Pontano Sans', sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 
 h1{
@@ -11,7 +15,7 @@ h1{
 }
 
 p{
-  font-size: 16px;
+  font-size: 15px;
 }
 
 html {

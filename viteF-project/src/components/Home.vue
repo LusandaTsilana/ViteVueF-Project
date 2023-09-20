@@ -5,19 +5,14 @@
 <div id = "box" class="container text-start">
   <div id = "boxx" class="row align-items-start">
     <div class="col" id="textbox">
-      <h5 class="display-5">Hi there, </h5>
-      <h5 class="display-5">I'm <span class="display-2" id="name">LUSANDA</span></h5>
+      <h5 class="display-4">Hi there, </h5>
+      <h5 class="display-4">I am <span class="display-2" id="name">LUSANDA</span></h5>
 
       <div class="high"><p class="h5">Junior Web Developer</p></div>
 
       <div id="buttons">
       <button type="button" class="btn btn" id="buttonn"><a href="/contact">Contact</a></button>
-      <button type="button" class="btn btn" id="buttonn">
-        <ejs-pdfviewer 
-      id="pdfViewer" 
-      :serviceUrl="serviceUrl" 
-      :documentPath="documentPath">Resume</ejs-pdfviewer>
-      </button>
+      <button type="button" class="btn btn" id="buttonn"><a href="@/assets/LUSANDA T CV 2023.pdf" download>Download CV </a></button>
 
         </div>
     </div>
@@ -33,6 +28,7 @@
 </template>
 
 <style scoped>
+
 
 #box{
     margin-top: 60px;
@@ -70,8 +66,9 @@
 
 #name{
   font-weight: bold;
-  text-decoration: underline;
+  text-decoration: none;
   text-decoration-thickness: 2px;
+  letter-spacing: 5px;
 }
 
 #buttons{
@@ -82,9 +79,8 @@
     margin: 10px;
     padding: 5px 10px;
     border-radius: 3%;
-    border: 1px solid gray;
     font-size: 14px;
-    
+    background-color: rgba(202, 220, 199, 1);
 }
 
 #buttonn:hover{
