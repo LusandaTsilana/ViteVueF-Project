@@ -83,35 +83,24 @@
 
 
 <div id = "MS-box" class="col shadow p-3 mb-5 bg-body-tertiary rounded">
-    <h4 id="MS" class="">My Expertise</h4>
+    <h1 id="MS" class="">My Expertise</h1>
     <div class="row" id="serv.row">
     <div class="col">
-       <img src="@/assets/coding.gif">
-        <br>
-        <br>
-        <h5><span id="hh">Software Developement</span></h5><br>
+        <h3><span id="hh">UI/UX Design</span></h3><br>
+        
     </div>
     <div class="col">
-        <h5><span id="hh">Front End Dev </span></h5><br>
+       
+        <h3><span id="hh">Web Development </span></h3><br>
            
     </div>
+    <div class="col">
+        <h3><span id="hh">Mobile Development </span></h3><br>
     </div>
+    </div>
+
 </div>
 
-<div class="container text-center">
-  <div class="row">
-    <div class="col align-self-start">
-      One of three columns
-    </div>
-    </div>
-    <div class="row"><div class="col align-self-center">
-      Two of three columns
-    </div></div>
-    <div class="row"><div class="col align-self-end">
-      Three of three columns
-    </div></div>
-   
-  </div>
 </div>
 
   
@@ -142,7 +131,12 @@ button:hover{
 }
 
 #hh{
-    color: rgb(69, 92, 65);
+  letter-spacing: 2px;
+  background: linear-gradient(
+    to bottom,
+    transparent 50%,
+    #fce041 50%
+  )
 }
 
 #proj{
