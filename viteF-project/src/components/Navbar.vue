@@ -3,30 +3,48 @@
   <nav class="navbar navbar-expand-lg shadow-sm" id="navbar">
   <div class="container-fluid">
     <a class="navbar-brand" id="logo"><router-link to="/home"><img src="@/assets/lusandalogo.png" alt="Logo" width="53.08" height="50" class="d-inline-block align-text-top"></router-link></a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" @click="toggleMenu" >
+      <span v-if="!MenuOpen"  class="navbar-toggler-icon"></span>
+      <span  v-if="MenuOpen"><i class="bi bi-x-lg" id="exit"></i></span>
     </button>
+
+
     <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav">
+      <ul v-if="MenuOpen" class="navbar-nav">
         <li class="nav-item">
-          <router-link to="/home"><a class="nav-link">HOME</a></router-link>
+          <router-link to="/home"><a class="nav-link" exact v-bind:class="{ 'nav-link-active': $route.path === '/home' }">HOME</a></router-link>
         </li>
         <li class="nav-item">
-          <router-link to="/about"><a class="nav-link">ABOUT</a></router-link>
+          <router-link to="/about"><a class="nav-link" exact v-bind:class="{ 'nav-link-active': $route.path === '/about' }">ABOUT</a></router-link>
         </li>
         <li class="nav-item">
-          <router-link to="/projects"><a class="nav-link">PROJECTS</a></router-link>
+          <router-link to="/projects"><a class="nav-link" exact v-bind:class="{ 'nav-link-active': $route.path === '/projects' }">PROJECTS</a></router-link>
         </li>
         <li class="nav-item">
-          <router-link to="/contact"><a class="nav-link">CONTACT</a></router-link>
+          <router-link to="/contact"><a class="nav-link" exact v-bind:class="{ 'nav-link-active': $route.path === '/contact' }">CONTACT</a></router-link>
         </li>
       </ul>
+      
     </div>
   </div>
 </nav>
 </template>
 
 <script>
+
+export default {
+  data() {
+    return {
+      MenuOpen: false,
+    };
+  },
+
+  methods: {
+    toggleMenu() {
+      this.MenuOpen = !this.MenuOpen;
+    },
+  },
+};
   
   
   </script>
@@ -46,6 +64,11 @@ nav{
 
 img{
     margin-left: 50px;
+}
+
+.nav-link-active {
+  /* Your underline styles for the active link */
+  font-weight: bold;
 }
 
 nav ul li{
@@ -90,6 +113,12 @@ nav ul li a:hover::after{
     }     
      .navbar-nav{
         font-size: 16px;
+      }
+
+      #exit{
+        display: none;
+        font-size: 2rem;
+
       }
 
       

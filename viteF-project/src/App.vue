@@ -1,11 +1,7 @@
 <template>
     <div id="app">
       <Navbar/> <!-- Global component -->
-      <Home/>
-      <!--Render the matched view based on the current route-->
-      <About/>
-      <Projects/>
-      <Contact/>
+      <router-view/><!--Render the matched view based on the current route-->
       <FooterBand/>
     </div>
   </template>
