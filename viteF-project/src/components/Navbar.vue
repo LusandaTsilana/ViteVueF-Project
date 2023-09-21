@@ -24,6 +24,21 @@
           <router-link to="/contact"><a class="nav-link" exact v-bind:class="{ 'nav-link-active': $route.path === '/contact' }">CONTACT</a></router-link>
         </li>
       </ul>
+
+      <ul id="fullscreenmenu" class="navbar-nav">
+        <li class="nav-item">
+          <router-link to="/home"><a class="nav-link" exact v-bind:class="{ 'nav-link-active': $route.path === '/home' }">HOME</a></router-link>
+        </li>
+        <li class="nav-item">
+          <router-link to="/about"><a class="nav-link" exact v-bind:class="{ 'nav-link-active': $route.path === '/about' }">ABOUT</a></router-link>
+        </li>
+        <li class="nav-item">
+          <router-link to="/projects"><a class="nav-link" exact v-bind:class="{ 'nav-link-active': $route.path === '/projects' }">PROJECTS</a></router-link>
+        </li>
+        <li class="nav-item">
+          <router-link to="/contact"><a class="nav-link" exact v-bind:class="{ 'nav-link-active': $route.path === '/contact' }">CONTACT</a></router-link>
+        </li>
+      </ul>
       
     </div>
   </div>
@@ -121,12 +136,17 @@ nav ul li a:hover::after{
 
       }
 
+    
+
       
     }
 
+    @media (max-width: 991px) {
+      #fullscreenmenu{
+  display: none;
+}
 
-    @media (max-width: 992px) {
-  #navbar{
+#navbar{
     background-color: white;
     text-align: center;
   }
