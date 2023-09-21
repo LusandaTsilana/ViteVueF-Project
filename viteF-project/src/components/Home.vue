@@ -112,7 +112,7 @@ p{
     -webkit-background-clip:content-box;
     background-clip: content-box;
     background-position: -300px 0px;
-    animation: backcolor 3s linear infinite alternate;
+    animation: backcolor 2.5s linear infinite alternate;
 
 }
 
