@@ -11,7 +11,7 @@
       <div class="high"><p class="h5">Junior Web Developer</p></div>
 
       <div id="buttons">
-      <button type="button" class="btn btn" id="buttonn"><a href="/contact">Contact</a></button>
+        <router-link to="/contact"><button type="button" class="btn btn" id="buttonn">Contact</button></router-link>
       <button type="button" class="btn btn" id="buttonn"><a href="@/assets/LUSANDA T CV 2023.pdf" download>Download CV </a></button>
 
         </div>

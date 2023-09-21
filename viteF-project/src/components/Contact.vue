@@ -25,7 +25,7 @@
 
 
 
-            <form @submit.prevent="sendForm" ref="myForm" id="contactForm">
+            <form @submit.prevent="sendForm" ref="myForm">
               
                 <div class="mb-3">
                     <label for="InputName" class="form-label">Full Name</label>
@@ -275,6 +275,8 @@ export default {
         async sendForm() {
             //to validate form fields using vuelidate
             this.v$.$validate();
+
+            //to validate recaptcha
            
            //to validate recaptcha to see if it has been clicked
            if (this.recaptchaResponse) {
