@@ -62,7 +62,6 @@
 
                 <div class="mb-3">
                         <div class="g-recaptcha" :data-sitekey="state.recaptchaSiteKey" :data-callback="onRecaptchaClick"></div>
-                        <div id="html_element"></div>
                 </div>
 
                 
@@ -331,21 +330,6 @@ export default {
 
 
     },
-
-    mounted() {
-    // Define the onloadCallback function here
-    var onloadCallback = function() {
-      // You can add any additional initialization code here if needed
-    };
-
-    // Load reCAPTCHA script
-    const script = document.createElement("script");
-    script.src = "https://www.google.com/recaptcha/api.js?render=explicit";
-    script.async = true;
-    script.defer = true;
-    script.onload = onloadCallback;
-    document.head.appendChild(script);
-  },
 
    
    
