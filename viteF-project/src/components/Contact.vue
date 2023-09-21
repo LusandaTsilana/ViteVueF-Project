@@ -46,7 +46,7 @@
               
                 <div class="mb-3">
                     <label for="InputEmail" class="form-label">Email</label>
-                    <input  type="text" name = "email" class="form-control" id="InputEmail" v-model="state.email" />
+                    <input  type="text" name = "email" class="form-control" id="InputEmail" autocomplete="email" v-model="state.email" />
                     <span v-if="v$.email.$error">
                     {{ v$.email.$errors[0].$message }}</span>
                 </div>
@@ -125,7 +125,7 @@ div p:hover{
 .g-recaptcha{
     display: block;
     height: 100px;
-    width: 100px;
+    width: 120px;
 }
 
 .col {
@@ -186,10 +186,6 @@ export default {
     //},
 
     setup() {
-
-        const recaptchaResponse = ref(null);
-
-
         const swal = Swal.mixin({
             position: 'center', // Change position to 'center'
             showCloseButton: true,
@@ -210,6 +206,30 @@ export default {
         text: 'Please try again later',
       });
     };
+
+    const showErrorRecaptcha = () => {
+        swal.fire({
+            icon: 'error',
+            title: 'Form not submitted',
+            text: 'Please complete recaptcha challenge again',
+        });
+    };
+
+    const onRecaptchaClick = (response) => {
+      // This function will be called after a successful reCAPTCHA challenge
+      if (response) {
+        // reCAPTCHA verification succeeded
+        // You can enable the form submission or perform other actions here
+        // For example, you can set a flag to indicate a successful reCAPTCHA challenge:
+        this.recaptchaSuccess = true;
+      } else {
+        // reCAPTCHA verification failed
+        // You can handle this case as needed, e.g., display an error message
+        // For example, you can set a flag to indicate a failed reCAPTCHA challenge:
+        this.recaptchaSuccess = false;
+      }
+    };
+
 
         const state = reactive({
             fullname: '',
@@ -244,7 +264,9 @@ export default {
             v$,
             showAlert,
             showError,
-            recaptchaResponse,
+            showErrorRecaptcha,
+            onRecaptchaClick,
+           
             
            
             
@@ -278,9 +300,10 @@ export default {
 
             //to validate recaptcha
            
-           //to validate recaptcha to see if it has been clicked
-           if (this.recaptchaResponse) {
-            if (!this.v$.$error) {
+
+
+            if (!this.v$.$error && this.recaptchaSuccess) {
+                this.recaptchaSuccess = true,
                 emailjs
                     .sendForm('service_ouebe0d', 'template_6yxd1di', this.$refs.myForm, 'n3c3fJnlqx0Zw7gBF')
                     .then((response) => {
@@ -312,21 +335,16 @@ export default {
                 });
             } else {
                 //display error message if recaptcha is not clicked
-                console.error('recaptcha not clicked!')
+                this.recaptchaSuccess = false;
+                this.showErrorRecaptcha();
             };
             
-           }
+          
 
         },
         openLink() {
             //to open to new window when clicking on view for school website
         },
-
-        onRecaptchaClick(response) {
-            // This method will be called when reCAPTCHA is clicked.
-             this.recaptchaResponse = response;
-
-},
 
        
 
