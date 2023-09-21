@@ -61,7 +61,7 @@
                 </div>
 
                 <div class="mb-3">
-                        <div class="g-recaptcha" :data-sitekey="state.recaptchaSiteKey" :data-callback="onRecaptchaClick"></div>
+                        <div class="g-recaptcha" :data-sitekey="state.recaptchaSiteKey"></div>
                 </div>
 
                 
@@ -125,7 +125,7 @@ div p:hover{
 .g-recaptcha{
     display: block;
     height: 100px;
-    width: 120px;
+    width: 100px;
 }
 
 .col {
@@ -215,22 +215,6 @@ export default {
         });
     };
 
-    const onRecaptchaClick = (response) => {
-      // This function will be called after a successful reCAPTCHA challenge
-      if (response) {
-        // reCAPTCHA verification succeeded
-        // You can enable the form submission or perform other actions here
-        // For example, you can set a flag to indicate a successful reCAPTCHA challenge:
-        this.recaptchaSuccess = true;
-      } else {
-        // reCAPTCHA verification failed
-        // You can handle this case as needed, e.g., display an error message
-        // For example, you can set a flag to indicate a failed reCAPTCHA challenge:
-        this.recaptchaSuccess = false;
-      }
-    };
-
-
         const state = reactive({
             fullname: '',
             cellphone: '',
@@ -265,7 +249,6 @@ export default {
             showAlert,
             showError,
             showErrorRecaptcha,
-            onRecaptchaClick,
            
             
            
@@ -302,8 +285,7 @@ export default {
            
 
 
-            if (!this.v$.$error && this.recaptchaSuccess) {
-                this.recaptchaSuccess = true,
+            if (!this.v$.$error) {
                 emailjs
                     .sendForm('service_ouebe0d', 'template_6yxd1di', this.$refs.myForm, 'n3c3fJnlqx0Zw7gBF')
                     .then((response) => {
@@ -335,11 +317,8 @@ export default {
                 });
             } else {
                 //display error message if recaptcha is not clicked
-                this.recaptchaSuccess = false;
-                this.showErrorRecaptcha();
+                
             };
-            
-          
 
         },
         openLink() {

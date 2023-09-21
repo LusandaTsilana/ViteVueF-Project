@@ -4,6 +4,8 @@ import About from "@/components/About.vue";
 import Projects from "@/components/Projects.vue";
 import Contact from "@/components/Contact.vue";
 
+
+
 const routes = [
     {path: '/', redirect: '/home' }, // To redirect root to '/home'
     {path: '/home', name: 'Home', component: Home},
@@ -12,6 +14,7 @@ const routes = [
     {path: '/contact', name: 'Contact', component: Contact},
 
 ];
+
 
 const router = createRouter({
     routes,

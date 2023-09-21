@@ -7,8 +7,6 @@ export default defineConfig({
   plugins: [vue()],
   build: {
     rollupOptions: {
-      
-     
     },
   },
   resolve: {
@@ -17,5 +15,4 @@ export default defineConfig({
     },
     
   },
- 
 });
