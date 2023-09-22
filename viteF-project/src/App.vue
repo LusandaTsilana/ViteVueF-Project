@@ -15,6 +15,7 @@
   import About from "@/components/About.vue";
   import Projects from "@/components/Projects.vue";
   import Contact from "@/components/Contact.vue";
+  import cv from "@/components/cv.vue";
   import FooterBand from '@/components/FooterBand.vue';
  
 
@@ -26,6 +27,7 @@
       About,
       Projects,
       Contact,
+      cv,
       FooterBand,
     }
   };

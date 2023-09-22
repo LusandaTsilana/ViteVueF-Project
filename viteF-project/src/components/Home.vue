@@ -12,7 +12,7 @@
 
       <div id="buttons">
         <router-link to="/contact"><button type="button" class="btn btn" id="buttonn">Contact</button></router-link>
-        <!--<router-link to="/"><button type="button" class="btn btn" id="buttonn">Download CV </button></router-link>-->
+        <router-link to="/cv"><button type="button" class="btn btn" id="buttonn">Download CV </button></router-link>
 
     
         </div>
