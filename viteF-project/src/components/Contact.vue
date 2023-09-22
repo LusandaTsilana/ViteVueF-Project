@@ -203,7 +203,7 @@ export default {
         swal.fire({
         icon: 'error',
         title: 'Form not submitted',
-        text: 'Please try again later',
+        text: 'Please check connection and try again later',
       });
     };
 

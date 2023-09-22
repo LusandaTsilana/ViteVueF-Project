@@ -2,7 +2,7 @@
 <template>
   <nav class="navbar navbar-expand-lg shadow-sm" id="navbar">
   <div class="container-fluid">
-    <a class="navbar-brand" id="logo"><router-link to="/home"><img src="@/assets/lusandalogo.png" alt="Logo" width="53.08" height="50" class="d-inline-block align-text-top"></router-link></a>
+    <a class="navbar-brand" id="logo"><router-link to="/"><img src="@/assets/lusandalogo.png" alt="Logo" width="53.08" height="50" class="d-inline-block align-text-top"></router-link></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" @click="toggleMenu" >
       <span v-if="!MenuOpen"  class="navbar-toggler-icon"></span>
       <span  v-if="MenuOpen"><i class="bi bi-x-lg" id="exit"></i></span>
