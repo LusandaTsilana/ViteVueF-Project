@@ -12,7 +12,7 @@
 
       <div id="buttons">
         <router-link to="/contact"><button type="button" class="btn btn" id="buttonn">Contact</button></router-link>
-      <button type="button" class="btn btn" id="buttonn"><a href="@/assets/LUSANDA T CV 2023.pdf" download>Download CV </a></button>
+      <!--<a :href="require('@/assets/LUSANDA T CV 2023.pdf')" target="_blank"><button type="button" class="btn btn" id="buttonn">Download CV </button></a>-->
 
         </div>
     </div>
@@ -116,6 +116,11 @@ p{
 
 }
 
+.h5{
+  text-align: center;
+
+}
+
 @keyframes backcolor{
   100%{
     background-position: 0px 0px;
@@ -176,6 +181,7 @@ p{
 <script>
 import { onMounted, provide } from 'vue'
 import { animate, spring } from 'motion'
+
 
 
 export default{
