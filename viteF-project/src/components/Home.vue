@@ -12,8 +12,9 @@
 
       <div id="buttons">
         <router-link to="/contact"><button type="button" class="btn btn" id="buttonn">Contact</button></router-link>
-      <!--<a :href="require('@/assets/LUSANDA T CV 2023.pdf')" target="_blank"><button type="button" class="btn btn" id="buttonn">Download CV </button></a>-->
+        <!--<router-link to="/"><button type="button" class="btn btn" id="buttonn">Download CV </button></router-link>-->
 
+    
         </div>
     </div>
     <div class="col">

@@ -6,12 +6,14 @@ import Contact from "@/components/Contact.vue";
 
 
 
+
 const routes = [
     {path: '/', redirect: '/home' }, // To redirect root to '/home'
     {path: '/home', name: 'Home', component: Home},
     {path: '/about', name: 'About', component: About},
     {path: '/projects', name: 'Projects', component: Projects},
     {path: '/contact', name: 'Contact', component: Contact},
+   
 
 ];
 

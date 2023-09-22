@@ -27,9 +27,6 @@
       Projects,
       Contact,
       FooterBand,
-     
-      
-      
     }
   };
   </script>
