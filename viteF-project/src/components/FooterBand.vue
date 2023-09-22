@@ -34,9 +34,8 @@ footer{
 }
 
 footer i{
-    font-size: 1rem;
+    font-size: 1.25rem;
     line-height: 1rem; /* 16px */
-   
     
 }
 footer a{
@@ -51,6 +50,10 @@ footer a:hover{
 i{
     margin-right: 10px;
     margin-left: 10px;
+    transition: transform 0.3s ease;
+}
+i:hover{
+    transform: scale(1.1);
 }
 
 #footer-icons{

@@ -82,7 +82,6 @@ img{
 }
 
 .nav-link-active {
-  /* Your underline styles for the active link */
   font-weight: bold;
 }
 

@@ -19,8 +19,6 @@
     </div>
     <div class="col">
         <img src="@/assets/portraitF.png" class = "" alt="portrait" id = "portrait" width="483.56" height="550">
-        <img src="@/assets/stripes.png" class="" alt="stripes" id="stripes1" width="180.38" height="129.11">
-        <img src="@/assets/stripes.png" class="" alt="stripes" id="stripes2" width="125.75" height="79.54">
     </div>
     
   </div>
@@ -32,7 +30,7 @@
 
 
 #box{
-    margin-top: 60px;
+    margin-top: 30px;
     margin-bottom: 30px;
    
 }
@@ -45,24 +43,6 @@
     position: relative;
     border-radius: 10px;
     height: 100%;
-}
-
-#stripes1{
- position: absolute;
- z-index: 1;
- left: 78%;
- top: 13%;
-  display: none;
-}
-
-
-
-#stripes2{
-  position:absolute;
-  z-index: 1;
-  left: 48%;
-  top: 70%;
-  display: none;
 }
 
 #name{

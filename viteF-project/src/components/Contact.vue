@@ -8,15 +8,14 @@
         <div id="contact-modes" class="column shadow p-5 mb-5 bg-body-tertiary rounded">
             <h5>Talk to me</h5>
 
-            <div class="col shadow-sm p-3 mb-5 bg-body-tertiary rounded">
-                <p class=""><a href=""><i class="bi bi-envelope-at"></i></a>sanda.tsilana<br>@gmail.com</p>
+            <div class="col shadow-sm p-3 mb-5 rounded" id="cols">
+                <p><i class="bi bi-envelope-at"></i>sanda.tsilana<br>@gmail.com</p>
             </div>
-            <div class="col shadow-sm p-3 mb-5 bg-body-tertiary rounded">
-                <p><a href="https://www.linkedin.com/in/lusanda-tsilana31" target="_blank" @click="openLink()"><i class="bi bi-linkedin" id="linkedin"></i></a>Linkedin</p>
-            </div>
-            <div class="col shadow-sm p-3 mb-5 bg-body-tertiary rounded">
-                <p><a href="https://github.com/LusandaTsilana" target="_blank" @click="openLink()"><i class="bi bi-github"></i></a>Github</p>
-            </div>
+            <a href="https://www.linkedin.com/in/lusanda-tsilana31" target="_blank" @click="openLink()"><div class="col shadow-sm p-3 mb-5 rounded" id="cols">
+                <p><i class="bi bi-linkedin" id="linkedin"></i>Linkedin</p></div></a>
+
+                <a href="https://github.com/LusandaTsilana" target="_blank" @click="openLink()"><div class="col shadow-sm p-3 mb-5 rounded" id="cols">
+                <p><i class="bi bi-linkedin" id="linkedin"></i>Github</p></div></a>
 
         </div>
 
@@ -107,8 +106,13 @@ div a {
     color: black;
 }
 
-div p:hover{
-    color: rgb(43, 72, 38);
+#cols{
+    transition: transform 0.3s ease;
+}
+
+#cols:hover{
+    background-color: rgba(202, 220, 199, 1);
+    transform: scale(1.05);
 }
 
 #form-box {

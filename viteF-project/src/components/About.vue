@@ -24,11 +24,11 @@ Now, I'm on the lookout for a full-time role where I can apply my coding skills 
       <h4>Qualification</h4>
 
       <div class="qualification_tabs">
-        <div class="qualification_title" @click="activeTab = 'tab1'" :class="{ 'active-tab': activeTab === 'tab1'}"><i class="bi bi-mortarboard"></i>
+        <div class="qualification_title" @click="activeTab = 'tab1'" exact v-bind:class="{ 'active-tab-active': activeTab === 'tab1'}"><i class="bi bi-mortarboard"></i>
           Education
         </div>
 
-        <div class="qualification_title" @click="activeTab = 'tab2'" :class="{ 'active-tab': activeTab === 'tab2'}"><i class="bi bi-briefcase"></i>
+        <div class="qualification_title" @click="activeTab = 'tab2'" exact v-bind:class="{ 'active-tab-active': activeTab === 'tab2'}"><i class="bi bi-briefcase"></i>
           Experience
         </div>
       </div>
@@ -166,6 +166,19 @@ h6{
   font-weight: bold;
 }
 
+img{
+    transition: transform 0.3s ease;
+}
+
+img:hover{
+    transform: scale(1.1);
+}
+
+.active-tab-active{
+  font-weight: bold;
+  color:rgb(69, 92, 65);
+}
+
 #highG, #highC{
   font-weight: bold;
   background: linear-gradient(
@@ -224,6 +237,7 @@ h6{
 .qualification_title.qualification_title:hover{
   color: rgb(69, 92, 65);
   font-weight: bold;
+  font-size: 16px;
 }
 
 .qualification_sections{
@@ -325,11 +339,23 @@ h6{
 </style>
 
 <script>
+import { onMounted, provide } from 'vue'
+import { animate, spring } from 'motion'
 
 export default {
 
 
   data() {
+     // Animation code here
+     onMounted(() => {
+      const animation = animate(".qualification_title", { scale: 1.1 }, {
+        duration: 1, // as in 1 sec
+        easing: spring(),
+        repeat: Infinity,
+        direction: "alternate",
+      });
+    });
+
     return {
       activeTab: 'initial',
       isShow: true,
