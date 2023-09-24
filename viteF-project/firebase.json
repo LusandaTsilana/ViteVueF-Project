@@ -11,9 +11,10 @@
     ],
     "rewrites": [
       {
-        "source": "**",
-        "destination": "/index.html"
+        "source": "/home/**",
+        "destination": "@/components/home/index/html"
       }
     ]
   }
 }
+
