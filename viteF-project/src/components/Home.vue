@@ -12,13 +12,13 @@
 
       <div id="buttons">
         <router-link to="/contact"><button type="button" class="btn btn" id="buttonn">Contact</button></router-link>
-        <router-link to="/cv"><button type="button" class="btn btn" id="buttonn">Download CV </button></router-link>
+        <a href="@/assets/document/pdf" target="_blank" @click="openLink()"><button type="button" class="btn btn" id="buttonn">Download CV </button></a>
 
     
         </div>
     </div>
     <div class="col">
-        <img src="@/assets/portraitF.png" class = "" alt="portrait" id = "portrait" width="483.56" height="550">
+        <img src="@/assets/portraitF.png" alt="portrait" id = "portrait" width="483.56" height="550">
     </div>
     
   </div>
@@ -43,6 +43,11 @@
     position: relative;
     border-radius: 10px;
     height: 100%;
+    transition: transform 0.3s ease;
+}
+
+#portrait:hover{
+    transform: scale(1.1);
 }
 
 #name{
@@ -50,6 +55,7 @@
   text-decoration: none;
   text-decoration-thickness: 2px;
   letter-spacing: 5px;
+  
 }
 
 #buttons{
@@ -160,7 +166,7 @@ p{
 </style>
 
 <script>
-import { onMounted, provide } from 'vue'
+import { defineSSRCustomElement, onMounted, provide } from 'vue'
 import { animate, spring } from 'motion'
 
 
@@ -177,8 +183,15 @@ export default{
       });
     });
 
-
+    
   
   },
-}
+
+  methods: {
+    openLink() {
+
+    },
+  },
+
+};
 </script>

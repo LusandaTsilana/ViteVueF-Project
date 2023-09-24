@@ -176,6 +176,7 @@ img:hover{
 
 .active-tab-active{
   font-weight: bold;
+  text-decoration: underline;
   color:rgb(69, 92, 65);
 }
 

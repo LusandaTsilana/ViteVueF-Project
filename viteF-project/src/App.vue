@@ -2,6 +2,7 @@
     <div id="app">
       <Navbar/> <!-- Global component -->
       <router-view/><!--Render the matched view based on the current route-->
+      <!--<scrollbutton/>-->
       <FooterBand/>
     </div>
   </template>
@@ -16,6 +17,7 @@
   import Projects from "@/components/Projects.vue";
   import Contact from "@/components/Contact.vue";
   import cv from "@/components/cv.vue";
+  //import scrollbutton from '@/components/scrollbutton.vue';
   import FooterBand from '@/components/FooterBand.vue';
  
 
@@ -28,6 +30,7 @@
       Projects,
       Contact,
       cv,
+      //scrollbutton,
       FooterBand,
     }
   };
