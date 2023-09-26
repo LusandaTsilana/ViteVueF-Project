@@ -12,7 +12,7 @@
 
       <div id="buttons">
         <router-link to="/contact"><button type="button" class="btn btn" id="buttonn">Contact</button></router-link>
-        <button type="button" class="btn btn" id="buttonn" @click="openPdf()">View Resume</button>
+        <button type="button" class="btn btn" id="buttonn" @click="openPdf()">View Resume → </button>
         </div>
     </div>
     <div class="col">
@@ -161,6 +161,38 @@ p{
   .high{
     margin-top: 10px;
     margin-bottom: 10px;
+  }
+
+}
+
+@media (min-width: 1920px) {
+  #portrait{
+    height: 900px; 
+    width: 840px;
+  }
+
+  #textbox{
+    margin-top: 160px;
+  }
+
+  h5{
+    font-size: 4.5rem;
+  }
+
+  #name{
+    font-size: 3.7rem;
+  }
+
+  #buttonn{
+    font-size: 23px;
+  }
+
+  #buttons{
+    margin-top: 80px;
+  }
+
+  p{
+    font-size: 1.5rem;
   }
 
 }

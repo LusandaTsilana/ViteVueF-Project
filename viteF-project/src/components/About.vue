@@ -358,7 +358,7 @@ export default {
     });
 
     return {
-      activeTab: 'initial',
+      activeTab: 'tab1',
       isShow: true,
     };
   },
