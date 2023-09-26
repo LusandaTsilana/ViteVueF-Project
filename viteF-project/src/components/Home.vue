@@ -1,128 +1,126 @@
 
 
 <template>
+  <div id="box" class="container text-start">
+    <div id="boxx" class="row align-items-start">
+      <div class="col" id="textbox">
+        <h5 class="display-4">Hi there, </h5>
+        <h5 class="display-4">I am <span class="display-2" id="name">LUSANDA</span></h5>
 
-<div id = "box" class="container text-start">
-  <div id = "boxx" class="row align-items-start">
-    <div class="col" id="textbox">
-      <h5 class="display-4">Hi there, </h5>
-      <h5 class="display-4">I am <span class="display-2" id="name">LUSANDA</span></h5>
-
-      <div class="high"><p class="h5">Junior Web Developer</p></div>
-
-      <div id="buttons">
-        <router-link to="/contact"><button type="button" class="btn btn" id="buttonn">Contact</button></router-link>
-        <button type="button" class="btn btn" id="buttonn" @click="openPdf()">View Resume → </button>
+        <div class="high">
+          <p class="h5">Junior Web Developer</p>
         </div>
+
+        <div id="buttons">
+          <router-link to="/contact"><button type="button" class="btn btn" id="buttonn">Contact</button></router-link>
+          <button type="button" class="btn btn" id="buttonn" @click="openPdf()">View Resume → </button>
+        </div>
+      </div>
+      <div class="col">
+        <img src="@/assets/portraitF.png" alt="portrait" id="portrait" width="483.56" height="550">
+      </div>
+
     </div>
-    <div class="col">
-        <img src="@/assets/portraitF.png" alt="portrait" id = "portrait" width="483.56" height="550">
-    </div>
-    
   </div>
-</div>
-  
 </template>
 
 <style scoped>
+#box {
+  margin-top: 30px;
+  margin-bottom: 30px;
 
-
-#box{
-    margin-top: 30px;
-    margin-bottom: 30px;
-   
 }
 
-#boxx{
+#boxx {
   height: 80%;
 }
 
-#portrait{
-    position: relative;
-    border-radius: 10px;
-    height: 100%;
-    transition: transform 0.3s ease;
+#portrait {
+  position: relative;
+  border-radius: 10px;
+  height: 100%;
+  transition: transform 0.3s ease;
 }
 
-#portrait:hover{
-    transform: scale(1.1);
+#portrait:hover {
+  transform: scale(1.1);
 }
 
-#name{
+#name {
   font-weight: bold;
   text-decoration: none;
   text-decoration-thickness: 2px;
   letter-spacing: 5px;
-  
+
 }
 
-iframe{
+iframe {
   display: none;
 }
 
-#buttons{
+#buttons {
   margin-top: 20px;
 }
 
-#buttonn{
-    margin: 10px;
-    padding: 5px 10px;
-    border-radius: 3%;
-    font-size: 14px;
-    background-color: rgba(202, 220, 199, 1);
+#buttonn {
+  margin: 10px;
+  padding: 5px 10px;
+  border-radius: 3%;
+  font-size: 14px;
+  background-color: rgba(202, 220, 199, 1);
 }
 
-#buttonn:hover{
-   background-color: rgb(155, 209, 146);
-   
+#buttonn:hover {
+  background-color: rgb(155, 209, 146);
+
 }
 
-#textbox{
-    margin-top: 70px;
-    display: block;
-    
+#textbox {
+  margin-top: 70px;
+  display: block;
+
 }
 
-p{
+p {
   margin-top: 8px;
   margin-right: 25px;
   margin-left: 10px;
 }
 
-.high{
-    width: 300px;
-    margin-top: 45px;
-    margin-bottom: 20px;
-    padding-bottom: 10px;
-    padding-top: 10px;
-    color: white;
-    background-image: linear-gradient(rgb(117, 159, 110), rgb(117, 159, 110));
-    background-repeat: no-repeat;
-    -webkit-background-clip:content-box;
-    background-clip: content-box;
-    background-position: -300px 0px;
-    animation: backcolor 2.5s linear infinite alternate;
+.high {
+  width: 300px;
+  margin-top: 45px;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  color: white;
+  background-image: linear-gradient(rgb(117, 159, 110), rgb(117, 159, 110));
+  background-repeat: no-repeat;
+  -webkit-background-clip: content-box;
+  background-clip: content-box;
+  background-position: -300px 0px;
+  animation: backcolor 2.5s linear infinite alternate;
 
 }
 
-.h5{
+.h5 {
   text-align: center;
 
 }
 
-@keyframes backcolor{
-  100%{
+@keyframes backcolor {
+  100% {
     background-position: 0px 0px;
   }
 }
 
-#buttons a{
+#buttons a {
   text-decoration: none;
   color: black;
 }
 
 @media (max-width: 992px) {
-  #boxx{
+  #boxx {
     display: flex;
     flex-direction: column-reverse;
     justify-content: center;
@@ -130,11 +128,12 @@ p{
 
   }
 
-  #stripes1, #stripes2{
+  #stripes1,
+  #stripes2 {
     display: none;
   }
-  
-  #textbox{
+
+  #textbox {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -142,14 +141,14 @@ p{
     margin-top: 25px;
   }
 
-  #buttons{
+  #buttons {
     display: flex;
     justify-content: center;
     margin-top: 10px;
 
   }
 
-  img{
+  img {
     width: 395px;
     height: 357px;
     display: flex;
@@ -158,7 +157,7 @@ p{
     margin: auto;
   }
 
-  .high{
+  .high {
     margin-top: 10px;
     margin-bottom: 10px;
   }
@@ -166,37 +165,36 @@ p{
 }
 
 @media (min-width: 1920px) {
-  #portrait{
-    height: 900px; 
+  #portrait {
+    height: 900px;
     width: 840px;
   }
 
-  #textbox{
+  #textbox {
     margin-top: 160px;
   }
 
-  h5{
+  h5 {
     font-size: 4.5rem;
   }
 
-  #name{
+  #name {
     font-size: 3.7rem;
   }
 
-  #buttonn{
+  #buttonn {
     font-size: 23px;
   }
 
-  #buttons{
+  #buttons {
     margin-top: 80px;
   }
 
-  p{
+  p {
     font-size: 1.5rem;
   }
 
 }
-
 </style>
 
 <script>
@@ -206,7 +204,7 @@ import { animate, spring } from 'motion'
 
 
 
-export default{
+export default {
 
   setup() {
     // Animation code here
@@ -219,15 +217,15 @@ export default{
       });
     });
 
-    
-  
+
+
   },
 
   methods: {
-   openPdf() {
+    openPdf() {
       //pdf path to my CV
       const pdfUrl = '/LT CV SEPT 2023.pdf';
-      
+
       // Open the PDF in a new tab/window.
       window.open(pdfUrl, '_blank');
     },
