@@ -11,7 +11,6 @@
   "dependencies": {
     "@emailjs/browser": "^3.11.0",
     "@formkit/auto-animate": "^0.7.0",
-    "@syncfusion/ej2-vue-grids": "^23.1.36",
     "@unhead/vue": "^1.6.2",
     "@vuelidate/core": "^2.0.3",
     "@vuelidate/validators": "^2.0.4",
@@ -22,10 +21,8 @@
     "firebase": "^10.3.1",
     "firebase-tools": "^0.1.6",
     "motion": "^10.16.2",
-    "pdfvuer": "^2.0.1",
     "sweetalert2": "^11.7.28",
     "vue": "^3.3.4",
-    "vue-pdf": "^4.3.0",
     "vue-recaptcha": "^3.0.0-alpha.2",
     "vue-router": "^4.2.4",
     "vue-sweetalert2": "^5.0.5"
