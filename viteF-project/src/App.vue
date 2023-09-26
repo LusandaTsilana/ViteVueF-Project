@@ -1,6 +1,7 @@
 <template>
     <div id="app">
-      <Navbar/> <!-- Global component -->
+      <Navbar/> 
+      <!-- Global component -->
       <router-view/><!--Render the matched view based on the current route-->
       <!--<scrollbutton/>-->
       <FooterBand/>
