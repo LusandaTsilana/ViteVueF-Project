@@ -14,12 +14,12 @@
         <router-link to="/contact"><button type="button" class="btn btn" id="buttonn">Contact</button></router-link>
         <!-- <pdf src="/LT CV SEPT 2023.pdf" target="_blank" @click="openLink()"><button type="button" class="btn btn" id="buttonn">Download CV </button></pdf> -->
         <!-- <button @click="openLink">Open PDF <iframe src="/LT CV SEPT 2023.pdf" width="100%" height="100%"></iframe></button> -->
-        <pdf src="/LT CV SEPT 2023.pdf" :page="1" target="_blank" @click="openLink()">
+        <!-- <pdf src="/LT CV SEPT 2023.pdf" :page="1" target="_blank" @click="openLink()">
     <template slot="loading">
       loading content here...
     </template>
     <button type="button" class="btn btn" id="buttonn">Download CV </button>
-  </pdf>
+  </pdf> -->
 
     
         </div>
@@ -180,16 +180,16 @@ p{
 import { onMounted } from 'vue'
 import { animate, spring } from 'motion'
 //import pdf from 'vue-pdf'
-import pdf from 'pdfvuer'
-import 'pdfjs-dist/build/pdf.worker.entry'
+//import pdf from 'pdfvuer'
+//import 'pdfjs-dist/build/pdf.worker.entry'
 
 
 
 export default{
 
-  components: {
-    pdf
- },
+//   components: {
+//     pdf
+//  },
 
  
 

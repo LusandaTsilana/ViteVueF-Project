@@ -11,8 +11,8 @@
     ],
     "rewrites": [
       {
-        "source": "/home/**",
-        "destination": "@/components/home/index/html"
+        "source": "**",
+        "destination": "/index.html"
       }
     ]
   }
