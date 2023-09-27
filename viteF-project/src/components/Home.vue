@@ -224,7 +224,7 @@ export default {
   methods: {
     openPdf() {
       //pdf path to my CV
-      const pdfUrl = '/LT CV SEPT 2023.pdf';
+      const pdfUrl = '/LT CV SEPT 2023 (2).pdf';
 
       // Open the PDF in a new tab/window.
       window.open(pdfUrl, '_blank');
