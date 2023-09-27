@@ -11,11 +11,17 @@
             <div class="col shadow-sm p-3 mb-5 rounded" id="cols">
                 <p><i class="bi bi-envelope-at"></i>sanda.tsilana<br>@gmail.com</p>
             </div>
-            <a href="https://www.linkedin.com/in/lusanda-tsilana31" target="_blank" @click="openLink()"><div class="col shadow-sm p-3 mb-5 rounded" id="cols">
-                <p><i class="bi bi-linkedin" id="linkedin"></i>Linkedin</p></div></a>
+            <a href="https://www.linkedin.com/in/lusanda-tsilana31" target="_blank" @click="openLink()">
+                <div class="col shadow-sm p-3 mb-5 rounded" id="cols">
+                    <p><i class="bi bi-linkedin" id="linkedin"></i>Linkedin</p>
+                </div>
+            </a>
 
-                <a href="https://github.com/LusandaTsilana" target="_blank" @click="openLink()"><div class="col shadow-sm p-3 mb-5 rounded" id="cols">
-                <p><i class="bi bi-linkedin" id="linkedin"></i>Github</p></div></a>
+            <a href="https://github.com/LusandaTsilana" target="_blank" @click="openLink()">
+                <div class="col shadow-sm p-3 mb-5 rounded" id="cols">
+                    <p><i class="bi bi-linkedin" id="linkedin"></i>Github</p>
+                </div>
+            </a>
 
         </div>
 
@@ -25,46 +31,49 @@
 
 
             <form @submit.prevent="sendForm" ref="myForm">
-              
+
                 <div class="mb-3">
                     <label for="InputName" class="form-label">Full Name</label>
-                    <input type="name" name = "fullname" class="form-control" id="InputName" v-model="state.fullname"/>
+                    <input type="name" name="fullname" class="form-control" id="InputName" v-model="state.fullname" />
                     <span v-if="v$.fullname.$error">
-                    {{ v$.fullname.$errors[0].$message }}</span>
-                   
+                        {{ v$.fullname.$errors[0].$message }}</span>
+
                 </div>
 
                 <div class="mb-3">
                     <label for="InputNumber" class="form-label">Cellphone (optional)</label>
-                    <input type="cellphone" name = "cellphone" class="form-control" id="InputNumber" v-model="state.cellphone" />
+                    <input type="cellphone" name="cellphone" class="form-control" id="InputNumber"
+                        v-model="state.cellphone" />
                     <span v-if="v$.cellphone.$error">
-                    {{ v$.cellphone.$errors[0].$message }}</span>
-                   
+                        {{ v$.cellphone.$errors[0].$message }}</span>
+
                 </div>
 
-              
+
                 <div class="mb-3">
                     <label for="InputEmail" class="form-label">Email</label>
-                    <input  type="text" name = "email" class="form-control" id="InputEmail" autocomplete="email" v-model="state.email" />
+                    <input type="text" name="email" class="form-control" id="InputEmail" autocomplete="email"
+                        v-model="state.email" />
                     <span v-if="v$.email.$error">
-                    {{ v$.email.$errors[0].$message }}</span>
+                        {{ v$.email.$errors[0].$message }}</span>
                 </div>
 
-               
+
                 <div class="mb-3">
                     <label for="InputMessage" class="form-label">Message</label>
-                    <input  type="text" name = "messagetext" class="form-control pb-5" id="InputMessage" cols="30" rows= "10" v-model="state.messagetext"/>
+                    <input type="text" name="messagetext" class="form-control pb-5" id="InputMessage" cols="30" rows="10"
+                        v-model="state.messagetext" />
                     <span v-if="v$.messagetext.$error">
-                    {{ v$.messagetext.$errors[0].$message }}</span>
+                        {{ v$.messagetext.$errors[0].$message }}</span>
 
                 </div>
 
                 <div class="mb-3">
-                        <div class="g-recaptcha" :data-sitekey="state.recaptchaSiteKey"></div>
+                    <div class="g-recaptcha" :data-sitekey="state.recaptchaSiteKey"></div>
                 </div>
 
-                
-              
+
+
                 <button type="submit" class="btn btn-outline" id="submit-button">Submit</button>
             </form>
         </div>
@@ -106,11 +115,11 @@ div a {
     color: black;
 }
 
-#cols{
+#cols {
     transition: transform 0.3s ease;
 }
 
-#cols:hover{
+#cols:hover {
     background-color: rgba(202, 220, 199, 1);
     transform: scale(1.05);
 }
@@ -120,13 +129,14 @@ div a {
     width: 50%;
     height: 100%;
 }
-#contact-modes{
+
+#contact-modes {
     padding: 100px;
     width: 30%;
     /*height: 100%;*/
 }
 
-.g-recaptcha{
+.g-recaptcha {
     display: block;
     height: 100px;
     width: 100px;
@@ -143,7 +153,7 @@ div a {
     background-color: rgba(202, 220, 199, 1);
 }
 
-span{
+span {
     color: red;
     font-size: 13px;
 }
@@ -162,7 +172,7 @@ span{
     #form-box {
         padding: 100px;
         width: 70%;
-        
+
     }
 
 }
@@ -173,21 +183,11 @@ span{
 
 import { useVuelidate } from '@vuelidate/core'
 import { required, numeric, email, minLength, maxLength } from '@vuelidate/validators'
-import { reactive, computed, ref} from 'vue'
+import { reactive, computed, ref } from 'vue'
 import emailjs from '@emailjs/browser';
 import Swal from 'sweetalert2';
 
-
-
-//import VueRecaptcha from 'vue-recaptcha'
-
-
-
 export default {
-
-   // components: {
-       // VueRecaptcha,
-    //},
 
     setup() {
         const swal = Swal.mixin({
@@ -196,28 +196,20 @@ export default {
         });
 
         const showAlert = () => {
-        swal.fire({
-        icon: 'success',
-        title: 'Form Submitted!',
-        text: 'Thank you!' ,
-      });
-    };
+            swal.fire({
+                icon: 'success',
+                title: 'Form Submitted!',
+                text: 'Thank you!',
+            });
+        };
 
-    const showError = () => {
-        swal.fire({
-        icon: 'error',
-        title: 'Form not submitted',
-        text: 'Please check connection and try again later',
-      });
-    };
-
-    const showErrorRecaptcha = () => {
-        swal.fire({
-            icon: 'error',
-            title: 'Form not submitted',
-            text: 'Please complete recaptcha challenge again',
-        });
-    };
+        const showError = () => {
+            swal.fire({
+                icon: 'error',
+                title: 'Form not submitted',
+                text: 'Please check connection and try again later',
+            });
+        };
 
         const state = reactive({
             fullname: '',
@@ -225,21 +217,23 @@ export default {
             email: '',
             messagetext: '',
             recaptchaSiteKey: '6LfvMBwoAAAAAHBRBl_2OCBMvgygQgeOhT-IBTjk',
-           
+
 
         });
 
         const rules = computed(() => {
             return {
                 fullname: { required },
-                cellphone: { numeric,
+                cellphone: {
+                    numeric,
                     minLength: minLength(10),
-                    maxLength: maxLength(10) },
-                    email: { required, email },
-                    messagetext: {
+                    maxLength: maxLength(10)
+                },
+                email: { required, email },
+                messagetext: {
                     required
                 },
-               
+
             };
         });
 
@@ -252,12 +246,7 @@ export default {
             v$,
             showAlert,
             showError,
-            showErrorRecaptcha,
-           
-            
-           
-            
-           
+
         };
     },
 
@@ -280,48 +269,43 @@ export default {
     },
     methods: {
 
-        
+
         async sendForm() {
             //to validate form fields using vuelidate
             this.v$.$validate();
-
-            //to validate recaptcha
-           
-
 
             if (!this.v$.$error) {
                 emailjs
                     .sendForm('service_ouebe0d', 'template_6yxd1di', this.$refs.myForm, 'n3c3fJnlqx0Zw7gBF')
                     .then((response) => {
                         console.log('Email sent successfully', response);
-                    //will send form to server/email.js here
 
-                    //show that form submission successful below
-                     this.showAlert();
+                        //show that form submission successful below
+                        this.showAlert();
 
-                    // Reset the form if there are no validation errors
-                this.$refs.myForm.reset();
-                
-                // You can also reset the validation state 
-                this.v$.$reset();
+                        // Reset the form if there are no validation errors
+                        this.$refs.myForm.reset();
 
-                // Clear the form data to its reactive state
-                this.state.fullname = '';
-                this.state.cellphone = '';
-                this.state.email = '';
-                this.state.messagetext = '';
-               
-               
-                    
-              
-                })  .catch((errors) => {
-                    console.error('Email sending failed', errors);
-                    this.showError();
-               
-                });
+                        // You can also reset the validation state 
+                        this.v$.$reset();
+
+                        // Clear the form data to its reactive state
+                        this.state.fullname = '';
+                        this.state.cellphone = '';
+                        this.state.email = '';
+                        this.state.messagetext = '';
+
+
+
+
+                    }).catch((errors) => {
+                        console.error('Email sending failed', errors);
+                        this.showError();
+
+                    });
             } else {
                 //display error message if recaptcha is not clicked
-                
+
             };
 
         },
@@ -329,13 +313,13 @@ export default {
             //to open to new window when clicking on view for school website
         },
 
-       
+
 
 
     },
 
-   
-   
+
+
 };
 
 

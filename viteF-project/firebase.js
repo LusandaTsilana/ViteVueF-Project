@@ -11,7 +11,7 @@ const firebaseConfig = {
   projectId: "lusandatdev-3a669",
   storageBucket: "lusandatdev-3a669.appspot.com",
   messagingSenderId: "723342053451",
-  appId: "1:723342053451:web:c734d92df9ea8ad8b73dce"
+  appId: "1:723342053451:web:c734d92df9ea8ad8b73dce",
 };
 
 // Initialize Firebase
