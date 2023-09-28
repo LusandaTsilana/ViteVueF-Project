@@ -19,7 +19,7 @@
 
             <a href="https://github.com/LusandaTsilana" target="_blank" @click="openLink()">
                 <div class="col shadow-sm p-3 mb-5 rounded" id="cols">
-                    <p><i class="bi bi-linkedin" id="linkedin"></i>Github</p>
+                    <p><i class="bi bi-github" id="github"></i>Github</p>
                 </div>
             </a>
 
