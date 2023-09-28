@@ -236,9 +236,9 @@ export default {
     isRecaptchaCompleted.value = true;
     sendForm();
   } else {
-    // reCAPTCHA was not completed, set the variable to false
+    // reCAPTCHA was not completed, set to false
     isRecaptchaCompleted.value = false;
-    // You can also disable the submit button here if it's not already disabled
+    // disable the submit button here 
   }
 }
 
