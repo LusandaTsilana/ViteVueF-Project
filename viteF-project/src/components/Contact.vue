@@ -69,12 +69,12 @@
                 </div>
 
                 <div class="mb-3">
-                    <div class="g-recaptcha" :data-sitekey="state.recaptchaSiteKey"></div>
+                    <div class="g-recaptcha" id="recaptcha"></div>
                 </div>
 
 
 
-                <button type="submit" class="btn btn-outline" id="submit-button">Submit</button>
+                <button :disabled="!isRecaptchaCompleted" type="submit" class="btn btn-outline" id="submit-button">Submit</button>
             </form>
         </div>
 
@@ -183,8 +183,8 @@ span {
 
 import { useVuelidate } from '@vuelidate/core'
 import { required, numeric, email, minLength, maxLength } from '@vuelidate/validators'
-import { reactive, computed, ref } from 'vue'
-import emailjs from '@emailjs/browser';
+import { reactive, computed, ref, onMounted } from 'vue'
+import emailjs, { sendForm } from '@emailjs/browser';
 import Swal from 'sweetalert2';
 
 export default {
@@ -216,10 +216,32 @@ export default {
             cellphone: '',
             email: '',
             messagetext: '',
-            recaptchaSiteKey: '6LfvMBwoAAAAAHBRBl_2OCBMvgygQgeOhT-IBTjk',
-
-
         });
+
+        const recaptchaSiteKey = '6LfvMBwoAAAAAHBRBl_2OCBMvgygQgeOhT-IBTjk';
+        const recaptchaWidgetId = ref(null);
+        const isRecaptchaCompleted = ref(false);
+
+        onMounted(() => {
+      recaptchaWidgetId.value = grecaptcha.render('recaptcha', {
+        sitekey: recaptchaSiteKey,
+        callback: yourCallbackFunction,
+      });
+    });
+
+
+    function yourCallbackFunction(response) {
+  if (response) {
+    // reCAPTCHA was completed, set the variable to true
+    isRecaptchaCompleted.value = true;
+    sendForm();
+  } else {
+    // reCAPTCHA was not completed, set the variable to false
+    isRecaptchaCompleted.value = false;
+    // You can also disable the submit button here if it's not already disabled
+  }
+}
+
 
         const rules = computed(() => {
             return {
@@ -246,6 +268,7 @@ export default {
             v$,
             showAlert,
             showError,
+            isRecaptchaCompleted,
 
         };
     },
