@@ -74,7 +74,8 @@
 
 
 
-                <button :disabled="!isRecaptchaCompleted" type="submit" class="btn btn-outline" id="submit-button">Submit</button>
+                <button :disabled="!isRecaptchaCompleted" type="submit" class="btn btn-outline shadow"
+                    id="submit-button">Submit</button>
             </form>
         </div>
 
@@ -153,6 +154,10 @@ div a {
     background-color: rgba(202, 220, 199, 1);
 }
 
+#submit-button:hover {
+    background-color: rgb(155, 209, 146)
+}
+
 span {
     color: red;
     font-size: 13px;
@@ -223,24 +228,24 @@ export default {
         const isRecaptchaCompleted = ref(false);
 
         onMounted(() => {
-      recaptchaWidgetId.value = grecaptcha.render('recaptcha', {
-        sitekey: recaptchaSiteKey,
-        callback: yourCallbackFunction,
-      });
-    });
+            recaptchaWidgetId.value = grecaptcha.render('recaptcha', {
+                sitekey: recaptchaSiteKey,
+                callback: yourCallbackFunction,
+            });
+        });
 
 
-    function yourCallbackFunction(response) {
-  if (response) {
-    // reCAPTCHA was completed, set the variable to true
-    isRecaptchaCompleted.value = true;
-    sendForm();
-  } else {
-    // reCAPTCHA was not completed, set to false
-    isRecaptchaCompleted.value = false;
-    // disable the submit button here 
-  }
-}
+        function yourCallbackFunction(response) {
+            if (response) {
+                // reCAPTCHA was completed, set the variable to true
+                isRecaptchaCompleted.value = true;
+                sendForm();
+            } else {
+                // reCAPTCHA was not completed, set to false
+                isRecaptchaCompleted.value = false;
+                // disable the submit button here 
+            }
+        }
 
 
         const rules = computed(() => {
