@@ -350,6 +350,7 @@ img:hover {
 <script>
 import { onMounted, provide } from 'vue'
 import { animate, spring } from 'motion'
+import { annotate, annotationGroup } from 'rough-notation';
 
 export default {
 
@@ -363,6 +364,13 @@ export default {
         repeat: Infinity,
         direction: "alternate",
       });
+
+      const a1 = annotate(document.querySelector('#e1'), { type: 'underline' });
+      const a2 = annotate(document.querySelector('#e3'), { type: 'box' });
+      const a3 = annotate(document.querySelector('#e3'), { type: 'circle' });
+
+      const ag = annotationGroup([a3, a1, a2]);
+      ag.show();
     });
 
     return {
