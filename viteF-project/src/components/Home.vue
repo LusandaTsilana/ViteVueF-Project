@@ -8,7 +8,7 @@
         <h5 class="display-4">I am <span class="display-2" id="name">LUSANDA</span></h5>
 
         <div class="high">
-          <p class="h5">Junior Web Developer</p>
+          <p class="h5">Software Developer</p>
         </div>
 
         <div id="buttons">
@@ -224,7 +224,7 @@ export default {
   methods: {
     openPdf() {
       //pdf path to my CV
-      const pdfUrl = '/LT CV SEPT 2023 (2).pdf';
+      const pdfUrl = '/LUSANDA TSILANA CV APRIL 2024.pdf';
 
       // Open the PDF in a new tab/window.
       window.open(pdfUrl, '_blank');

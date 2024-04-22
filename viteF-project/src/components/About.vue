@@ -14,16 +14,16 @@
           world. While still working as a clinical trial recruiter, I decided to pursue a <strong>BSc. Computer
             Science.</strong> To gain practical experience, I enrolled in a Software Developer program, where I honed my
           skills in <span id="highC">UI/UX </span>design and <span id="highD">web development.</span> Since then, I've
-          transitioned into a role as a <strong>Junior Software Developer.</strong> <br>
+          transitioned into a role as a <strong>Software Engineer.</strong> <br>
           <br>
-          In my spare time, I'm fully immersed in a <span id="highE">SAS</span> programming course to further expand my
-          knowledge into Data Analysis. <br>
+          In my spare time, I'm fully immersed in <span id="highE">Javascript and AWS</span> courses to further expand and strengthen my problem solving skills. <br>
           <br>
           I'm also actively delving into <strong>back-end</strong> development to diversify my skill set. Since switching
-          careers, I've had the privilege of working alongside top developers to enhance my expertise and gain hands-on
-          experience in developing web and <span id="highF">mobile applications.</span> <br>
+          careers, I've had the privilege of working alongside product engineers and solution architects to enhance my expertise and gain hands-on
+          experience in delivering <span id="highF">high-quality, efficient systems</span> that meet the needs of users
+          and the business.<br>
           <br>
-          Now, I'm on the lookout for a full-time role where I can apply my coding skills to <span id="circle">grow
+          Now, I'm on the lookout for a full-time role where I can <span id="circle">grow
           </span>professionally. <br>
 
         </p>
@@ -87,10 +87,21 @@
 
             <div class="experience_data">
               <div>
+                <h6 class="experience_name">Product Engineer Intern</h6>
+                <span class="subtitle">Absa Group</span>
+                <div class="calender">
+                  <i class="calender-alt">2024 - Current</i>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="experience_data">
+              <div>
                 <h6 class="experience_name">Junior Web Developer</h6>
                 <span class="subtitle">Younglings</span>
                 <div class="calender">
-                  <i class="calender-alt">2023 - Current</i>
+                  <i class="calender-alt">2023 - 2024</i>
                 </div>
               </div>
 
