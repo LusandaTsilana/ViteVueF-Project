@@ -224,7 +224,7 @@ export default {
   methods: {
     openPdf() {
       //pdf path to my CV
-      const pdfUrl = '/LUSANDA TSILANA CV APRIL 2024.pdf';
+      const pdfUrl = '/LUSANDA TSILANA CV MAY 2024.pdf';
 
       // Open the PDF in a new tab/window.
       window.open(pdfUrl, '_blank');

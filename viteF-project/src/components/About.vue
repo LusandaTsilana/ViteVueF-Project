@@ -118,17 +118,6 @@
 
             </div>
 
-            <div class="experience_data">
-              <div id="BS">
-                <h6 class="experience_name">Beauty Sales</h6>
-                <span class="subtitle">Foschini</span>
-                <div class="calender">
-                  <i class="calender-alt">2018 - 2019</i>
-                </div>
-              </div>
-
-            </div>
-
 
           </div>
 
